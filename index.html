@@ -24,6 +24,7 @@
                  <li><a href="#" class="review-btn">Leave Review</a></li>
                 <li><a href="#contact" class="">Contact</a></li>
                 <li><a href="property-management.html" class="">Add Property</a></li>
+                <li><a href="review-management.html" class="">Review</a></li>
             </ul>
             <div class="mobile-menu">
                 <i class="fas fa-bars"></i>
@@ -277,7 +278,7 @@
     <div class="container">
         <div class="properties-header">
             <h2 class="section-title fade-in">Available Properties</h2>
-            <button class="btn btn-outline refresh-btn" id="refresh-properties">
+            <button class="btn btn-accent  refresh-btn" id="refresh-properties">
                 <i class="fas fa-sync-alt"></i> Refresh Properties
             </button>
         </div>
@@ -303,10 +304,18 @@
 
     <!-- Reviews Section -->
     <section class="reviews" id="testimonials">
-    <div class="container">
-        <h2 class="section-title fade-in">What Our Guests Say</h2>
-        <div class="reviews-container" id="reviews-container">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Guests Say</h2>
+            <div class="reviews-container" id="reviews-container">
                 <!-- Reviews will be dynamically loaded here -->
+            </div>
+            <div class="reviews-actions fade-in" style="text-align: center; margin-top: 40px;">
+                <a href="review-management.html" class="btn" style="margin-right: 15px;">
+                    <i class="fas fa-star"></i> Leave a Review
+                </a>
+                <a href="review-management.html" class="btn btn-accent">
+                    <i class="fas fa-comments"></i> See All Reviews
+                </a>
             </div>
         </div>
     </section>

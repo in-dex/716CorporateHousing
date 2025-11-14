@@ -1223,8 +1223,14 @@ document.head.appendChild(style);
     // Then initialize everything else
     initializeFilters();
     loadProperties();
-    loadReviews();
+    
+    // Load reviews from review manager instead of static ones
+    loadReviewsFromManager();
+    updateMainPageMetrics();
     setupPublicReviewForm();
+
+    // Setup auto-refresh for reviews
+    setupReviewAutoRefresh();
 
     // Refresh button functionality
     document.getElementById('refresh-properties').addEventListener('click', refreshProperties);
@@ -2031,52 +2037,218 @@ function syncProperties() {
     applyFilters();
 }
 
+// Load Reviews from Review Manager - CORRECTED VERSION
 function loadReviewsFromManager() {
     const reviewsContainer = document.getElementById('reviews-container');
     if (!reviewsContainer) return;
     
-    // Get reviews from the review manager
-    const displayReviews = reviewManager.getAllReviewsForDisplay();
+    // Get settings and reviews from localStorage
+    const settings = JSON.parse(localStorage.getItem('reviewSettings')) || {
+        curation: { enabled: false, approvedReviews: [] },
+        maxDisplay: 6,
+        showGoogle: true,
+        showManual: true
+    };
     
+    const googleReviews = JSON.parse(localStorage.getItem('googleReviews')) || [];
+    const manualTestimonials = JSON.parse(localStorage.getItem('manualTestimonials')) || [];
+    
+    let displayReviews = [];
+    
+    if (settings.curation && settings.curation.enabled) {
+        // CURATION MODE: Only show approved reviews
+        console.log('Curation mode: Showing only approved reviews');
+        const approvedIds = settings.curation.approvedReviews || [];
+        
+        // Combine all reviews and filter by approved IDs
+        const allReviews = [...googleReviews, ...manualTestimonials];
+        displayReviews = allReviews
+            .filter(review => approvedIds.includes(review.id))
+            .sort((a, b) => {
+                const dateA = a.time || new Date(a.date).getTime();
+                const dateB = b.time || new Date(b.date).getTime();
+                return dateB - dateA;
+            })
+            .slice(0, settings.maxDisplay || 6);
+            
+        console.log(`Found ${approvedIds.length} approved reviews, ${displayReviews.length} after filtering`);
+        
+    } else {
+        // NORMAL MODE: Show all reviews based on settings
+        console.log('Normal mode: Showing all reviews based on settings');
+        
+        if (settings.showGoogle) {
+            displayReviews.push(...googleReviews);
+        }
+        
+        if (settings.showManual) {
+            displayReviews.push(...manualTestimonials);
+        }
+        
+        // Sort by date (newest first) and limit
+        displayReviews = displayReviews
+            .sort((a, b) => {
+                const dateA = a.time || new Date(a.date).getTime();
+                const dateB = b.time || new Date(b.date).getTime();
+                return dateB - dateA;
+            })
+            .slice(0, settings.maxDisplay || 6);
+    }
+
+    // If no reviews, show placeholder
     if (displayReviews.length === 0) {
         reviewsContainer.innerHTML = `
-            <div class="no-reviews" style="grid-column: 1/-1; text-align: center; padding: 40px;">
-                <i class="fas fa-comments fa-3x" style="color: var(--light-gray); margin-bottom: 15px;"></i>
-                <h3 style="color: var(--dark); margin-bottom: 10px;">No Reviews Yet</h3>
-                <p style="color: var(--text-gray);">Be the first to leave a review!</p>
-                <a href="review-management.html" class="btn" style="margin-top: 15px;">
-                    <i class="fas fa-star"></i> Leave a Review
-                </a>
+            <div class="no-reviews-message" style="grid-column: 1/-1; text-align: center; padding: 60px 20px;">
+                <div style="font-size: 4rem; color: var(--light-gray); margin-bottom: 20px;">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3 style="color: var(--dark); margin-bottom: 15px; font-size: 1.5rem;">
+                    ${settings.curation && settings.curation.enabled ? 'No Approved Reviews Yet' : 'No Reviews Yet'}
+                </h3>
+                <p style="color: var(--text-gray); margin-bottom: 25px; font-size: 1.1rem;">
+                    ${settings.curation && settings.curation.enabled 
+                        ? 'No reviews have been approved for display yet. Go to Review Management to approve some reviews!' 
+                        : 'Be the first to share your experience with 716 Corporate Housing!'}
+                </p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="review-management.html" class="btn btn-accent" style="font-size: 1.1rem; padding: 12px 30px;">
+                        <i class="fas fa-cog"></i> Manage Reviews
+                    </a>
+                    ${!(settings.curation && settings.curation.enabled) ? `
+                    <a href="review-management.html" class="btn" style="font-size: 1.1rem; padding: 12px 30px;">
+                        <i class="fas fa-star"></i> Share Your Experience
+                    </a>
+                    ` : ''}
+                </div>
             </div>
         `;
         return;
     }
-    
+
+    // Create review cards
     reviewsContainer.innerHTML = displayReviews.map((review, index) => {
         const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
         const sourceIcon = review.source === 'google' ? 'fab fa-google' : 'fas fa-user';
+        const reviewDate = review.relative_time_description || 
+                          new Date(review.time || review.date).toLocaleDateString('en-US', {
+                              year: 'numeric',
+                              month: 'long',
+                              day: 'numeric'
+                          });
         
+        const avatarUrl = review.profile_photo_url || 
+                         review.avatar || 
+                         `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author_name || review.name)}&background=daa520&color=fff&size=100`;
+
         return `
-            <div class="review-card fade-in" style="transition-delay: ${index * 0.1}s">
+            <div class="review-card fade-in" style="animation-delay: ${index * 0.1}s">
                 <div class="review-header">
                     <div class="review-avatar">
-                        <img src="${review.avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author_name || review.name)}&background=daa520&color=fff&size=100`}" 
-                             alt="${review.author_name || review.name}" loading="lazy">
+                        <img src="${avatarUrl}" alt="${review.author_name || review.name}" loading="lazy">
                     </div>
                     <div class="review-info">
                         <div class="review-name">${review.author_name || review.name}</div>
                         ${review.profession ? `<div class="review-profession">${review.profession}</div>` : ''}
-                        <div class="review-date">${new Date(review.date || review.time).toLocaleDateString()}</div>
+                        <div class="review-date">${reviewDate}</div>
                     </div>
                 </div>
                 <div class="review-stars">${stars}</div>
                 <p>${review.text}</p>
                 <div class="review-source">
                     <i class="${sourceIcon}"></i>
+                    <span class="source-text">${review.source === 'google' ? 'Google Review' : 'Testimonial'}</span>
+                    ${settings.curation && settings.curation.enabled ? '<span class="approved-badge">✓ Approved</span>' : ''}
                 </div>
             </div>
         `;
     }).join('');
+
+    // Trigger animations
+    setTimeout(() => {
+        document.querySelectorAll('.review-card').forEach((card, index) => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        });
+    }, 100);
+}
+
+// Update metrics on main page - ENHANCED VERSION
+function updateMainPageMetrics() {
+    const settings = JSON.parse(localStorage.getItem('reviewSettings')) || {
+        curation: { enabled: false, approvedReviews: [] }
+    };
+    
+    const googleReviews = JSON.parse(localStorage.getItem('googleReviews')) || [];
+    const manualTestimonials = JSON.parse(localStorage.getItem('manualTestimonials')) || [];
+    
+    let allReviews = [];
+    let totalReviews = 0;
+    let averageRating = '4.9'; // Fallback
+    
+    if (settings.curation && settings.curation.enabled) {
+        // In curation mode, only count approved reviews
+        const approvedIds = settings.curation.approvedReviews || [];
+        allReviews = [...googleReviews, ...manualTestimonials]
+            .filter(review => approvedIds.includes(review.id));
+    } else {
+        // In normal mode, count all reviews based on settings
+        if (settings.showGoogle !== false) {
+            allReviews.push(...googleReviews);
+        }
+        if (settings.showManual !== false) {
+            allReviews.push(...manualTestimonials);
+        }
+    }
+    
+    totalReviews = allReviews.length;
+    
+    // Calculate average rating
+    if (totalReviews > 0) {
+        const totalRating = allReviews.reduce((sum, review) => sum + review.rating, 0);
+        averageRating = (totalRating / totalReviews).toFixed(1);
+    }
+    
+    // Update metrics section
+    const metricsSection = document.querySelector('.metrics');
+    if (metricsSection) {
+        const ratingElement = metricsSection.querySelector('.metric-item:nth-child(3) .metric-value');
+        const reviewsElement = metricsSection.querySelector('.metric-item:first-child .metric-value');
+        
+        if (ratingElement) {
+            ratingElement.textContent = averageRating + '★';
+            // Add tooltip for curation mode
+            if (settings.curation && settings.curation.enabled) {
+                ratingElement.title = `Based on ${totalReviews} approved reviews`;
+            }
+        }
+        if (reviewsElement) {
+            reviewsElement.textContent = totalReviews + '+';
+            // Add tooltip for curation mode
+            if (settings.curation && settings.curation.enabled) {
+                reviewsElement.title = `${totalReviews} approved reviews`;
+            }
+        }
+    }
+    
+    console.log(`Metrics updated: ${totalReviews} reviews, ${averageRating} avg rating`);
+}
+
+// Auto-refresh reviews when page becomes visible
+function setupReviewAutoRefresh() {
+    // Refresh reviews when page becomes visible (user returns to tab)
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            // Page is visible again, refresh reviews
+            loadReviewsFromManager();
+            updateMainPageMetrics();
+        }
+    });
+    
+    // Also refresh every 5 minutes while page is open
+    setInterval(() => {
+        loadReviewsFromManager();
+        updateMainPageMetrics();
+    }, 5 * 60 * 1000); // 5 minutes
 }
 
 

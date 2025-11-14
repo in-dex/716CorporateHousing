@@ -67,45 +67,71 @@
             <!-- Google Reviews Tab -->
             <div class="tab-content active" id="google-tab">
                 <div class="google-setup">
-                    <h2>Google Reviews Integration</h2>
-                    <div class="api-status" id="google-status">
-                        <i class="fas fa-times-circle"></i>
-                        <span>Not Connected to Google Reviews API</span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="google-api-key">Google API Key *</label>
-                        <input type="password" id="google-api-key" placeholder="Enter your Google API Key">
-                        <small>
-                            Get API key from <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a><br>
-                            Required APIs: Places API, Geocoding API
-                        </small>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="business-search">Find Your Business</label>
-                        <div style="display: flex; gap: 10px;">
-                            <input type="text" id="business-search" 
-                                value="716 Corporate Housing Buffalo NY" 
-                                placeholder="Search for your business" 
-                                style="flex: 1;">
-                            <button type="button" class="btn" id="search-business">
-                                <i class="fas fa-search"></i> Search
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="google-place-id">Google Place ID</label>
-                        <input type="text" id="google-place-id" placeholder="Place ID will appear here after search" readonly>
-                        <small>This will be automatically filled when you search for your business</small>
-                    </div>
-                    
-                    <div style="display: flex; gap: 10px;">
-                        <button class="btn" id="connect-google">Connect to Google Reviews</button>
-                        <button class="btn btn-outline" id="test-connection">Test Connection</button>
-                    </div>
-                </div>
+    <h2>Google Reviews Integration</h2>
+    <div class="api-status" id="google-status">
+        <i class="fas fa-times-circle"></i>
+        <span>Not Connected to Google Reviews API</span>
+    </div>
+    
+    <div class="form-group">
+        <label for="google-api-key">Google API Key *</label>
+        <input type="password" id="google-api-key" placeholder="Enter your Google API Key">
+        <small>
+            Get API key from <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a><br>
+            Required APIs: Places API
+        </small>
+    </div>
+    
+    <!-- Place ID Finder Section -->
+    <div class="form-group">
+        <label>Find Your Place ID</label>
+        <div class="place-id-finder">
+            <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                <input type="text" id="business-name" 
+                       value="716 Corporate Housing" 
+                       placeholder="Business name" 
+                       style="flex: 1;">
+                <input type="text" id="business-location" 
+                       value="Buffalo, NY" 
+                       placeholder="City, State" 
+                       style="flex: 1;">
+            </div>
+            <button type="button" class="btn" id="open-placeid-finder">
+                <i class="fas fa-external-link-alt"></i> Open Place ID Finder
+            </button>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="google-place-id">Google Place ID *</label>
+        <input type="text" id="google-place-id" placeholder="Paste your Place ID here">
+        <small>
+            Get your Place ID from: 
+            <a href="https://developers.google.com/maps/documentation/places/web-service/place-id" 
+               target="_blank" id="place-id-link">
+               Google Place ID Finder
+            </a>
+        </small>
+    </div>
+    
+    <!-- Business Preview -->
+    <div id="business-preview" style="display: none; margin: 20px 0; padding: 15px; background: var(--bg-gray); border-radius: var(--border-radius);">
+        <h4 style="margin-bottom: 10px;">Business Preview</h4>
+        <div id="preview-content"></div>
+    </div>
+    
+    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <button class="btn" id="connect-google">
+            <i class="fas fa-plug"></i> Connect & Test
+        </button>
+        <button class="btn btn-accent" id="sync-reviews">
+            <i class="fas fa-sync-alt"></i> Sync Reviews Now
+        </button>
+        <button class="btn btn-outline btn-accent" id="clear-data">
+            <i class="fas fa-trash"></i> Clear Data
+        </button>
+    </div>
+</div>
 
                 <div class="sync-section">
                     <h3>Sync Google Reviews</h3>
@@ -173,41 +199,107 @@
             </div>
 
             <!-- Settings Tab -->
-            <div class="tab-content" id="settings-tab">
-                <div class="google-setup">
-                    <h2>Display Settings</h2>
-                    
-                    <div class="form-group">
-                        <label for="max-reviews-display">Maximum Reviews to Display</label>
-                        <input type="number" id="max-reviews-display" value="6" min="1" max="20">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="auto-sync">Auto-sync Google Reviews</label>
-                        <select id="auto-sync">
-                            <option value="disabled">Disabled</option>
-                            <option value="daily">Daily</option>
-                            <option value="weekly">Weekly</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox" id="show-google-reviews" checked>
-                            Show Google Reviews on Website
-                        </label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox" id="show-manual-testimonials" checked>
-                            Show Manual Testimonials on Website
-                        </label>
-                    </div>
-                    
-                    <button class="btn" id="save-settings">Save Settings</button>
-                </div>
+<div class="tab-content" id="settings-tab">
+    <div class="settings-grid">
+        <!-- Display Settings -->
+        <div class="settings-section">
+            <h3>Display Settings</h3>
+            
+            <div class="form-group">
+                <label for="max-reviews-display">Maximum Reviews to Display</label>
+                <input type="number" id="max-reviews-display" value="6" min="1" max="20">
             </div>
+            
+            <div class="form-group">
+                <label for="auto-sync">Auto-sync Google Reviews</label>
+                <select id="auto-sync">
+                    <option value="disabled">Disabled</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="show-google-reviews" checked>
+                    Show Google Reviews on Website
+                </label>
+            </div>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="show-manual-testimonials" checked>
+                    Show Manual Testimonials on Website
+                </label>
+            </div>
+        </div>
+
+        <!-- Review Curation Settings -->
+        <div class="settings-section">
+            <h3>Review Curation</h3>
+            
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="curation-enabled">
+                    Enable Review Curation
+                </label>
+                <small>When enabled, only approved reviews will appear on your website</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="min-rating">Minimum Rating to Auto-Approve</label>
+                <select id="min-rating">
+                    <option value="5">5 Stars Only</option>
+                    <option value="4" selected>4+ Stars</option>
+                    <option value="3">3+ Stars</option>
+                    <option value="2">2+ Stars</option>
+                    <option value="1">All Ratings</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="max-age">Maximum Review Age (Days)</label>
+                <input type="number" id="max-age" value="365" min="30" max="1095">
+                <small>Only show reviews from the last X days</small>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="btn" id="auto-approve">
+                    <i class="fas fa-magic"></i> Auto-Approve Reviews
+                </button>
+                <button type="button" class="btn " id="approve-all">
+                    <i class="fas fa-check-double"></i> Approve All
+                </button>
+                <button type="button" class="btn btn-danger" id="reject-all">
+                    <i class="fas fa-times-circle"></i> Reject All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+    <label>
+        <input type="checkbox" id="hide-approved-reviews">
+        Hide Approved Reviews in Management View
+    </label>
+    <small>When enabled, approved reviews will be hidden from the management tabs</small>
+</div>
+
+<div class="form-group">
+    <label>
+        <input type="checkbox" id="auto-hide-after-approval">
+        Auto-hide After Approval
+    </label>
+    <small>Automatically hide reviews after you approve them</small>
+</div>
+    
+    <div class="settings-footer">
+        <button class="btn btn-accent" id="save-settings">
+            <i class="fas fa-save"></i> Save All Settings
+        </button>
+    </div>
+</div>
+
         </div>
     </section>
 
