@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Management - 716 Corporate Housing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="review-managementStyle.css">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-home"></i>
+                716 Corporate Housing
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="property-management.html">Properties</a></li>
+                <li><a href="review-management.html" class="active">Reviews</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Review Management Section -->
+    <section class="review-management">
+        <div class="management-container">
+            <div class="management-header">
+                <h1>Review & Testimonial Management</h1>
+                <p>Manage Google reviews and manual testimonials for your website</p>
+            </div>
+
+            <!-- Review Statistics -->
+            <div class="review-stats">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-reviews">0</div>
+                    <div class="stat-label">Total Reviews</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="average-rating">0.0</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="google-reviews">0</div>
+                    <div class="stat-label">Google Reviews</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="manual-reviews">0</div>
+                    <div class="stat-label">Manual Testimonials</div>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="management-tabs">
+                <button class="tab-btn active" data-tab="google">Google Reviews</button>
+                <button class="tab-btn" data-tab="manual">Manual Testimonials</button>
+                <button class="tab-btn" data-tab="settings">Settings</button>
+            </div>
+
+            <!-- Google Reviews Tab -->
+            <div class="tab-content active" id="google-tab">
+                <div class="google-setup">
+                    <h2>Google Reviews Integration</h2>
+                    <div class="api-status" id="google-status">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Not Connected to Google Reviews API</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="google-api-key">Google API Key *</label>
+                        <input type="password" id="google-api-key" placeholder="Enter your Google API Key">
+                        <small>
+                            Get API key from <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a><br>
+                            Required APIs: Places API, Geocoding API
+                        </small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="business-search">Find Your Business</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="business-search" 
+                                value="716 Corporate Housing Buffalo NY" 
+                                placeholder="Search for your business" 
+                                style="flex: 1;">
+                            <button type="button" class="btn" id="search-business">
+                                <i class="fas fa-search"></i> Search
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="google-place-id">Google Place ID</label>
+                        <input type="text" id="google-place-id" placeholder="Place ID will appear here after search" readonly>
+                        <small>This will be automatically filled when you search for your business</small>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px;">
+                        <button class="btn" id="connect-google">Connect to Google Reviews</button>
+                        <button class="btn btn-outline" id="test-connection">Test Connection</button>
+                    </div>
+                </div>
+
+                <div class="sync-section">
+                    <h3>Sync Google Reviews</h3>
+                    <p>Manually sync your latest Google reviews to display on your website</p>
+                    <button class="btn btn-accent sync-btn" id="sync-reviews">
+                        <i class="fas fa-sync-alt"></i> Sync Reviews Now
+                    </button>
+                </div>
+
+                <div id="google-reviews-container">
+                    <!-- Google reviews will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Manual Testimonials Tab -->
+            <div class="tab-content" id="manual-tab">
+                <div class="manual-management">
+                    <h2>Add Manual Testimonial</h2>
+                    <form id="manual-testimonial-form" class="testimonial-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="testimonial-name">Name *</label>
+                                <input type="text" id="testimonial-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="testimonial-profession">Profession/Title</label>
+                                <input type="text" id="testimonial-profession" placeholder="e.g., Travel Nurse, Business Consultant">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Rating *</label>
+                            <div class="star-rating">
+                                <input type="radio" id="rating-5" name="rating" value="5" checked>
+                                <label for="rating-5" title="5 stars">★</label>
+                                <input type="radio" id="rating-4" name="rating" value="4">
+                                <label for="rating-4" title="4 stars">★</label>
+                                <input type="radio" id="rating-3" name="rating" value="3">
+                                <label for="rating-3" title="3 stars">★</label>
+                                <input type="radio" id="rating-2" name="rating" value="2">
+                                <label for="rating-2" title="2 stars">★</label>
+                                <input type="radio" id="rating-1" name="rating" value="1">
+                                <label for="rating-1" title="1 star">★</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="testimonial-text">Review Text *</label>
+                            <textarea id="testimonial-text" required placeholder="Enter the testimonial content..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="testimonial-date">Date</label>
+                            <input type="date" id="testimonial-date">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-accent">Add Testimonial</button>
+                    </form>
+                </div>
+
+                <h3>Manage Testimonials</h3>
+                <div class="testimonials-grid" id="manual-testimonials-container">
+                    <!-- Manual testimonials will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="google-setup">
+                    <h2>Display Settings</h2>
+                    
+                    <div class="form-group">
+                        <label for="max-reviews-display">Maximum Reviews to Display</label>
+                        <input type="number" id="max-reviews-display" value="6" min="1" max="20">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="auto-sync">Auto-sync Google Reviews</label>
+                        <select id="auto-sync">
+                            <option value="disabled">Disabled</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="show-google-reviews" checked>
+                            Show Google Reviews on Website
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="show-manual-testimonials" checked>
+                            Show Manual Testimonials on Website
+                        </label>
+                    </div>
+                    
+                    <button class="btn" id="save-settings">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="review-management.js"></script>
+</body>
+</html>

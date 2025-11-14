@@ -1,0 +1,436 @@
+<!-- property-management.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Management | 716 Corporate Housing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="property-managementStyle.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-home"></i>
+                716 Corporate Housing
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#properties">Our Units</a></li>
+                <li><a href="index.html#amenities">Amenities</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#testimonials">Testimonials</a></li>
+                <li><a href="index.html" class="review-btn">Leave Review</a></li>
+                <li><a href="property-management.html" class="">Add Property</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Property Management Section -->
+<section class="property-management">
+    <div class="container">
+        <div class="management-container">
+            <!-- Enhanced Header with Actions on Right -->
+            <div class="management-header">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1>Property Management</h1>
+                        <p>Add and manage properties for 716 Corporate Housing</p>
+                    </div>
+                    <div class="header-actions">
+                        <!-- Display Toggle -->
+                        <div class="display-toggle">
+                            <button class="toggle-btn active" data-view="grid" title="Grid View">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="toggle-btn" data-view="table" title="Table View">
+                                <i class="fas fa-list"></i>
+                            </button>
+                        </div>
+                        <!-- Modern Add Property Button -->
+                        <button class="modern-add-btn" id="add-property-btn">
+                            <div class="btn-icon">
+                                <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="btn-text">
+                                <span class="btn-title">Add Property</span>
+                                <span class="btn-subtitle">Create new listing</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div class="success-message" id="success-message">
+                <i class="fas fa-check-circle"></i>
+                <h3>Property Added Successfully!</h3>
+                <p>The property has been saved and will appear on the main page.</p>
+            </div>
+
+           <!-- Property Form Modal -->
+<div id="property-form-modal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <!-- Fixed Header -->
+        <div class="modal-header">
+            <h3 id="form-title">Add New Property</h3>
+            <button class="close-modal" id="close-form-btn">&times;</button>
+        </div>
+        
+        <!-- Scrollable Content Area -->
+        <div class="form-container">
+            <form id="property-form" class="property-form">
+                <!-- Basic Information -->
+                <div class="form-section">
+                    <div class="form-section-title">
+                        <i class="fas fa-info-circle"></i>
+                        Basic Information
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="property-title">Property Title *</label>
+                            <input type="text" id="property-title" required placeholder="e.g., 664 Auburn #2">
+                        </div>
+                        <div class="form-group">
+                            <label for="property-location">Location *</label>
+                            <input type="text" id="property-location" required placeholder="e.g., Buffalo, NY">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="property-address">Full Address *</label>
+                            <input type="text" id="property-address" required placeholder="e.g., 664 Auburn Ave, Buffalo, NY 14213">
+                        </div>
+                        <div class="form-group">
+                            <label for="property-coordinates">Coordinates (optional)</label>
+                            <input type="text" id="property-coordinates" placeholder="lat: 42.9176, lng: -78.8894">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Details -->
+                <div class="form-section">
+                    <div class="form-section-title">
+                        <i class="fas fa-home"></i>
+                        Property Details
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="property-bedrooms">Bedrooms *</label>
+                            <select id="property-bedrooms" required>
+                                <option value="1">1 Bedroom</option>
+                                <option value="2" selected>2 Bedrooms</option>
+                                <option value="3">3 Bedrooms</option>
+                                <option value="4">4+ Bedrooms</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="property-bathrooms">Bathrooms *</label>
+                            <select id="property-bathrooms" required>
+                                <option value="1" selected>1 Bathroom</option>
+                                <option value="2">2 Bathrooms</option>
+                                <option value="3">3+ Bathrooms</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing & Availability -->
+                <div class="form-section">
+                    <div class="form-section-title">
+                        <i class="fas fa-tag"></i>
+                        Pricing & Availability
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="property-price-min">Price Range *</label>
+                            <div style="display: flex; gap: 10px;">
+                                <input type="number" id="property-price-min" required placeholder="Min" min="0" style="flex: 1;">
+                                <input type="number" id="property-price-max" required placeholder="Max" min="0" style="flex: 1;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="property-status">Availability Status *</label>
+                            <select id="property-status" required>
+                                <option value="ready-now">Ready Now</option>
+                                <option value="ready-soon">Ready Soon</option>
+                                <option value="ask">Contact for Availability</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="property-availability">Availability Text *</label>
+                        <input type="text" id="property-availability" required placeholder="e.g., Ready Now, Nov 17, etc.">
+                    </div>
+                </div>
+
+                <!-- Media Section -->
+<div class="form-section">
+    <div class="form-section-title">
+        <i class="fas fa-images"></i>
+        Property Images
+    </div>
+    
+    <div class="multiple-images-section">
+        <!-- Image Upload Area -->
+        <div class="image-upload-area">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Add property images (first image will be primary)</p>
+            <div class="image-url-input">
+                <input type="url" id="image-url-input" placeholder="Paste image URL here...">
+                <button type="button" id="add-image-btn">
+                    <i class="fas fa-plus"></i> Add Image
+                </button>
+            </div>
+            <small>Supported: JPG, PNG, WebP. Max file size: 5MB (for future file upload)</small>
+        </div>
+
+        <!-- Images Gallery -->
+        <div class="images-gallery" id="images-gallery">
+            <!-- Images will be dynamically added here -->
+            <div class="no-images" id="no-images">
+                <i class="fas fa-images"></i>
+                <p>No images added yet</p>
+            </div>
+        </div>
+
+        <!-- Large Preview -->
+        <div class="image-preview-large" id="image-preview-large" style="display: none;">
+            <h4>Primary Image Preview</h4>
+            <img id="large-preview-img" src="" alt="Primary image preview">
+        </div>
+    </div>
+
+    <!-- Video URL (keep this if you still want it) -->
+    <div class="form-group" style="margin-top: 30px;">
+        <label for="property-video">Video Tour URL (optional)</label>
+        <input type="url" id="property-video" placeholder="https://drive.google.com/file/d/.../preview">
+    </div>
+</div>
+
+<!-- Gallery Modal for Fullscreen View -->
+<div class="gallery-modal" id="gallery-modal">
+    <div class="gallery-modal-content">
+        <img id="gallery-modal-img" src="" alt="Gallery view">
+        <button class="gallery-modal-close" id="gallery-modal-close">&times;</button>
+        <button class="gallery-nav gallery-prev" id="gallery-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="gallery-nav gallery-next" id="gallery-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="gallery-counter" id="gallery-counter"></div>
+    </div>
+</div>
+
+                <!-- Description -->
+                <div class="form-section">
+                    <div class="form-section-title">
+                        <i class="fas fa-align-left"></i>
+                        Description
+                    </div>
+                    <div class="form-group">
+                        <label for="property-description">Description *</label>
+                        <textarea id="property-description" required placeholder="Describe the property..." rows="6"></textarea>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="form-section">
+                    <div class="form-section-title">
+                        <i class="fas fa-star"></i>
+                        Features & Amenities
+                    </div>
+                    <div class="form-group">
+                        <label>Property Features</label>
+                        <div class="features-grid">
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="features" value="Fully Furnished" checked>
+                                <span>Fully Furnished</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="features" value="High-Speed Internet" checked>
+                                <span>High-Speed Internet</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="features" value="In-Unit Laundry">
+                                <span>In-Unit Laundry</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="features" value="Parking Available">
+                                <span>Parking Available</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="features" value="Pet Friendly">
+                                <span>Pet Friendly</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="features" value="Utilities Included" checked>
+                                <span>Utilities Included</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="features" value="Modern Kitchen">
+                                <span>Modern Kitchen</span>
+                            </label>
+                            <label class="feature-checkbox">
+                                <input type="checkbox" name="features" value="Updated Bathroom">
+                                <span>Updated Bathroom</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="reset-form">
+                        <i class="fas fa-redo"></i> Reset Form
+                    </button>
+                    <button type="submit" class="btn btn-primary" id="submit-form">
+                        <i class="fas fa-plus"></i> Add Property
+                    </button>
+                    <button type="button" class="btn btn-accent" id="cancel-edit" style="display: none;">
+                        <i class="fas fa-times"></i> Cancel Edit
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+            <!-- Floating Action Button -->
+            <button class="floating-action-btn" id="floating-add-btn" style="display: none;">
+                <i class="fas fa-plus"></i>
+            </button>
+
+            <!-- Enhanced Filtering Section -->
+            <div class="filter-section">
+                <div class="filter-header">
+                    <h3>Filter Properties</h3>
+                    <div class="filter-controls">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="property-search" placeholder="Search by name, location, or features...">
+                        </div>
+                        <button class="btn btn-accent" id="clear-filters">
+                            <i class="fas fa-times"></i> Clear Filters
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quick-filters">
+                    <div class="filter-group">
+                        <label>Quick Filters:</label>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">All Properties</button>
+                            <button class="filter-btn" data-filter="ready-now">Ready Now</button>
+                            <button class="filter-btn" data-filter="ready-soon">Ready Soon</button>
+                            <button class="filter-btn" data-filter="ask">Contact</button>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <label>Bedrooms:</label>
+                        <div class="filter-buttons">
+                            <button class="filter-btn" data-beds="all">All</button>
+                            <button class="filter-btn" data-beds="1">1 Bed</button>
+                            <button class="filter-btn" data-beds="2">2 Beds</button>
+                            <button class="filter-btn" data-beds="3">3 Beds</button>
+                            <button class="filter-btn" data-beds="4">4+ Beds</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="active-filters" id="active-filters" style="display: none;">
+                    <span>Active filters:</span>
+                    <div class="filter-tags" id="filter-tags"></div>
+                </div>
+            </div>
+
+            <!-- Properties Display Area -->
+            <div class="properties-display">
+                <div class="section-header">
+                    <h3>Managed Properties</h3>
+                    <div class="results-info">
+                        <span id="properties-count">0</span> properties found
+                    </div>
+                </div>
+                
+                <!-- Grid View -->
+                <div class="properties-grid" id="properties-grid">
+                    <!-- Properties will be displayed here in 4-column layout -->
+                </div>
+                
+                <!-- Table View (Initially Hidden) -->
+                <div class="properties-table" id="properties-table" style="display: none;">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Property</th>
+                                    <th class="hide-on-mobile">Location</th>
+                                    <th class="hide-on-mobile">Bed/Bath</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="properties-table-body">
+                                <!-- Table rows will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="no-properties" id="no-properties" style="display: none;">
+                    <i class="fas fa-home fa-3x"></i>
+                    <h3>No Properties Found</h3>
+                    <p>Try adjusting your filters or add a new property.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- View Property Modal -->
+<div id="view-property-modal" class="property-modal" style="display: none;">
+    <div class="modal-content-property">
+        <span class="modal-close" id="view-modal-close">&times;</span>
+        <div class="modal-header" id="view-modal-header">
+            <!-- Content will be dynamically populated -->
+        </div>
+        <div class="modal-actions">
+            <button class="btn" id="view-modal-edit">
+                <i class="fas fa-edit"></i> Edit Property
+            </button>
+            <button class="btn btn-accent" id="view-modal-close-btn">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Video Modal -->
+<div class="video-modal" id="video-modal">
+    <div class="video-modal-content">
+        <span class="video-modal-close" onclick="closeVideoModal()">&times;</span>
+        <div class="video-player-container">
+            <iframe 
+                id="video-iframe"
+                src="" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+
+    <script src="property-management.js"></script>
+</body>
+</html>
