@@ -67,8 +67,18 @@
                 <option value="3000-4000">$3-4K</option>
                 <option value="4000-plus">$4K+</option>
             </select>
+
+            <select id="date-filter" class="compact-select">
+                <option value="all">Any Date</option>
+                <option value="available-now">Available Now</option>
+                <option value="next-7-days">Next 7 Days</option>
+                <option value="next-30-days">Next 30 Days</option>
+                <option value="next-90-days">Next 90 Days</option>
+                <option value="custom">Custom Date Range</option>
+            </select>
         </div>
-        
+
+
         <!-- Row 2: Controls - Toggle, Search, Actions -->
         <div class="mobile-controls-row">
             <div class="view-toggle">
@@ -94,8 +104,19 @@
                 </button>
             </div>
         </div>
+        
     </div>
     
+        <div class="custom-date-range" id="custom-date-range" style="display: none;">
+            <div class="date-inputs">
+                <input type="date" id="start-date" class="compact-select">
+                <span>to</span>
+                <input type="date" id="end-date" class="compact-select">
+                <button class="btn btn-sm btn-primary" id="apply-custom-date">Apply</button>
+            </div>
+        </div>
+        
+
     <!-- Row 3: Results Count -->
     <div class="results-count">
         <span id="results-count">0</span> properties found

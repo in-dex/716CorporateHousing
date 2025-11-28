@@ -7,7 +7,10 @@ class PropertyListings {
             status: 'all',
             bedrooms: 'all',
             price: 'all',
-            search: ''
+            search: '',
+            date: 'all',
+            startDate: null,
+            endDate: null
         };
         
         this.init();
@@ -29,7 +32,7 @@ class PropertyListings {
             // Combine properties from different sources
             this.properties = [...storedProperties, ...managedProperties];
             
-            // If no properties found, use some sample data based on the Monday.com layout
+            // If no properties found, use some sample data with dates
             if (this.properties.length === 0) {
                 this.properties = this.getSampleProperties();
             }
@@ -42,6 +45,19 @@ class PropertyListings {
     }
     
     getSampleProperties() {
+        const today = new Date();
+        const nextWeek = new Date(today);
+        nextWeek.setDate(today.getDate() + 7);
+        
+        const twoWeeks = new Date(today);
+        twoWeeks.setDate(today.getDate() + 14);
+        
+        const nextMonth = new Date(today);
+        nextMonth.setDate(today.getDate() + 30);
+        
+        const futureDate = new Date(today);
+        futureDate.setDate(today.getDate() + 60);
+        
         return [
             {
                 id: 1,
@@ -54,6 +70,7 @@ class PropertyListings {
                 priceMax: 4000,
                 availability: "Ready Soon",
                 status: "ready-soon",
+                availableDate: twoWeeks.toISOString().split('T')[0],
                 image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 video: true,
                 listing: true
@@ -69,6 +86,7 @@ class PropertyListings {
                 priceMax: 2600,
                 availability: "Ready Now",
                 status: "ready-now",
+                availableDate: today.toISOString().split('T')[0],
                 image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 video: true,
                 listing: true
@@ -84,6 +102,7 @@ class PropertyListings {
                 priceMax: 2500,
                 availability: "Ready Now",
                 status: "ready-now",
+                availableDate: today.toISOString().split('T')[0],
                 image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 video: true,
                 listing: true
@@ -99,6 +118,7 @@ class PropertyListings {
                 priceMax: 2500,
                 availability: "Dec. 20",
                 status: "ready-soon",
+                availableDate: nextWeek.toISOString().split('T')[0],
                 image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 video: true,
                 listing: true
@@ -114,6 +134,7 @@ class PropertyListings {
                 priceMax: 3000,
                 availability: "Ready Soon ASK",
                 status: "ask",
+                availableDate: futureDate.toISOString().split('T')[0],
                 image: "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
                 video: true,
                 listing: true
@@ -138,6 +159,19 @@ class PropertyListings {
             this.applyFilters();
         });
         
+        document.getElementById('date-filter').addEventListener('change', (e) => {
+            this.currentFilters.date = e.target.value;
+            
+            // Show/hide custom date range
+            const customDateRange = document.getElementById('custom-date-range');
+            if (e.target.value === 'custom') {
+                customDateRange.style.display = 'block';
+            } else {
+                customDateRange.style.display = 'none';
+                this.applyFilters();
+            }
+        });
+        
         document.getElementById('search-filter').addEventListener('input', (e) => {
             this.currentFilters.search = e.target.value.toLowerCase();
             this.applyFilters();
@@ -145,6 +179,11 @@ class PropertyListings {
         
         document.getElementById('reset-filters').addEventListener('click', () => {
             this.resetFilters();
+        });
+        
+        // Custom date range apply button
+        document.getElementById('apply-custom-date').addEventListener('click', () => {
+            this.applyCustomDateFilter();
         });
         
         // Refresh button
@@ -160,6 +199,25 @@ class PropertyListings {
                 this.switchView(view);
             });
         });
+    }
+    
+    applyCustomDateFilter() {
+        const startDate = document.getElementById('start-date').value;
+        const endDate = document.getElementById('end-date').value;
+        
+        if (!startDate || !endDate) {
+            alert('Please select both start and end dates');
+            return;
+        }
+        
+        if (new Date(startDate) > new Date(endDate)) {
+            alert('Start date cannot be after end date');
+            return;
+        }
+        
+        this.currentFilters.startDate = startDate;
+        this.currentFilters.endDate = endDate;
+        this.applyFilters();
     }
     
     switchView(view) {
@@ -211,6 +269,40 @@ class PropertyListings {
                 }
             }
             
+            // Date filter
+            if (this.currentFilters.date !== 'all' && property.availableDate) {
+                const availableDate = new Date(property.availableDate);
+                const today = new Date();
+                
+                switch (this.currentFilters.date) {
+                    case 'available-now':
+                        if (availableDate > today) return false;
+                        break;
+                    case 'next-7-days':
+                        const nextWeek = new Date(today);
+                        nextWeek.setDate(today.getDate() + 7);
+                        if (availableDate < today || availableDate > nextWeek) return false;
+                        break;
+                    case 'next-30-days':
+                        const nextMonth = new Date(today);
+                        nextMonth.setDate(today.getDate() + 30);
+                        if (availableDate < today || availableDate > nextMonth) return false;
+                        break;
+                    case 'next-90-days':
+                        const next90Days = new Date(today);
+                        next90Days.setDate(today.getDate() + 90);
+                        if (availableDate < today || availableDate > next90Days) return false;
+                        break;
+                    case 'custom':
+                        if (this.currentFilters.startDate && this.currentFilters.endDate) {
+                            const startDate = new Date(this.currentFilters.startDate);
+                            const endDate = new Date(this.currentFilters.endDate);
+                            if (availableDate < startDate || availableDate > endDate) return false;
+                        }
+                        break;
+                }
+            }
+            
             // Search filter
             if (this.currentFilters.search) {
                 const searchTerm = this.currentFilters.search.toLowerCase();
@@ -245,24 +337,30 @@ class PropertyListings {
             status: 'all',
             bedrooms: 'all',
             price: 'all',
-            search: ''
+            search: '',
+            date: 'all',
+            startDate: null,
+            endDate: null
         };
         
         document.getElementById('status-filter').value = 'all';
         document.getElementById('bedroom-filter').value = 'all';
         document.getElementById('price-filter').value = 'all';
+        document.getElementById('date-filter').value = 'all';
         document.getElementById('search-filter').value = '';
+        document.getElementById('custom-date-range').style.display = 'none';
+        document.getElementById('start-date').value = '';
+        document.getElementById('end-date').value = '';
         
         this.applyFilters();
     }
     
-  updateStats() {
-    const total = this.properties.length;
-    const filtered = this.filteredProperties.length;
-    
-    // Update results count
-    document.getElementById('results-count').textContent = filtered;
-    
+    updateStats() {
+        const total = this.properties.length;
+        const filtered = this.filteredProperties.length;
+        
+        // Update results count
+        document.getElementById('results-count').textContent = filtered;
     }
     
     updateActiveFilters() {
@@ -292,6 +390,14 @@ class PropertyListings {
                 type: 'price',
                 label: this.getFilterLabel('price', this.currentFilters.price),
                 value: this.currentFilters.price
+            });
+        }
+        
+        if (this.currentFilters.date !== 'all') {
+            activeFiltersList.push({
+                type: 'date',
+                label: this.getFilterLabel('date', this.currentFilters.date),
+                value: this.currentFilters.date
             });
         }
         
@@ -332,6 +438,11 @@ class PropertyListings {
                 this.currentFilters.price = 'all';
                 document.getElementById('price-filter').value = 'all';
                 break;
+            case 'date':
+                this.currentFilters.date = 'all';
+                document.getElementById('date-filter').value = 'all';
+                document.getElementById('custom-date-range').style.display = 'none';
+                break;
             case 'search':
                 this.currentFilters.search = '';
                 document.getElementById('search-filter').value = '';
@@ -362,6 +473,14 @@ class PropertyListings {
                 '2500-3000': '$2,500 - $3,000',
                 '3000-4000': '$3,000 - $4,000',
                 '4000-plus': '$4,000+'
+            },
+            date: {
+                'all': 'Any Date',
+                'available-now': 'Available Now',
+                'next-7-days': 'Next 7 Days',
+                'next-30-days': 'Next 30 Days',
+                'next-90-days': 'Next 90 Days',
+                'custom': 'Custom Date Range'
             }
         };
         
@@ -395,7 +514,7 @@ class PropertyListings {
                     <div class="availability-badge badge-${property.status}">
                         ${this.getAvailabilityBadge(property.status)}
                     </div>
-                    <div class="availability-date">${property.availability}</div>
+                    <div class="availability-date">${this.formatAvailabilityDate(property.availableDate)}</div>
                 </td>
                 <td>
                     <div class="table-actions">
@@ -441,7 +560,7 @@ class PropertyListings {
                     <div class="card-price">$${property.price}/month</div>
                     <div class="card-availability">
                         <i class="fas fa-calendar-check"></i>
-                        <span>${property.availability}</span>
+                        <span>${this.formatAvailabilityDate(property.availableDate)}</span>
                     </div>
                     <div class="card-actions">
                         ${property.listing ? `
@@ -458,6 +577,23 @@ class PropertyListings {
                 </div>
             </div>
         `).join('');
+    }
+    
+    formatAvailabilityDate(dateString) {
+        if (!dateString) return 'Contact for availability';
+        
+        const date = new Date(dateString);
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(today.getDate() + 1);
+        
+        if (date.toDateString() === today.toDateString()) {
+            return 'Available Today';
+        } else if (date.toDateString() === tomorrow.toDateString()) {
+            return 'Available Tomorrow';
+        } else {
+            return `Available ${date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}`;
+        }
     }
     
     getAvailabilityBadge(status) {

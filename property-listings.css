@@ -698,3 +698,73 @@
 .no-results p {
     font-size: 0.9rem;
 }
+
+/* Date Filter Styles */
+.custom-date-range {
+    background: var(--light);
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    border: 1px solid var(--border-gray);
+}
+
+.date-inputs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.date-inputs input[type="date"] {
+    padding: 8px 10px;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    background: var(--light);
+    color: var(--text-gray);
+    min-width: 140px;
+}
+
+.date-inputs span {
+    color: var(--text-gray);
+    font-size: 0.85rem;
+}
+
+/* Update mobile layouts for the new filter */
+@media (max-width: 768px) {
+    .compact-filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    /* Make availability and date filters span full width */
+    #status-filter,
+    #date-filter {
+        grid-column: 1 / -1;
+    }
+    
+    .date-inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .date-inputs input[type="date"] {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+    .compact-filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    #date-filter {
+        grid-column: 1 / -1;
+    }
+}
