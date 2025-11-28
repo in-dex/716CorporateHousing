@@ -1,0 +1,700 @@
+/* Property Listings Styles - Professional & Compact */
+.property-listings {
+    padding: 20px 0;
+    background-color: var(--bg-gray);
+    min-height: 100vh;
+}
+
+/* Compact Header */
+.compact-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.compact-header h1 {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 2rem;
+}
+
+.compact-header p {
+    color: var(--text-gray);
+    font-size: 1rem;
+}
+
+/* Compact Filter Bar - IMPROVED FOR LARGER SCREENS */
+.compact-filter-bar {
+    background: var(--light);
+    padding: 15px 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+    border: 1px solid var(--border-gray);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* View Toggle */
+.view-toggle {
+    display: flex;
+    background: var(--bg-gray);
+    border-radius: 6px;
+    padding: 2px;
+    border: 1px solid var(--border-gray);
+}
+
+.toggle-btn {
+    padding: 6px 10px;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-gray);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 32px;
+}
+
+.toggle-btn.active {
+    background: var(--primary);
+    color: white;
+}
+
+.toggle-btn:hover:not(.active) {
+    background: var(--light-gray);
+}
+
+/* Compact Filters - IMPROVED LAYOUT */
+.compact-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.compact-select {
+    padding: 8px 10px;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    background: var(--light);
+    color: var(--text-gray);
+    min-width: 120px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.compact-select:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 10px 8px 32px;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+/* Results Count */
+.results-count {
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+/* Active Filters */
+.active-filters {
+    background: var(--light);
+    padding: 12px 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 15px;
+    border: 1px solid var(--border-gray);
+}
+
+.filter-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-tag {
+    background: var(--primary-light);
+    color: var(--dark);
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.remove-filter {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--gray);
+    padding: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+}
+
+/* LARGER SCREEN OPTIMIZATION (Desktop) */
+@media (min-width: 1024px) {
+    .compact-filter-bar {
+        padding: 15px 20px;
+    }
+    
+    .filter-controls {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: nowrap; /* Prevent wrapping on large screens */
+    }
+    
+    .compact-filters {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 0 1 auto; /* Don't grow too much */
+        flex-wrap: nowrap;
+    }
+    
+    .mobile-controls-row {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        flex: 1;
+        justify-content: flex-end;
+    }
+    
+    .view-toggle {
+        flex-shrink: 0;
+    }
+    
+    .search-box {
+        flex: 0 1 250px; /* Flexible but constrained */
+        min-width: 200px;
+        max-width: 300px;
+    }
+    
+    .action-buttons {
+        flex-shrink: 0;
+    }
+}
+
+/* MEDIUM SCREEN OPTIMIZATION (Tablets) */
+@media (min-width: 769px) and (max-width: 1023px) {
+    .compact-filter-bar {
+        padding: 12px 15px;
+    }
+    
+    .filter-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .compact-filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .mobile-controls-row {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 12px;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .search-box {
+        min-width: auto;
+        max-width: none;
+    }
+}
+
+/* PROFESSIONAL MOBILE LAYOUT */
+@media (max-width: 768px) {
+    .compact-filter-bar {
+        padding: 12px 15px;
+    }
+    
+    .filter-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    /* Row 1: All Filters in One Compact Row */
+    .compact-filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    /* Show all filters on mobile */
+    #status-filter,
+    #bedroom-filter,
+    #price-filter {
+        display: block;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    /* Make availability filter span full width */
+    #status-filter {
+        grid-column: 1 / -1;
+    }
+    
+    /* Row 2: Controls - Toggle, Search, Actions in One Compact Row */
+    .mobile-controls-row {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .view-toggle {
+        grid-column: 1;
+    }
+    
+    .search-box {
+        grid-column: 2;
+        min-width: auto;
+        max-width: none;
+        margin: 0;
+    }
+    
+    .action-buttons {
+        grid-column: 3;
+        gap: 6px;
+    }
+    
+    /* Row 3: Results Count */
+    .results-count {
+        text-align: center;
+        margin-top: 8px;
+        width: 100%;
+    }
+}
+
+/* SMALL MOBILE OPTIMIZATION */
+@media (max-width: 480px) {
+    .compact-filter-bar {
+        padding: 12px 15px;
+    }
+    
+    .filter-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    /* Row 1: All Filters in One Compact Row */
+    .compact-filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    /* Show all filters on mobile */
+    #status-filter,
+    #bedroom-filter,
+    #price-filter {
+        display: block;
+        min-width: auto;
+        width: 100%;
+    }
+    
+    /* Make availability filter span full width */
+    #status-filter {
+        grid-column: 1 / -1;
+    }
+    
+    /* Row 2: Controls - Toggle, Search, Actions in One Compact Row */
+    .mobile-controls-row {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 10px;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .view-toggle {
+        grid-column: 1;
+    }
+    
+    .search-box {
+        grid-column: 2;
+        min-width: auto;
+        max-width: none;
+        margin: 0;
+    }
+    
+    .action-buttons {
+        grid-column: 3;
+        gap: 6px;
+    }
+    
+    /* Row 3: Results Count */
+    .results-count {
+        text-align: center;
+        margin-top: 8px;
+        width: 100%;
+    }
+}
+
+/* EXTRA SMALL MOBILE */
+@media (max-width: 360px) {
+    .compact-filter-bar {
+        padding: 8px 10px;
+    }
+    
+    .compact-filters {
+        gap: 6px;
+    }
+    
+    .mobile-controls-row {
+        gap: 6px;
+    }
+    
+    .compact-select {
+        padding: 6px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .search-box input {
+        padding: 6px 8px 6px 28px;
+        font-size: 0.75rem;
+    }
+    
+    .btn-sm {
+        padding: 4px 6px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Rest of your existing table and card styles remain the same */
+.table-container {
+    background: var(--light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-gray);
+}
+
+.properties-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.properties-table th {
+    background: var(--primary);
+    color: white;
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+.properties-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid var(--border-gray);
+    vertical-align: top;
+}
+
+.properties-table tr:last-child td {
+    border-bottom: none;
+}
+
+.properties-table tr:hover {
+    background: var(--bg-gray);
+}
+
+/* Table Columns */
+.address-col { width: 35%; }
+.price-col { width: 20%; }
+.availability-col { width: 25%; }
+.actions-col { width: 20%; }
+
+/* Property Info in Table */
+.property-info-table h4 {
+    color: var(--dark);
+    margin-bottom: 3px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.property-info-table .bed-bath {
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
+
+/* Price Styling */
+.price-range {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+/* Availability Badges */
+.availability-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.badge-ready-now {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-ready-soon {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.badge-ask {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.availability-date {
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
+
+/* Action Buttons - Professional Flex Layout */
+.table-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    background: var(--light);
+    color: var(--text-gray);
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 60px;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.action-btn.video {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.action-btn.video:hover {
+    background: var(--accent-dark);
+}
+
+/* Responsive Table Actions */
+@media(max-width: 768px)  {
+    .properties-table {
+        font-size: 0.8rem;
+    }
+    
+    .properties-table th,
+    .properties-table td {
+        padding: 10px 8px;
+    }
+    
+    .table-actions {
+        flex-direction: column;
+        gap: 4px;
+    }
+    
+    .action-btn {
+        min-width: auto;
+        padding: 4px 8px;
+    }
+    
+    .address-col { width: 30%; }
+    .price-col { width: 20%; }
+    .availability-col { width: 30%; }
+    .actions-col { width: 20%; }
+}
+
+/* Card View */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.property-card-listings {
+    background: var(--light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-gray);
+    transition: var(--transition);
+}
+
+.property-card-listings:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-header {
+    position: relative;
+}
+
+.card-header img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--primary);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    color: var(--dark);
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.card-bed-bath {
+    color: var(--text-gray);
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.card-price {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.card-availability {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-gray);
+    background: var(--light);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-gray);
+}
+
+.no-results i {
+    margin-bottom: 15px;
+    color: var(--light-gray);
+}
+
+.no-results h3 {
+    margin-bottom: 8px;
+    color: var(--dark);
+    font-size: 1.1rem;
+}
+
+.no-results p {
+    font-size: 0.9rem;
+}
