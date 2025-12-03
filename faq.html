@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions | 716 Corporate Housing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/faq.css">
+</head>
+<body>
+   <header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="716 Corporate Housing" class="logo-image">           
+           
+        </div>
+        
+        <!-- Desktop Navigation - Section Links Only -->
+        <nav class="nav-links desktop-nav">
+            <ul class="section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#general" data-section="general">General Questions</a></li>
+                <li><a href="#booking" data-section="booking">Booking & Payments</a></li>
+                <li><a href="#amenities" data-section="amenities">Amenities & Services</a></li>
+                <li><a href="#policies" data-section="policies">Policies</a></li>
+                <li><a href="#location" data-section="location">Buffalo Location</a></li>
+                <li><a href="#contact" data-section="contact">Contact Support</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+        <button class="mobile-menu" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+<nav class="mobile-nav-menu" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="mobile-logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
+        </div>
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <!-- Make sure this has proper vertical layout -->
+    <div class="mobile-nav-content">
+        <!-- Main Navigation Section -->
+        <div class="mobile-nav-section">
+            <h3>Main Navigation</h3>
+            <ul class="mobile-nav-links main-nav-links">
+               <ul class="mobile-nav-links main-nav-links">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="property-listings.html">Available Units</a></li>
+                <li><a href="things-to-do.html">Things to do</a></li>
+                <li><a href="buying-a-home.html">Buying a home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="furnishing-services.html">Furnishing Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="property-management.html">Add Property</a></li>
+                <li><a href="review-management.html">Review</a></li>                
+            </ul>
+            </ul>
+        </div>
+        
+        <!-- Section Navigation for Current Page -->
+        <div class="mobile-nav-section">
+            <h3>On This Page</h3>
+            <ul class="mobile-nav-links section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#general" data-section="general">General Questions</a></li>
+                <li><a href="#booking" data-section="booking">Booking & Payments</a></li>
+                <li><a href="#amenities" data-section="amenities">Amenities & Services</a></li>
+                <li><a href="#policies" data-section="policies">Policies</a></li>
+                <li><a href="#location" data-section="location">Buffalo Location</a></li>
+                <li><a href="#contact" data-section="contact">Contact Support</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Actions -->
+        <div class="mobile-nav-actions">
+            <a href="tel:7162716555" class="btn btn-accent">
+                <i class="fas fa-phone"></i> 716-271-6555
+            </a>
+            <a href="#contact" class="btn">Contact Support</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="faq-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Frequently Asked Questions</h1>
+                <p class="fade-in">Find answers to common questions about our corporate housing services in Buffalo, NY.</p>
+                <div class="search-container fade-in">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="faq-search" placeholder="Search for answers...">
+                    <button id="clear-search">Clear</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Categories -->
+    <section class="faq-categories">
+        <div class="container">
+            <div class="categories-grid">
+                <a href="#booking" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Booking & Reservations</h3>
+                    <p>How to book, minimum stay, and reservation process</p>
+                </a>
+                
+                <a href="#payments" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Pricing & Payments</h3>
+                    <p>Utilities, fees, payment methods, and costs</p>
+                </a>
+                
+                <a href="#amenities" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Amenities & Furnishings</h3>
+                    <p>What's included in your fully furnished home</p>
+                </a>
+                
+                <a href="#stay" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>During Your Stay</h3>
+                    <p>House rules, maintenance, and guest services</p>
+                </a>
+                
+                <a href="#extensions" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Extensions & Changes</h3>
+                    <p>Renewals, early departures, and modifications</p>
+                </a>
+                
+                <a href="#location" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location & Buffalo</h3>
+                    <p>About Buffalo, neighborhoods, and local info</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-content" id="questions">
+        <div class="container">
+            <!-- Booking Section -->
+            <div class="faq-section" id="booking">
+                <h2 class="section-title fade-in">
+                    <i class="fas fa-calendar-check"></i>
+                    Booking & Reservations
+                </h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>How do I book a property?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Booking is easy! Follow these simple steps:</p>
+                            <ol>
+                                <li>Browse our <a href="index.html#properties">Available Units</a> to find properties that match your needs</li>
+                                <li>Text us at <a href="tel:7162716555">(716) 271-6555</a> with the units you're interested in</li>
+                                <li>We'll send you more details, photos, and arrange a virtual tour if needed</li>
+                                <li>Complete our simple online application form</li>
+                                <li>Sign the lease agreement electronically and pay the security deposit</li>
+                                <li>You're all set! We'll coordinate your move-in details</li>
+                            </ol>
+                            <p>We look forward to helping you find your perfect home in Buffalo!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>What is the minimum lease duration required?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our properties require a <strong>minimum stay of 31 days</strong>. We specialize in short to medium-term housing for travel professionals, typically ranging from 1-12 months.</p>
+                            <p>This minimum duration ensures we can provide the high-quality service and amenities that our guests expect, while also being flexible enough to accommodate most travel assignments and temporary relocations.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Can I tour a property before booking?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! We offer multiple ways to view our properties:</p>
+                            <ul>
+                                <li><strong>Virtual Tours:</strong> Most properties have detailed photo galleries and virtual walkthroughs</li>
+                                <li><strong>Video Tours:</strong> We can provide live video tours via FaceTime, Zoom, or WhatsApp</li>
+                                <li><strong>In-Person Tours:</strong> For local guests, we can arrange in-person viewings by appointment</li>
+                                <li><strong>Current Availability:</strong> Some properties may be occupied, so we'll show you similar available units</li>
+                            </ul>
+                            <p>Contact us at <a href="tel:7162716555">716-271-6555</a> to schedule a viewing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>How far in advance should I book?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We recommend booking as early as possible, especially during peak seasons (May-September). Here's our general guidance:</p>
+                            <div class="timeline-grid">
+                                <div class="timeline-item">
+                                    <div class="timeline-time">30+ days</div>
+                                    <div class="timeline-desc">Best availability and rates</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-time">14-30 days</div>
+                                    <div class="timeline-desc">Good availability, some popular units may be booked</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-time">7-14 days</div>
+                                    <div class="timeline-desc">Limited availability, contact us for last-minute options</div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-time">0-7 days</div>
+                                    <div class="timeline-desc">Very limited, but we'll try our best to accommodate</div>
+                                </div>
+                            </div>
+                            <p><strong>Pro Tip:</strong> Travel nurses and healthcare professionals should book as soon as assignments are confirmed for the best selection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pricing Section -->
+            <div class="faq-section" id="payments">
+                <h2 class="section-title fade-in">
+                    <i class="fas fa-dollar-sign"></i>
+                    Pricing & Payments
+                </h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Are utilities included in the rent?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes!</strong> We include all essential utilities in your monthly rent for a truly hassle-free living experience:</p>
+                            <div class="utilities-grid">
+                                <div class="utility-item">
+                                    <i class="fas fa-wifi"></i>
+                                    <span>High-Speed Internet</span>
+                                </div>
+                                <div class="utility-item">
+                                    <i class="fas fa-tint"></i>
+                                    <span>Water & Sewer</span>
+                                </div>
+                                <div class="utility-item">
+                                    <i class="fas fa-bolt"></i>
+                                    <span>Electricity</span>
+                                </div>
+                                <div class="utility-item">
+                                    <i class="fas fa-fire"></i>
+                                    <span>Gas/Heating</span>
+                                </div>
+                                <div class="utility-item">
+                                    <i class="fas fa-trash"></i>
+                                    <span>Trash Removal</span>
+                                </div>
+                                <div class="utility-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Basic Maintenance</span>
+                                </div>
+                            </div>
+                            <p>There are no separate utility bills to worry about. Your monthly payment covers everything you need for comfortable living.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Are there any extra fees or hidden costs?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>No hidden fees!</strong> We believe in transparent pricing. Here's what your monthly payment includes:</p>
+                            <div class="included-list">
+                                <div class="included-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <strong>Monthly Rent</strong>
+                                        <span>Your all-inclusive housing cost</span>
+                                    </div>
+                                </div>
+                                <div class="included-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <strong>Security Deposit</strong>
+                                        <span>One-time refundable deposit (typically equal to one month's rent)</span>
+                                    </div>
+                                </div>
+                                <div class="included-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <strong>No Application Fees</strong>
+                                        <span>We don't charge fees to apply for our properties</span>
+                                    </div>
+                                </div>
+                                <div class="included-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <strong>No Monthly Service Fees</strong>
+                                        <span>Unlike some corporate housing, we don't add monthly service charges</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><strong>Optional Services (if needed):</strong></p>
+                            <ul>
+                                <li>Parking (if not included - most properties include at least one parking space)</li>
+                                <li>Pet fee (if applicable - typically $25-$50 per month)</li>
+                                <li>Additional cleaning services beyond normal turnover</li>
+                            </ul>
+                            <p>We'll always discuss any additional costs upfront before you book.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>What payment methods do you accept?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer multiple convenient payment options:</p>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <i class="fas fa-credit-card"></i>
+                                    <div>
+                                        <strong>Credit/Debit Cards</strong>
+                                        <span>Visa, MasterCard, American Express, Discover</span>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <i class="fas fa-university"></i>
+                                    <div>
+                                        <strong>Bank Transfers</strong>
+                                        <span>ACH, wire transfers, Zelle</span>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <div>
+                                        <strong>Digital Payments</strong>
+                                        <span>Apple Pay, Google Pay, Venmo</span>
+                                    </div>
+                                </div>
+                                <div class="payment-method">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <div>
+                                        <strong>Corporate Billing</strong>
+                                        <span>Direct billing for company-sponsored stays</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><strong>Payment Schedule:</strong></p>
+                            <ul>
+                                <li>Security deposit due upon signing the lease</li>
+                                <li>First month's rent due before move-in</li>
+                                <li>Subsequent payments due monthly on the 1st</li>
+                                <li>We provide electronic invoices and receipts for all payments</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Do you offer any discounts or special rates?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We offer several discount programs:</p>
+                            <div class="discounts-grid">
+                                <div class="discount-card">
+                                    <div class="discount-icon">
+                                        <i class="fas fa-user-md"></i>
+                                    </div>
+                                    <h4>Healthcare Professionals</h4>
+                                    <p>Special rates for travel nurses, doctors, and healthcare workers</p>
+                                </div>
+                                <div class="discount-card">
+                                    <div class="discount-icon">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <h4>Academic Rates</h4>
+                                    <p>Discounts for visiting professors, researchers, and students</p>
+                                </div>
+                                <div class="discount-card">
+                                    <div class="discount-icon">
+                                        <i class="fas fa-building"></i>
+                                    </div>
+                                    <h4>Corporate Extended Stays</h4>
+                                    <p>Reduced rates for stays of 3+ months</p>
+                                </div>
+                                <div class="discount-card">
+                                    <div class="discount-icon">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <h4>Seasonal Offers</h4>
+                                    <p>Off-peak season discounts (November-February)</p>
+                                </div>
+                            </div>
+                            <p><strong>How to Get Discounts:</strong></p>
+                            <ul>
+                                <li>Mention your profession when inquiring</li>
+                                <li>Ask about current promotions</li>
+                                <li>Book longer stays for better rates</li>
+                                <li>Refer a friend for referral credits</li>
+                            </ul>
+                            <p>Contact us at <a href="tel:7162716555">716-271-6555</a> to discuss available discounts for your specific situation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amenities Section -->
+            <div class="faq-section" id="amenities">
+                <h2 class="section-title fade-in">
+                    <i class="fas fa-couch"></i>
+                    Amenities & Furnishings
+                </h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Are the units fully furnished?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Yes, absolutely!</strong> Each unit is fully furnished to provide a complete turnkey living experience. You only need to bring your personal items.</p>
+                            
+                            <div class="amenities-details">
+                                <div class="amenity-category">
+                                    <h4><i class="fas fa-bed"></i> Bedrooms</h4>
+                                    <ul>
+                                        <li>Quality mattress with protective cover</li>
+                                        <li>Bed frame and headboard</li>
+                                        <li>Nightstands with lamps</li>
+                                        <li>Dresser or wardrobe</li>
+                                        <li>Full set of linens (sheets, pillows, comforter)</li>
+                                        <li>Extra blankets and pillows</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="amenity-category">
+                                    <h4><i class="fas fa-utensils"></i> Kitchen</h4>
+                                    <ul>
+                                        <li>Full-size refrigerator</li>
+                                        <li>Stove/oven and microwave</li>
+                                        <li>Dishwasher (in most units)</li>
+                                        <li>Cookware set (pots, pans, baking sheets)</li>
+                                        <li>Complete dinnerware set (plates, bowls, glasses, mugs)</li>
+                                        <li>Cutlery and cooking utensils</li>
+                                        <li>Small appliances (toaster, coffee maker, kettle)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="amenity-category">
+                                    <h4><i class="fas fa-bath"></i> Bathroom</h4>
+                                    <ul>
+                                        <li>Shower curtain or door</li>
+                                        <li>Bath mats</li>
+                                        <li>Towels (bath, hand, washcloths)</li>
+                                        <li>Basic toiletries to get you started</li>
+                                        <li>Hairdryer (upon request)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="amenity-category">
+                                    <h4><i class="fas fa-tv"></i> Living Area</h4>
+                                    <ul>
+                                        <li>Sofa or living room seating</li>
+                                        <li>Coffee table and end tables</li>
+                                        <li>Smart TV with streaming capabilities</li>
+                                        <li>Desk and chair for remote work</li>
+                                        <li>Lamps and lighting</li>
+                                        <li>Storage solutions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <p><strong>Special Note:</strong> If you need any additional items or have specific requirements, please let us know. We aim to make your stay as comfortable as possible!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>What amenities are included in the common areas?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>In addition to fully furnished apartments, many of our properties include shared amenities:</p>
+                            <div class="shared-amenities">
+                                <div class="shared-item">
+                                    <i class="fas fa-dumbbell"></i>
+                                    <span>Fitness Center</span>
+                                </div>
+                                <div class="shared-item">
+                                    <i class="fas fa-swimming-pool"></i>
+                                    <span>Swimming Pool</span>
+                                </div>
+                                <div class="shared-item">
+                                    <i class="fas fa-hot-tub"></i>
+                                    <span>Hot Tub</span>
+                                </div>
+                                <div class="shared-item">
+                                    <i class="fas fa-car"></i>
+                                    <span>Parking Garage</span>
+                                </div>
+                                <div class="shared-item">
+                                    <i class="fas fa-bicycle"></i>
+                                    <span>Bike Storage</span>
+                                </div>
+                                <div class="shared-item">
+                                    <i class="fas fa-dog"></i>
+                                    <span>Pet-Friendly Areas</span>
+                                </div>
+                                <div class="shared-item">
+                                    <i class="fas fa-wind"></i>
+                                    <span>Central A/C & Heating</span>
+                                </div>
+                                <div class="shared-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>24/7 Security</span>
+                                </div>
+                            </div>
+                            <p><strong>Note:</strong> Amenities vary by property. Check the specific listing or ask us about amenities for your preferred unit.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Is housekeeping included during my stay?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our standard service includes:</p>
+                            <div class="cleaning-services">
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-broom"></i>
+                                    </div>
+                                    <h4>Move-In Cleaning</h4>
+                                    <p>Professional deep cleaning before your arrival</p>
+                                </div>
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-tools"></i>
+                                    </div>
+                                    <h4>Maintenance Support</h4>
+                                    <p>24/7 emergency maintenance response</p>
+                                </div>
+                                <div class="service-card">
+                                    <div class="service-icon">
+                                        <i class="fas fa-redo"></i>
+                                    </div>
+                                    <h4>Linen Refresh</h4>
+                                    <p>Fresh linens available upon request (additional fee may apply)</p>
+                                </div>
+                            </div>
+                            <p><strong>Additional Cleaning Services:</strong></p>
+                            <ul>
+                                <li><strong>Weekly/Bi-weekly Cleaning:</strong> Available for an additional fee</li>
+                                <li><strong>Deep Cleaning:</strong> Scheduled cleaning during extended stays</li>
+                                <li><strong>Move-Out Cleaning:</strong> Included in your security deposit refund process</li>
+                            </ul>
+                            <p>We can arrange regular cleaning services based on your preferences and budget. Contact us to discuss options.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- During Your Stay Section -->
+            <div class="faq-section" id="stay">
+                <h2 class="section-title fade-in">
+                    <i class="fas fa-home"></i>
+                    During Your Stay
+                </h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>What if I have maintenance issues during my stay?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We provide 24/7 maintenance support to ensure your stay is comfortable:</p>
+                            <div class="maintenance-process">
+                                <div class="step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Report the Issue</h4>
+                                        <p>Contact us via text, phone, or our online portal</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>We Assess</h4>
+                                        <p>We'll determine if it's an emergency or can be scheduled</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Quick Response</h4>
+                                        <ul>
+                                            <li><strong>Emergency:</strong> Response within 2 hours (water leaks, no heat in winter, no power)</li>
+                                            <li><strong>Urgent:</strong> Within 24 hours (appliance issues, minor leaks)</li>
+                                            <li><strong>Routine:</strong> Within 3-5 business days (cosmetic repairs)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Resolution</h4>
+                                        <p>We fix the issue and follow up to ensure your satisfaction</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><strong>Emergency Contact:</strong> For after-hours emergencies, call <a href="tel:7162716555">716-271-6555</a> and follow the prompts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Can I have guests or visitors?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We have reasonable guest policies to ensure safety and comfort for all residents:</p>
+                            <div class="guest-policies">
+                                <div class="policy-card">
+                                    <div class="policy-icon">
+                                        <i class="fas fa-user-check"></i>
+                                    </div>
+                                    <h4>Short-Term Guests</h4>
+                                    <p>Guests may stay up to 7 consecutive nights without notification</p>
+                                </div>
+                                <div class="policy-card">
+                                    <div class="policy-icon">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <h4>Extended Stays</h4>
+                                    <p>Guests staying longer than 7 nights must be registered with management</p>
+                                </div>
+                                <div class="policy-card">
+                                    <div class="policy-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <h4>Overnight Limits</h4>
+                                    <p>Maximum of 2 overnight guests at a time (varies by unit size)</p>
+                                </div>
+                                <div class="policy-card">
+                                    <div class="policy-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <h4>Parking</h4>
+                                    <p>Guest parking may require permits or have time restrictions</p>
+                                </div>
+                            </div>
+                            <p><strong>Important Guidelines:</strong></p>
+                            <ul>
+                                <li>You are responsible for your guests' behavior and any damages</li>
+                                <li>Guests must comply with all community rules</li>
+                                <li>Quiet hours (typically 10pm-7am) apply to all residents and guests</li>
+                                <li>No subletting or unauthorized occupants</li>
+                            </ul>
+                            <p>If you have specific questions about guest policies for your unit, please ask us before your guests arrive.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Are pets allowed in your properties?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p><strong>Many of our properties are pet-friendly!</strong> However, policies vary by building and unit.</p>
+                            <div class="pet-policies">
+                                <div class="pet-card">
+                                    <div class="pet-icon">
+                                        <i class="fas fa-dog"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Pet-Friendly Properties</h4>
+                                        <p>Most units accept dogs and cats with approval</p>
+                                    </div>
+                                </div>
+                                <div class="pet-card">
+                                    <div class="pet-icon">
+                                        <i class="fas fa-ban"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Restrictions</h4>
+                                        <p>Some breed or weight restrictions may apply</p>
+                                    </div>
+                                </div>
+                                <div class="pet-card">
+                                    <div class="pet-icon">
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Pet Fees</h4>
+                                        <p>Typically $25-$50 monthly pet rent + refundable deposit</p>
+                                    </div>
+                                </div>
+                                <div class="pet-card">
+                                    <div class="pet-icon">
+                                        <i class="fas fa-file-signature"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Pet Agreement</h4>
+                                        <p>Required pet addendum to the lease</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p><strong>Service Animals:</strong> We fully comply with Fair Housing laws and accommodate service and emotional support animals with proper documentation. No pet fees apply to legitimate service animals.</p>
+                            <p><strong>To Bring Your Pet:</strong></p>
+                            <ol>
+                                <li>Notify us during the application process</li>
+                                <li>Provide photos and information about your pet</li>
+                                <li>Complete the pet application if required</li>
+                                <li>Pay applicable pet fees</li>
+                                <li>Sign the pet addendum</li>
+                            </ol>
+                            <p>Contact us to discuss specific pet policies for your preferred unit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extensions Section -->
+            <div class="faq-section" id="extensions">
+                <h2 class="section-title fade-in">
+                    <i class="fas fa-sync-alt"></i>
+                    Extensions & Changes
+                </h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>What are my renewal options if I want to extend my stay?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer flexible renewal options should you wish to extend your stay beyond the initial term. We understand that assignments and plans can change!</p>
+                            
+                            <div class="renewal-options">
+                                <div class="option-card">
+                                    <div class="option-header">
+                                        <i class="fas fa-calendar-plus"></i>
+                                        <h4>Month-to-Month Extension</h4>
+                                    </div>
+                                    <p>Continue on a monthly basis after your initial lease term ends</p>
+                                    <ul>
+                                        <li>No long-term commitment required</li>
+                                        <li>30-day notice to vacate</li>
+                                        <li>Rent may adjust to current market rates</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="option-card">
+                                    <div class="option-header">
+                                        <i class="fas fa-file-contract"></i>
+                                        <h4>Fixed-Term Renewal</h4>
+                                    </div>
+                                    <p>Sign a new lease for a specific period (3, 6, or 12 months)</p>
+                                    <ul>
+                                        <li>Lock in your rate for the renewal period</li>
+                                        <li>Priority for unit retention</li>
+                                        <li>Sometimes includes renewal incentives</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="option-card">
+                                    <div class="option-header">
+                                        <i class="fas fa-exchange-alt"></i>
+                                        <h4>Unit Transfer</h4>
+                                    </div>
+                                    <p>Move to a different unit if your needs change</p>
+                                    <ul>
+                                        <li>Switch to larger/smaller unit</li>
+                                        <li>Change neighborhoods or amenities</li>
+                                        <li>Minimal transfer fees</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <p><strong>Renewal Process:</strong></p>
+                            <ol>
+                                <li>Notify us at least 30 days before your lease ends</li>
+                                <li>We'll discuss available options and rates</li>
+                                <li>Sign renewal agreement electronically</li>
+                                <li>Continue enjoying your Buffalo home!</li>
+                            </ol>
+                            <p><strong>Important:</strong> Early communication is key! Let us know as soon as you think you might want to extend your stay so we can plan accordingly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>What if I need to leave earlier than planned?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We understand that plans can change. Here's our early departure policy:</p>
+                            <div class="departure-options">
+                                <div class="departure-card">
+                                    <div class="departure-header">
+                                        <i class="fas fa-calendar-times"></i>
+                                        <h4>Early Termination</h4>
+                                    </div>
+                                    <p>If you need to leave before your lease ends</p>
+                                    <div class="departure-details">
+                                        <p><strong>Required:</strong> 30-day written notice</p>
+                                        <p><strong>Fee:</strong> Typically 1-2 months' rent (varies by lease)</p>
+                                        <p><strong>Security Deposit:</strong> Refunded per normal procedures after unit inspection</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="departure-card">
+                                    <div class="departure-header">
+                                        <i class="fas fa-user-friends"></i>
+                                        <h4>Lease Takeover</h4>
+                                    </div>
+                                    <p>Find someone to take over your lease</p>
+                                    <div class="departure-details">
+                                        <p><strong>Process:</strong> New tenant must apply and be approved</p>
+                                        <p><strong>Fee:</strong> Reduced or waived early termination fee</p>
+                                        <p><strong>Your Responsibility:</strong> Help find qualified replacement</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="departure-card">
+                                    <div class="departure-header">
+                                        <i class="fas fa-handshake"></i>
+                                        <h4>Negotiated Agreement</h4>
+                                    </div>
+                                    <p>Discuss special circumstances with management</p>
+                                    <div class="departure-details">
+                                        <p><strong>When:</strong> Medical emergencies, job relocation, etc.</p>
+                                        <p><strong>Outcome:</strong> Case-by-case consideration</p>
+                                        <p><strong>Documentation:</strong> May require supporting documents</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p><strong>Steps for Early Departure:</strong></p>
+                            <ol>
+                                <li>Contact us immediately to discuss your situation</li>
+                                <li>Submit written notice (email is acceptable)</li>
+                                <li>Discuss available options and associated costs</li>
+                                <li>If applicable, help find a replacement tenant</li>
+                                <li>Schedule move-out inspection</li>
+                                <li>Return keys and complete move-out checklist</li>
+                            </ol>
+                            <p><strong>Pro Tip:</strong> The sooner you communicate with us about potential early departure, the more options we have to help minimize any additional costs.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>Can I switch to a different unit during my stay?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, unit transfers are possible depending on availability and timing!</p>
+                            <div class="transfer-process">
+                                <div class="transfer-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>Request & Availability</h4>
+                                        <p>Contact us to discuss your needs and check available units</p>
+                                    </div>
+                                </div>
+                                <div class="transfer-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>Timing Considerations</h4>
+                                        <ul>
+                                            <li>Best during lease renewal periods</li>
+                                            <li>May require overlap between units</li>
+                                            <li>Typically 30-60 day notice preferred</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="transfer-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>Transfer Fees</h4>
+                                        <ul>
+                                            <li>Administrative fee: $100-$250</li>
+                                            <li>New security deposit if rent increases</li>
+                                            <li>Pro-rated rent adjustment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="transfer-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>Move Coordination</h4>
+                                        <p>We help coordinate the logistics of your move between units</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p><strong>Common Reasons for Transfers:</strong></p>
+                            <div class="transfer-reasons">
+                                <div class="reason">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                    <span>Need more/less space</span>
+                                </div>
+                                <div class="reason">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Change neighborhoods</span>
+                                </div>
+                                <div class="reason">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>Adjust budget</span>
+                                </div>
+                                <div class="reason">
+                                    <i class="fas fa-paw"></i>
+                                    <span>Pet requirements</span>
+                                </div>
+                            </div>
+                            
+                            <p><strong>Important Notes:</strong></p>
+                            <ul>
+                                <li>Transfers are subject to availability</li>
+                                <li>You must be in good standing (rent paid on time, no violations)</li>
+                                <li>New lease agreement will be required</li>
+                                <li>Security deposit transfers depend on unit condition</li>
+                            </ul>
+                            <p>Contact us to discuss transfer possibilities for your specific situation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location Section -->
+            <div class="faq-section" id="location">
+                <h2 class="section-title fade-in">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Location & Buffalo
+                </h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>What should I know about living in Buffalo?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Welcome to Buffalo! Here's what makes our city special:</p>
+                            
+                            <div class="buffalo-highlights">
+                                <div class="highlight-card">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-snowflake"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Four Seasons</h4>
+                                        <p>Beautiful summers, colorful falls, snowy winters, and blooming springs</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="highlight-card">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-utensils"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Food Scene</h4>
+                                        <p>Famous for wings, beef on weck, and a growing culinary scene</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="highlight-card">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-water"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Niagara Falls</h4>
+                                        <p>One of the world's natural wonders just 20 minutes away</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="highlight-card">
+                                    <div class="highlight-icon">
+                                        <i class="fas fa-theater-masks"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Arts & Culture</h4>
+                                        <p>Albright-Knox Art Gallery, Shea's Performing Arts, Buffalo Philharmonic</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p><strong>Getting Around:</strong></p>
+                            <ul>
+                                <li><strong>Public Transit:</strong> NFTA buses and Metro Rail</li>
+                                <li><strong>Driving:</strong> Easy highway access, generally light traffic compared to major cities</li>
+                                <li><strong>Biking:</strong> Growing network of bike lanes and trails</li>
+                                <li><strong>Walkability:</strong> Many neighborhoods are highly walkable, especially Elmwood Village and Allentown</li>
+                            </ul>
+                            
+                            <p><strong>Weather Tips:</strong></p>
+                            <div class="weather-tips">
+                                <div class="tip">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <div>
+                                        <strong>Winter</strong>
+                                        <span>Bundle up! December-February average 20-30°F</span>
+                                    </div>
+                                </div>
+                                <div class="tip">
+                                    <i class="fas fa-sun"></i>
+                                    <div>
+                                        <strong>Summer</strong>
+                                        <span>Beautiful 70-80°F days, perfect for outdoor activities</span>
+                                    </div>
+                                </div>
+                                <div class="tip">
+                                    <i class="fas fa-umbrella"></i>
+                                    <div>
+                                        <strong>Lake Effect</strong>
+                                        <span>Can bring sudden weather changes - always check forecasts</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p>Check out our <a href="things-to-do.html">Things to Do in Buffalo</a> page for more local insights and recommendations!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>How close are your properties to hospitals and medical centers?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We specialize in housing for healthcare professionals! Our properties are strategically located near major medical facilities:</p>
+                            
+                            <div class="hospital-locations">
+                                <div class="hospital-card">
+                                    <div class="hospital-icon">
+                                        <i class="fas fa-hospital"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Kaleida Health Facilities</h4>
+                                        <ul>
+                                            <li>Buffalo General Medical Center: 5-15 minutes</li>
+                                            <li>Millard Fillmore Suburban Hospital: 10-20 minutes</li>
+                                            <li>Women & Children's Hospital: 8-18 minutes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="hospital-card">
+                                    <div class="hospital-icon">
+                                        <i class="fas fa-plus-circle"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Catholic Health System</h4>
+                                        <ul>
+                                            <li>Mercy Hospital of Buffalo: 10-25 minutes</li>
+                                            <li>Sisters of Charity Hospital: 12-30 minutes</li>
+                                            <li>Kenmore Mercy Hospital: 15-35 minutes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="hospital-card">
+                                    <div class="hospital-icon">
+                                        <i class="fas fa-stethoscope"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Specialty Centers</h4>
+                                        <ul>
+                                            <li>Roswell Park Comprehensive Cancer Center: 5-20 minutes</li>
+                                            <li>VA Western New York Healthcare System: 10-25 minutes</li>
+                                            <li>Buffalo Medical Group: Various locations 5-30 minutes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="hospital-card">
+                                    <div class="hospital-icon">
+                                        <i class="fas fa-clinic-medical"></i>
+                                    </div>
+                                    <div>
+                                        <h4>University Affiliated</h4>
+                                        <ul>
+                                            <li>UBMD Physicians' Group: Multiple locations</li>
+                                            <li>Jacobs School of Medicine: Downtown campus access</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p><strong>For Healthcare Professionals:</strong></p>
+                            <ul>
+                                <li>Ask about our healthcare professional discounts</li>
+                                <li>We understand shift schedules and on-call requirements</li>
+                                <li>Many properties offer flexible lease terms for travel assignments</li>
+                                <li>Convenient locations near hospital clusters</li>
+                            </ul>
+                            
+                            <p><strong>Need specific commute times?</strong> When you inquire about a property, let us know which hospital you'll be working at, and we'll provide exact commute information for that location.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in">
+                        <div class="faq-question">
+                            <h3>What's the best way to get from the airport to my unit?</h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Buffalo Niagara International Airport (BUF) is conveniently located and easy to navigate:</p>
+                            
+                            <div class="transport-options">
+                                <div class="transport-card">
+                                    <div class="transport-icon">
+                                        <i class="fas fa-car"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Ride-Sharing & Taxis</h4>
+                                        <p><strong>Time:</strong> 15-30 minutes to most properties</p>
+                                        <p><strong>Cost:</strong> $25-$45 depending on destination</p>
+                                        <p><strong>Services:</strong> Uber, Lyft, and traditional taxis available</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="transport-card">
+                                    <div class="transport-icon">
+                                        <i class="fas fa-shuttle-van"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Rental Cars</h4>
+                                        <p><strong>Location:</strong> On-site rental agencies at airport</p>
+                                        <p><strong>Companies:</strong> All major carriers available</p>
+                                        <p><strong>Tip:</strong> Reserve in advance for best rates</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="transport-card">
+                                    <div class="transport-icon">
+                                        <i class="fas fa-bus"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Public Transit</h4>
+                                        <p><strong>Route:</strong> NFTA Bus Route 24</p>
+                                        <p><strong>Time:</strong> 45-60 minutes to downtown</p>
+                                        <p><strong>Cost:</strong> $2.00 per ride</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="transport-card">
+                                    <div class="transport-icon">
+                                        <i class="fas fa-concierge-bell"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Our Assistance</h4>
+                                        <p><strong>Arrival Kit:</strong> We provide arrival instructions</p>
+                                        <p><strong>Local Tips:</strong> Best routes and transportation advice</p>
+                                        <p><strong>Coordination:</strong> Can help arrange airport pickup (additional fee)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p><strong>Airport Information:</strong></p>
+                            <ul>
+                                <li><strong>Code:</strong> BUF (Buffalo Niagara International Airport)</li>
+                                <li><strong>Distance:</strong> 10-20 miles from most of our properties</li>
+                                <li><strong>Airlines:</strong> Major carriers including Delta, United, American, Southwest, JetBlue</li>
+                                <li><strong>Parking:</strong> Short-term and long-term options available</li>
+                            </ul>
+                            
+                            <p><strong>Before You Arrive:</strong> We'll send you detailed arrival instructions including:</p>
+                            <ol>
+                                <li>Exact address and access information for your unit</li>
+                                <li>Parking instructions if you're driving</li>
+                                <li>Local transportation recommendations</li>
+                                <li>Emergency contact numbers</li>
+                                <li>Welcome package information</li>
+                            </ol>
+                            <p>Contact us if you have specific questions about airport transportation for your stay.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Still Have Questions -->
+    <section class="contact-cta">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Still Have Questions?</h2>
+                <p>We're here to help! Contact us directly for personalized assistance.</p>
+                
+                <div class="contact-methods">
+                    <a href="tel:7162716555" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="method-details">
+                            <div class="method-label">Call or Text</div>
+                            <div class="method-value">716-271-6555</div>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:info@716corporatehousing.com" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="method-details">
+                            <div class="method-label">Email Us</div>
+                            <div class="method-value">info@716corporatehousing.com</div>
+                        </div>
+                    </a>
+                    
+                    <a href="index.html#intake-form" class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="method-details">
+                            <div class="method-label">Book a Stay</div>
+                            <div class="method-value">Request a Home</div>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="response-time">
+                    <i class="fas fa-clock"></i>
+                    <p>We typically respond within 1-2 hours during business hours (9am-7pm EST)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column fade-in">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Premium furnished housing for travel professionals in Buffalo, NY.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#properties"><i class="fas fa-chevron-right"></i> Our Units</a></li>
+                        <li><a href="things-to-do.html"><i class="fas fa-chevron-right"></i> Things to Do</a></li>
+                        <li><a href="buying-home.html"><i class="fas fa-chevron-right"></i> Buying a Home</a></li>
+                        <li><a href="#questions"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Buffalo, NY</a></li>
+                        <li><a href="tel:7162716555"><i class="fas fa-phone"></i> 716-271-6555</a></li>
+                        <li><a href="mailto:info@716corporatehousing.com"><i class="fas fa-envelope"></i> info@716corporatehousing.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 716 Corporate Housing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <h3>716 Corporate Housing</h3>
+                    <p>FAQ Assistance</p>
+                </div>
+                <div class="chat-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    Need help finding an answer? Ask me anything about our corporate housing services!
+                    <div class="chat-time">Just now</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Ask a question...">
+                <button class="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="mobilenav.js"></script>
+    <script src="js/faq.js"></script>
+</body>
+</html>

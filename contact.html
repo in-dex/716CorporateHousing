@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact 716 Corporate Housing | Buffalo Corporate Housing Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+   <header>
+    <div class="container header-container">
+      <div class="logo">
+            <img src="logo.png" alt="716 Corporate Housing" class="logo-image">           
+            <!-- <span>716 Corporate Housing</span> -->
+        </div>
+        
+        <!-- Desktop Navigation - Section Links Only -->
+        <nav class="nav-links desktop-nav section-nav">
+            <ul class="section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#contact-info" data-section="contact-info">Contact Info</a></li>
+                <li><a href="#contact-form" data-section="contact-form">Contact Form</a></li>
+                <li><a href="#map" data-section="map">Location</a></li>
+                <li><a href="#faq" data-section="faq">FAQ</a></li>
+                <li><a href="#emergency" data-section="emergency">Emergency</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+        <button class="mobile-menu" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+<nav class="mobile-nav-menu" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="mobile-logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
+        </div>
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <!-- Make sure this has proper vertical layout -->
+    <div class="mobile-nav-content">
+        <!-- Main Navigation Section -->
+        <div class="mobile-nav-section">
+            <h3>Main Navigation</h3>
+            <ul class="mobile-nav-links main-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="property-listings.html">Available Units</a></li>
+                <li><a href="things-to-do.html">Things to do</a></li>
+                <li><a href="buying-a-home.html">Buying a home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="furnishing-services.html">Furnishing Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+                <li><a href="property-management.html">Add Property</a></li>
+                <li><a href="review-management.html">Review</a></li>                
+            </ul>
+        </div>
+        
+        <!-- Section Navigation for Current Page -->
+        <div class="mobile-nav-section">
+            <h3>On This Page</h3>
+            <ul class="mobile-nav-links section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#contact-info" data-section="contact-info">Contact Info</a></li>
+                <li><a href="#contact-form" data-section="contact-form">Contact Form</a></li>
+                <li><a href="#map" data-section="map">Location</a></li>
+                <li><a href="#faq" data-section="faq">FAQ</a></li>
+                <li><a href="#emergency" data-section="emergency">Emergency</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Actions -->
+        <div class="mobile-nav-actions">
+            <a href="tel:7162716555" class="btn btn-accent">
+                <i class="fas fa-phone"></i> 716-271-6555
+            </a>
+            <a href="#contact-form" class="btn">Contact Form</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Contact 716 Corporate Housing</h1>
+                <p class="fade-in">We're here to help you find the perfect corporate housing solution in Buffalo.</p>
+                <div class="hero-cta fade-in">
+                    <a href="#contact-form" class="btn btn-accent">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </a>
+                    <a href="tel:7162716555" class="btn">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section" id="contact-info">
+        <div class="container">
+            <div class="contact-info-grid">
+                <div class="contact-info-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h3>Phone</h3>
+                        <a href="tel:7162716555" class="contact-value">716-271-6555</a>
+                        <p class="contact-description">Call or text us anytime</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h3>Email</h3>
+                        <a href="mailto:info@716corporatehousing.com" class="contact-value">info@716corporatehousing.com</a>
+                        <p class="contact-description">We respond within 24 hours</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h3>Location</h3>
+                        <div class="contact-value">Buffalo, NY</div>
+                        <p class="contact-description">Serving all of Buffalo area</p>
+                    </div>
+                </div>
+                
+                <div class="contact-info-card fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-content">
+                        <h3>Hours</h3>
+                        <div class="contact-value">24/7 Support Available</div>
+                        <p class="contact-description">Emergency support always available</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Quick Actions -->
+    <section class="contact-main-section" id="contact-form">
+        <div class="container">
+            <div class="contact-main-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-section fade-in">
+                    <h2>Send Us a Message</h2>
+                    <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                    
+                    <form id="contact-form-main">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-name">Full Name *</label>
+                                <input type="text" id="contact-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email">Email Address *</label>
+                                <input type="email" id="contact-email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contact-phone">Phone Number</label>
+                                <input type="tel" id="contact-phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Subject *</label>
+                                <select id="contact-subject" name="subject" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="housing-inquiry">Housing Inquiry</option>
+                                    <option value="booking">Booking Request</option>
+                                    <option value="availability">Availability Check</option>
+                                    <option value="pricing">Pricing Information</option>
+                                    <option value="furnishing">Furnishing Services</option>
+                                    <option value="partnership">Partnership Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-message">Message *</label>
+                            <textarea id="contact-message" name="message" rows="6" required placeholder="Tell us about your housing needs, timeline, and any specific requirements..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-timeline">When do you need housing?</label>
+                            <select id="contact-timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="immediately">Immediately (within 1 week)</option>
+                                <option value="2-weeks">Within 2 weeks</option>
+                                <option value="1-month">Within 1 month</option>
+                                <option value="1-3-months">1-3 months from now</option>
+                                <option value="3-plus-months">3+ months from now</option>
+                                <option value="just-researching">Just researching options</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-referral">How did you hear about us?</label>
+                            <select id="contact-referral" name="referral">
+                                <option value="">Select option</option>
+                                <option value="google">Google Search</option>
+                                <option value="referral">Referral</option>
+                                <option value="social-media">Social Media</option>
+                                <option value="website">Our Website</option>
+                                <option value="healthcare-network">Healthcare Network</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-accent">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Quick Actions Sidebar -->
+                <div class="quick-actions-sidebar">
+                    <div class="quick-action-card fade-in">
+                        <div class="action-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="action-content">
+                            <h3>Request a Home</h3>
+                            <p>Fill out our quick online form to request information about available units and pricing.</p>
+                            <a href="index.html#intake-form" class="btn">
+                                <i class="fas fa-file-alt"></i> Request a Home
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-action-card fade-in">
+                        <div class="action-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="action-content">
+                            <h3>View Available Units</h3>
+                            <p>Browse our current inventory of available furnished apartments and homes in Buffalo.</p>
+                            <a href="property-listings.html" class="btn">
+                                <i class="fas fa-eye"></i> View Units
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-action-card fade-in call-card">
+                        <div class="action-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="action-content">
+                            <h3>Prefer to Call?</h3>
+                            <p>Our team is standing by to answer your questions and help you find the perfect housing solution.</p>
+                            <div class="phone-number">
+                                <i class="fas fa-phone"></i>
+                                <a href="tel:7162716555">716-271-6555</a>
+                            </div>
+                            <p class="call-note">Available 24/7 for urgent inquiries</p>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-info-card fade-in">
+                        <div class="info-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Quick Tips</h4>
+                        </div>
+                        <ul class="info-tips">
+                            <li>Include your move-in date for faster response</li>
+                            <li>Let us know if you have specific location preferences</li>
+                            <li>Mention any special requirements (pets, accessibility, etc.)</li>
+                            <li>For urgent needs, call us directly for immediate assistance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map">
+        <div class="container">
+            <div class="map-header fade-in">
+                <h2 class="section-title">Serving the Buffalo Area</h2>
+                <p class="section-subtitle">We provide corporate housing solutions throughout Buffalo and surrounding areas</p>
+            </div>
+            
+            <div class="map-container fade-in">
+                <div class="map-placeholder">
+                    <div class="map-content">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Buffalo, NY Area</h3>
+                        <p>Our properties are strategically located near:</p>
+                        <div class="map-locations">
+                            <div class="location-item">
+                                <i class="fas fa-hospital"></i>
+                                <span>Major Medical Centers</span>
+                            </div>
+                            <div class="location-item">
+                                <i class="fas fa-university"></i>
+                                <span>Universities & Colleges</span>
+                            </div>
+                            <div class="location-item">
+                                <i class="fas fa-building"></i>
+                                <span>Business Districts</span>
+                            </div>
+                            <div class="location-item">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span>Shopping & Dining Areas</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-note">
+                        <i class="fas fa-info-circle"></i>
+                        <span>Contact us for specific property locations and neighborhood details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="contact-faq" id="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>How quickly can you respond to inquiries?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically respond to all inquiries within 24 hours. For urgent housing needs, we recommend calling us directly at (716) 271-6555 for immediate assistance.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>What information should I include in my inquiry?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Please include your desired move-in date, length of stay, number of bedrooms needed, budget range, and any specific requirements (pets, accessibility, location preferences). This helps us provide the most relevant options.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Do you offer virtual property tours?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We provide virtual tours and detailed photo galleries of all our available properties. We can also schedule video calls to walk you through properties remotely.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>What areas of Buffalo do you serve?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We serve the entire Buffalo metropolitan area, with properties in neighborhoods convenient to major hospitals, universities, and business centers. Contact us for specific location availability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="emergency-contact" id="emergency">
+        <div class="container">
+            <div class="emergency-content fade-in">
+                <div class="emergency-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="emergency-text">
+                    <h2>Emergency Contact</h2>
+                    <p>For urgent housing needs or emergency support for current guests, call us immediately:</p>
+                    <div class="emergency-phone">
+                        <a href="tel:7162716555" class="btn btn-accent">
+                            <i class="fas fa-phone"></i> 716-271-6555
+                        </a>
+                        <span class="emergency-note">Available 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column fade-in">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Buffalo's trusted partner for corporate housing and temporary accommodations since 2008.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Quick Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:7162716555"><i class="fas fa-phone"></i> (716) 271-6555</a></li>
+                        <li><a href="mailto:info@716corporatehousing.com"><i class="fas fa-envelope"></i> info@716corporatehousing.com</a></li>
+                        <li><a href="mailto:Furnish@716corporatehousing.com"><i class="fas fa-couch"></i> Furnishing Inquiries</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Buffalo, NY</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="property-listings.html"><i class="fas fa-chevron-right"></i> Available Units</a></li>
+                        <li><a href="furnishing-services.html"><i class="fas fa-chevron-right"></i> Furnishing Services</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2008-2025 716 Corporate Housing. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Success Modal -->
+    <div class="contact-success-modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thank you for contacting 716 Corporate Housing. We'll get back to you within 24 hours.</p>
+            <div class="modal-actions">
+                <button class="btn btn-accent" id="close-modal">Close</button>
+                <a href="tel:7162716555" class="btn">
+                    <i class="fas fa-phone"></i> Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Text Widget -->
+    <div class="floating-text">
+        <i class="fas fa-comment-alt"></i> Text Us Now: 716-271-6555
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Need help? Chat with us!</p>
+                </div>
+                <div class="chat-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    Hello! How can we help you today with your housing needs?
+                    <div class="chat-time">Just now</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button class="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+      <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="mobilenav.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

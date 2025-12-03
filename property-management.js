@@ -1072,13 +1072,19 @@ navigateGallery(direction) {
 }
     
     getStatusBadge(status) {
-        const badges = {
-            'ready-now': 'Ready Now',
-            'ready-soon': 'Coming Soon',
-            'ask': 'Contact for Availability'
-        };
-        return badges[status] || 'Available';
-    }
+    const badges = {
+        'ready-now': { text: 'Ready Now', class: 'status-ready-now' },
+        'ready-soon': { text: 'Coming Soon', class: 'status-ready-soon' },
+        'ask': { text: 'Contact for Availability', class: 'status-ask' },
+        'for-rent': { text: 'For Rent', class: 'status-for-rent' },
+        'for-sale': { text: 'For Sale', class: 'status-for-sale' },
+        'sold': { text: 'Sold', class: 'status-sold' },
+        'under-offer': { text: 'Under Offer', class: 'status-under-offer' },
+        'rented': { text: 'Rented', class: 'status-rented' }
+    };
+    const badge = badges[status] || { text: 'Available', class: 'status-ready-now' };
+    return `<span class="table-badge ${badge.class}">${badge.text}</span>`;
+}
     
     deleteProperty(id) {
         if (confirm('Are you sure you want to delete this property?')) {

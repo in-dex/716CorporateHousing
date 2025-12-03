@@ -6,31 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Property Management | 716 Corporate Housing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="property-managementStyle.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
+ 
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-home"></i>
-                716 Corporate Housing
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#properties">Our Units</a></li>
-                <li><a href="index.html#amenities">Amenities</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#testimonials">Testimonials</a></li>
-                <li><a href="index.html" class="review-btn">Leave Review</a></li>
-                <li><a href="property-management.html" class="">Add Property</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+   <header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="716 Corporate Housing" class="logo-image">           
+            <span>716 Corporate Housing</span>
         </div>
-    </header>
+        
+        <!-- Desktop Navigation - Section Links Only -->
+        <nav class="nav-links desktop-nav">
+            <ul class="section-nav-links">
+                <li><a href="index.html" data-section="home">Home</a></li>
+                <!-- <li><a href="#properties" data-section="properties">Our Units</a></li>
+                <li><a href="#amenities" data-section="amenities">Amenities</a></li>
+                <li><a href="#about" data-section="about">About</a></li>
+                <li><a href="#testimonials" data-section="testimonials">Testimonials</a></li>
+                <li><a href="#" class="review-btn" data-section="review">Leave Review</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li> -->
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+        <!-- <button class="mobile-menu" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button> -->
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+<nav class="mobile-nav-menu" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="mobile-logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
+        </div>
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <!-- Make sure this has proper vertical layout -->
+    <div class="mobile-nav-content">
+        <!-- Main Navigation Section -->
+        <div class="mobile-nav-section">
+            <h3>Main Navigation</h3>
+            <ul class="mobile-nav-links main-nav-links">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="property-listings.html">Available Units</a></li>
+                <li><a href="things-to-do.html">Things to do</a></li>
+                <li><a href="buying-a-home.html">Buying a home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="furnishing-services.html">Furnishing Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="property-management.html">Add Property</a></li>
+                <li><a href="review-management.html">Review</a></li>                
+            </ul>
+        </div>
+        
+        <!-- Section Navigation for Current Page -->
+        <div class="mobile-nav-section">
+            <h3>On This Page</h3>
+            <ul class="mobile-nav-links section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#properties" data-section="properties">Our Units</a></li>
+                <li><a href="#amenities" data-section="amenities">Amenities</a></li>
+                <li><a href="#about" data-section="about">About</a></li>
+                <li><a href="#testimonials" data-section="testimonials">Testimonials</a></li>
+                <li><a href="#" class="review-btn" data-section="review">Leave Review</a></li>
+                <li><a href="#contact" data-section="contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Actions -->
+        <div class="mobile-nav-actions">
+            <a href="#intake-form" class="btn">Request a Home</a>
+            <a href="tel:7162716555" class="btn btn-accent">
+                <i class="fas fa-phone"></i> 716-271-6555
+            </a>
+        </div>
+    </div>
+</nav>
 
     <!-- Property Management Section -->
 <section class="property-management">
@@ -159,8 +227,13 @@
                             <label for="property-status">Availability Status *</label>
                             <select id="property-status" required>
                                 <option value="ready-now">Ready Now</option>
-                                <option value="ready-soon">Ready Soon</option>
+                                <option value="ready-soon">Coming Soon</option>
                                 <option value="ask">Contact for Availability</option>
+                                <option value="for-rent">For Rent</option>
+                                <option value="for-sale">For Sale</option>
+                                <option value="sold">Sold</option>
+                                <option value="under-offer">Under Offer</option>
+                                <option value="rented">Rented</option>
                             </select>
                         </div>
                     </div>

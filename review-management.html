@@ -6,31 +6,97 @@
     <title>Review Management - 716 Corporate Housing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="review-managementStyle.css">
     
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-home"></i>
-                716 Corporate Housing
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="property-management.html">Properties</a></li>
-                <li><a href="review-management.html" class="active">Reviews</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+   <header>
+    <div class="container header-container">
+        <div class="logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
         </div>
-    </header>
+        
+        <!-- Desktop Navigation - Section Links Only -->
+        <nav class="nav-links desktop-nav section-nav">
+            <ul class="section-nav-links">
+                <li><a href="index.html" data-section="home">Home</a></li>
+                <li><a href="#stats" data-section="stats">Statistics</a></li>
+                <li><a href="#google-reviews" data-section="google-reviews">Google Reviews</a></li>
+                <li><a href="#manual-testimonials" data-section="manual-testimonials">Manual Testimonials</a></li>
+                <li><a href="#settings" data-section="settings">Settings</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+        <button class="mobile-menu" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+<nav class="mobile-nav-menu" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="mobile-logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
+        </div>
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <!-- Make sure this has proper vertical layout -->
+    <div class="mobile-nav-content">
+        <!-- Main Navigation Section -->
+        <div class="mobile-nav-section">
+            <h3>Main Navigation</h3>
+            <ul class="mobile-nav-links main-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="property-listings.html">Available Units</a></li>
+                <li><a href="things-to-do.html">Things to do</a></li>
+                <li><a href="buying-a-home.html">Buying a home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="furnishing-services.html">Furnishing Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="property-management.html">Add Property</a></li>
+                <li><a href="review-management.html" class="active">Review</a></li>                
+            </ul>
+        </div>
+        
+        <!-- Section Navigation for Current Page -->
+        <div class="mobile-nav-section">
+            <h3>On This Page</h3>
+            <ul class="mobile-nav-links section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#stats" data-section="stats">Statistics</a></li>
+                <li><a href="#google-reviews" data-section="google-reviews">Google Reviews</a></li>
+                <li><a href="#manual-testimonials" data-section="manual-testimonials">Manual Testimonials</a></li>
+                <li><a href="#settings" data-section="settings">Settings</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Actions -->
+        <div class="mobile-nav-actions">
+            <a href="tel:7162716555" class="btn btn-accent">
+                <i class="fas fa-phone"></i> 716-271-6555
+            </a>
+            <a href="#settings" class="btn">Settings</a>
+        </div>
+    </div>
+</nav>
 
     <!-- Review Management Section -->
-    <section class="review-management">
+    <section class="review-management" id="home">
         <div class="management-container">
             <div class="management-header">
                 <h1>Review & Testimonial Management</h1>
@@ -38,7 +104,7 @@
             </div>
 
             <!-- Review Statistics -->
-            <div class="review-stats">
+            <div class="review-stats" id="stats">
                 <div class="stat-card">
                     <div class="stat-value" id="total-reviews">0</div>
                     <div class="stat-label">Total Reviews</div>
@@ -59,14 +125,14 @@
 
             <!-- Tabs -->
             <div class="management-tabs">
-                <button class="tab-btn active" data-tab="google">Google Reviews</button>
-                <button class="tab-btn" data-tab="manual">Manual Testimonials</button>
-                <button class="tab-btn" data-tab="settings">Settings</button>
+                <button class="tab-btn active" data-tab="google" id="google-reviews-tab">Google Reviews</button>
+                <button class="tab-btn" data-tab="manual" id="manual-testimonials-tab">Manual Testimonials</button>
+                <button class="tab-btn" data-tab="settings" id="settings-tab">Settings</button>
             </div>
 
             <!-- Google Reviews Tab -->
             <div class="tab-content active" id="google-tab">
-                <div class="google-setup">
+                <div class="google-setup" id="google-reviews">
     <h2>Google Reviews Integration</h2>
     <div class="api-status" id="google-status">
         <i class="fas fa-times-circle"></i>
@@ -136,7 +202,7 @@
                 <div class="sync-section">
                     <h3>Sync Google Reviews</h3>
                     <p>Manually sync your latest Google reviews to display on your website</p>
-                    <button class="btn btn-accent sync-btn" id="sync-reviews">
+                    <button class="btn btn-accent sync-btn" id="sync-reviews-btn">
                         <i class="fas fa-sync-alt"></i> Sync Reviews Now
                     </button>
                 </div>
@@ -148,7 +214,7 @@
 
             <!-- Manual Testimonials Tab -->
             <div class="tab-content" id="manual-tab">
-                <div class="manual-management">
+                <div class="manual-management" id="manual-testimonials">
                     <h2>Add Manual Testimonial</h2>
                     <form id="manual-testimonial-form" class="testimonial-form">
                         <div class="form-row">
@@ -200,7 +266,7 @@
 
             <!-- Settings Tab -->
 <div class="tab-content" id="settings-tab">
-    <div class="settings-grid">
+    <div class="settings-grid" id="settings">
         <!-- Display Settings -->
         <div class="settings-section">
             <h3>Display Settings</h3>

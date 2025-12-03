@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STR & MTR Furnishing Services | 716 Corporate Housing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/furnishing.css">
+</head>
+<body>
+   <header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="716 Corporate Housing" class="logo-image">           
+            <span>716 Corporate Housing</span>
+        </div>
+        
+        <!-- Desktop Navigation - Section Links Only -->
+        <nav class="nav-links desktop-nav section-nav">
+            <ul class="section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#services" data-section="services">Services Overview</a></li>
+                <li><a href="#packages" data-section="packages">Packages</a></li>
+                <li><a href="#why-choose" data-section="why-choose">Why Choose Us</a></li>
+                <li><a href="#portfolio" data-section="portfolio">Portfolio</a></li>
+                <li><a href="#property-owners" data-section="property-owners">For Owners</a></li>
+                <li><a href="#quote" data-section="quote">Get Quote</a></li>
+                <li><a href="#faq" data-section="faq">FAQ</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+        <button class="mobile-menu" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+<nav class="mobile-nav-menu" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="mobile-logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
+        </div>
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <!-- Make sure this has proper vertical layout -->
+    <div class="mobile-nav-content">
+        <!-- Main Navigation Section -->
+        <div class="mobile-nav-section">
+            <h3>Main Navigation</h3>
+            <ul class="mobile-nav-links main-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="property-listings.html">Available Units</a></li>
+                <li><a href="things-to-do.html">Things to do</a></li>
+                <li><a href="buying-a-home.html">Buying a home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="furnishing-services.html" class="active">Furnishing Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="property-management.html">Add Property</a></li>
+                <li><a href="review-management.html">Review</a></li>                
+            </ul>
+        </div>
+        
+        <!-- Section Navigation for Current Page -->
+        <div class="mobile-nav-section">
+            <h3>On This Page</h3>
+            <ul class="mobile-nav-links section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#services" data-section="services">Services Overview</a></li>
+                <li><a href="#packages" data-section="packages">Packages</a></li>
+                <li><a href="#why-choose" data-section="why-choose">Why Choose Us</a></li>
+                <li><a href="#portfolio" data-section="portfolio">Portfolio</a></li>
+                <li><a href="#property-owners" data-section="property-owners">For Owners</a></li>
+                <li><a href="#quote" data-section="quote">Get Quote</a></li>
+                <li><a href="#faq" data-section="faq">FAQ</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Actions -->
+        <div class="mobile-nav-actions">
+            <a href="tel:7162716555" class="btn btn-accent">
+                <i class="fas fa-phone"></i> 716-271-6555
+            </a>
+            <a href="#quote" class="btn">Get Quote</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="furnishing-hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">STR & MTR Furnishing Services</h1>
+                <p class="fade-in">Professional furnishing services designed to simplify the setup process for corporate units and short-term rentals across the USA</p>
+                
+                <div class="hero-metrics fade-in">
+                    <div class="metric">
+                        <div class="metric-value">3-6</div>
+                        <div class="metric-label">Week Timeline</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">Turnkey</div>
+                        <div class="metric-label">Solutions</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">Nationwide</div>
+                        <div class="metric-label">Service</div>
+                    </div>
+                </div>
+                
+                <div class="hero-cta fade-in">
+                    <a href="#quote" class="btn btn-accent">
+                        <i class="fas fa-quote-right"></i> Get Your Quote
+                    </a>
+                    <a href="tel:7162716555" class="btn btn-outline">
+                        <i class="fas fa-phone"></i> (716) 271-6555
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services-overview" id="services">
+        <div class="container">
+            <div class="overview-content">
+                <div class="overview-text slide-in-left">
+                    <h2>Transform Any Property into a Move-In Ready Home</h2>
+                    <p>Whether you're starting with an empty space or refreshing an existing unit, our team handles everything from furniture sourcing and delivery to full installation and styling.</p>
+                    
+                    <div class="overview-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Empty space setup or existing unit refresh</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Complete furniture sourcing and procurement</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Professional delivery and installation</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Interior styling and finishing touches</span>
+                        </div>
+                    </div>
+                    
+                    <p>Our flexible furnishing packages are tailored to fit a variety of property sizes and budgets. Setup fees vary depending on the scope of the project.</p>
+                </div>
+                
+                <div class="overview-image slide-in-right">
+                    <div class="image-stack">
+                        <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcMRnw0jDvh-aWyxIVZE7HljmlAaJ2WnJjbadGmkQPiGicFPM4irJTTuIf3HenzjwXt0_7l_UCuzYEUCgm6uEDVo6K3SmQrAxS_s-TIjv-m-YIS345KuQtDuWaVC-Owsp3j4ILzY9TXKzDumiBcNxqLWhM9XvwYNkjnf73QmF4arSV2jwW93aOlVu1ChvJcVQoY8db5uXvj-Is8cQabALrx32jB6_Tzo8TqCU4=w1280" alt="Living room setup" class="stack-image main">
+                        <img src="https://images.unsplash.com/photo-1556020685-ae41abfc9365?w=800&h=600&fit=crop?ixlib=rb-4.0.3&auto=format&fit=crop&w-800&q=80" alt="Bedroom setup" class="stack-image secondary">
+                        <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcWQ2Z0fDFm3el2_jvnjTZ0SSXHkrhx8Fk0NPfy7ehgDcQJEeC5jS08RuHOMLh6jj2q9CC5bEqm-wNSKL3_T56wIqPOEOWxvm5-6FA3J5c_V7tt2swQmSYSJyQFrXM6InetvITcgz_jKMzVE5FLpipPU87xVm0HF8XglVOTrm2eBYrHGfsKLcKe=w1280" alt="Kitchen setup" class="stack-image tertiary">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Packages -->
+    <section class="services-packages" id="packages">
+        <div class="container">
+            <h2 class="section-title fade-in">Complete Furnishing Packages</h2>
+            <p class="section-subtitle fade-in">We offer comprehensive solutions for every room in your property</p>
+            
+            <div class="packages-grid">
+                <!-- Living Room Package -->
+                <div class="package-card fade-in">
+                    <div class="package-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Living Room Packages</h3>
+                    <p>Complete living room setups including sofas, coffee tables, lamps, and entertainment centers.</p>
+                    <div class="package-includes">
+                        <h4>Includes:</h4>
+                        <ul>
+                            <li>Comfortable sofa or sectional</li>
+                            <li>Coffee table and side tables</li>
+                            <li>Floor and table lamps</li>
+                            <li>Entertainment center</li>
+                            <li>Area rug</li>
+                            <li>Wall art and decor</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Bedroom Package -->
+                <div class="package-card fade-in">
+                    <div class="package-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <h3>Bedroom Essentials</h3>
+                    <p>Quality beds, mattresses, dressers, nightstands, and premium linens for comfortable sleeping.</p>
+                    <div class="package-includes">
+                        <h4>Includes:</h4>
+                        <ul>
+                            <li>Premium bed frame and headboard</li>
+                            <li>Comfortable mattress</li>
+                            <li>Dresser and nightstands</li>
+                            <li>Premium bedding and linens</li>
+                            <li>Bedside lamps</li>
+                            <li>Mirror and storage solutions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Kitchen Package -->
+                <div class="package-card fade-in">
+                    <div class="package-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Kitchen Setup</h3>
+                    <p>Full kitchen packages with cookware, dishes, utensils, small appliances, and everything you need to cook.</p>
+                    <div class="package-includes">
+                        <h4>Includes:</h4>
+                        <ul>
+                            <li>Complete cookware set</li>
+                            <li>Dinnerware and glassware</li>
+                            <li>Cutlery and utensils</li>
+                            <li>Small appliances</li>
+                            <li>Kitchen tools and gadgets</li>
+                            <li>Storage containers</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Electronics Package -->
+                <div class="package-card fade-in">
+                    <div class="package-icon">
+                        <i class="fas fa-tv"></i>
+                    </div>
+                    <h3>Electronics & Entertainment</h3>
+                    <p>Smart TVs, streaming devices, high-speed WiFi routers, and cable setup included.</p>
+                    <div class="package-includes">
+                        <h4>Includes:</h4>
+                        <ul>
+                            <li>Smart TVs in living & bedrooms</li>
+                            <li>Streaming devices</li>
+                            <li>High-speed WiFi routers</li>
+                            <li>Cable/Internet setup</li>
+                            <li>Surge protectors</li>
+                            <li>Cable management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us" id="why-choose">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose Our Furnishing Services?</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Professional Design Consultation</h3>
+                    <p>Expert interior design advice to create cohesive, attractive spaces that appeal to guests.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>High-Quality Furniture</h3>
+                    <p>Modern, durable furniture pieces that withstand frequent use while maintaining style.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Complete Installation</h3>
+                    <p>Delivery, assembly, and installation included - we handle all the heavy lifting.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Flexible Solutions</h3>
+                    <p>Rental periods tailored to your needs with maintenance and replacement during stays.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <h3>Optional Add-ons</h3>
+                    <p>Additional services like office furniture, fitness equipment, and specialty items available.</p>
+                </div>
+                
+                <div class="feature-item fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Timely Delivery</h3>
+                    <p>Turnkey, move-in-ready spaces delivered within our typical 3–6 week timeline.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Gallery -->
+    <section class="portfolio-gallery" id="portfolio">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Past Projects</h2>
+            <p class="section-subtitle fade-in">Browse through our portfolio of beautifully furnished properties</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modern living room">
+                    <div class="gallery-overlay">
+                        <h3>Modern Living Room</h3>
+                        <p>Complete setup for STR property</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdrIdsr-FWuTpvzT-j9KG_W5xNFNYXzm_ndOkFH5ZAyoOUfnUN9pv2xu2PZg3fCfWdZ_ZkUnVqoGrZsmoFStlMlSzUEyN-yId0gwsu1ypsqin3juAlDr97xj2A1PY0Gn9KqeD5tpbo-jy5HQL387NjFXRumC-lOerTGECewSFFhg9hZr03yjDIfX_DYXqDcA37djzWkyT8REtFqxU8DnW8Wr5tbf5T6SfVs8eI=w1280" alt="Cozy bedroom">
+                    <div class="gallery-overlay">
+                        <h3>Cozy Bedroom Suite</h3>
+                        <p>Premium bedding and furniture</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fully equipped kitchen">
+                    <div class="gallery-overlay">
+                        <h3>Fully Equipped Kitchen</h3>
+                        <p>All essentials for cooking</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkcMRnw0jDvh-aWyxIVZE7HljmlAaJ2WnJjbadGmkQPiGicFPM4irJTTuIf3HenzjwXt0_7l_UCuzYEUCgm6uEDVo6K3SmQrAxS_s-TIjv-m-YIS345KuQtDuWaVC-Owsp3j4ILzY9TXKzDumiBcNxqLWhM9XvwYNkjnf73QmF4arSV2jwW93aOlVu1ChvJcVQoY8db5uXvj-Is8cQabALrx32jB6_Tzo8TqCU4=w1280" alt="Home office setup">
+                    <div class="gallery-overlay">
+                        <h3>Home Office Setup</h3>
+                        <p>Optional add-on service</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkctKQr39oLGeKr0zSVHTekFJUFC4dMYL2FeGx3RzkbK4ovenE5RY6DUlxbydcjQgUo5v9RcLj_cCEz20a6FODVmpneVP0zi_XIqbdvgLtZ0GPj9ScIqeaZl0hrB9c7fPyDFG4sDL4sxZmLbH6QlNVjrIMIOeACv5Iaae1qyj9zohYIDVkON9EJnwh1hzUpRgnp1pmbeY1X0ZY-ZAsvsXPpn35GgBPXdgd1j484=w1280" alt="Dining area">
+                    <div class="gallery-overlay">
+                        <h3>Elegant Dining Area</h3>
+                        <p>Complete table setting</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Outdoor furniture">
+                    <div class="gallery-overlay">
+                        <h3>Outdoor Living Space</h3>
+                        <p>Patio and balcony furniture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Owners Section -->
+    <section class="property-owners" id="property-owners">
+        <div class="container">
+            <div class="owners-content">
+                <div class="owners-text slide-in-left">
+                    <h2>For Property Owners & Investors</h2>
+                    <p>Maximize your rental income by converting your property into corporate housing. We handle everything from furnishing to tenant placement and property management. Turn your investment into a high-yield, low-hassle income stream.</p>
+                    
+                    <div class="owners-stats">
+                        <div class="stat">
+                            <div class="stat-value">30%</div>
+                            <div class="stat-label">Higher ROI</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">95%</div>
+                            <div class="stat-label">Occupancy Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">0</div>
+                            <div class="stat-label">Management Hassles</div>
+                        </div>
+                    </div>
+                    
+                    <div class="owners-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Complete property management services</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Professional photography and marketing</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Guest screening and placement</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check"></i>
+                            <span>Maintenance and cleaning coordination</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#quote" class="btn btn-accent">
+                        <i class="fas fa-calendar-check"></i> Get Free Consultation
+                    </a>
+                </div>
+                
+                <div class="owners-image slide-in-right">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Property investment">
+                    <div class="image-caption">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Increase your property's earning potential</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section" id="quote">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header fade-in">
+                    <h2>Get Your Personalized Quote</h2>
+                    <p>Fill out the form below and we'll get back to you within 24 hours with a custom quote for your furnishing needs.</p>
+                </div>
+                
+                <form id="furnishing-quote-form" class="fade-in">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company (Optional)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="property-type">Property Type *</label>
+                        <select id="property-type" name="property-type" required>
+                            <option value="">Select property type</option>
+                            <option value="short-term-rental">Short-Term Rental (STR)</option>
+                            <option value="corporate-housing">Corporate Housing</option>
+                            <option value="vacation-rental">Vacation Rental</option>
+                            <option value="multi-unit">Multi-Unit Property</option>
+                            <option value="single-family">Single Family Home</option>
+                            <option value="apartment">Apartment/Condo</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="bedrooms">Number of Bedrooms</label>
+                            <select id="bedrooms" name="bedrooms">
+                                <option value="">Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5+">5+</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bathrooms">Number of Bathrooms</label>
+                            <select id="bathrooms" name="bathrooms">
+                                <option value="">Select</option>
+                                <option value="1">1</option>
+                                <option value="1.5">1.5</option>
+                                <option value="2">2</option>
+                                <option value="2.5">2.5</option>
+                                <option value="3+">3+</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="property-location">Property Location (City, State) *</label>
+                        <input type="text" id="property-location" name="property-location" required placeholder="e.g., Buffalo, NY">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="furnishing-type">Furnishing Needs *</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="full-furnishing" name="furnishing-type[]" value="full">
+                                <label for="full-furnishing">Full Property Furnishing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="partial-furnishing" name="furnishing-type[]" value="partial">
+                                <label for="partial-furnishing">Partial/Refresh Furnishing</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="living-room" name="furnishing-type[]" value="living">
+                                <label for="living-room">Living Room Package</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="bedroom" name="furnishing-type[]" value="bedroom">
+                                <label for="bedroom">Bedroom Package</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="kitchen" name="furnishing-type[]" value="kitchen">
+                                <label for="kitchen">Kitchen Package</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="electronics" name="furnishing-type[]" value="electronics">
+                                <label for="electronics">Electronics Package</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeline">Desired Timeline *</label>
+                        <select id="timeline" name="timeline" required>
+                            <option value="">Select timeline</option>
+                            <option value="urgent">ASAP (1-2 weeks)</option>
+                            <option value="standard">Standard (3-6 weeks)</option>
+                            <option value="flexible">Flexible (6+ weeks)</option>
+                            <option value="planning">Just planning/exploring</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Estimated Budget Range</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="under-5k">Under $5,000</option>
+                            <option value="5k-10k">$5,000 - $10,000</option>
+                            <option value="10k-20k">$10,000 - $20,000</option>
+                            <option value="20k-30k">$20,000 - $30,000</option>
+                            <option value="30k-plus">$30,000+</option>
+                            <option value="not-sure">Not sure - need guidance</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Details or Special Requests</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us about your property, specific needs, or any special requirements..."></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="how-heard">How did you hear about us?</label>
+                        <select id="how-heard" name="how-heard">
+                            <option value="">Select option</option>
+                            <option value="google">Google Search</option>
+                            <option value="referral">Referral</option>
+                            <option value="social-media">Social Media</option>
+                            <option value="website">Our Website</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-accent">
+                        <i class="fas fa-paper-plane"></i> Request Quote
+                    </button>
+                </form>
+                
+                <div class="contact-info fade-in">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Call Us</h4>
+                            <a href="tel:7162716555">(716) 271-6555</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email Us</h4>
+                            <a href="mailto:Furnish@716corporatehousing.com">Furnish@716corporatehousing.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Response Time</h4>
+                            <p>Within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+            
+            <div class="faq-grid">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>What areas do you serve?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We provide furnishing services across the United States, with a strong presence in major metropolitan areas and popular STR markets. Our nationwide network allows us to efficiently serve clients regardless of location.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>How long does the furnishing process take?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our typical timeline is 3-6 weeks from initial consultation to move-in ready completion. This includes design consultation, furniture sourcing, delivery, and installation. Rush services are available for urgent needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Do you offer design services?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Professional interior design consultation is included in all our packages. We work with you to create spaces that are both functional and aesthetically pleasing, tailored to your target market.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Can you work with my existing furniture?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We can refresh existing spaces by incorporating your current pieces with new items, or we can start completely fresh. Our team will assess what you have and provide recommendations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>What's included in your pricing?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our quotes include all furniture, accessories, delivery, assembly, installation, and styling. We provide transparent pricing with no hidden fees. Setup fees vary based on property size and scope.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <h3>Do you offer ongoing maintenance?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer maintenance and replacement services during guest stays. We can coordinate repairs, replacements, and regular maintenance to ensure your property always looks its best.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Transform Your Property?</h2>
+                <p>Contact us today to discuss your furnishing needs and get a personalized quote for your STR or corporate housing property.</p>
+                
+                <div class="cta-buttons">
+                    <a href="#quote" class="btn btn-accent">
+                        <i class="fas fa-quote-right"></i> Get Your Quote
+                    </a>
+                    <a href="tel:7162716555" class="btn">
+                        <i class="fas fa-phone"></i> Call Now
+                    </a>
+                </div>
+                
+                <div class="cta-contact">
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:Furnish@716corporatehousing.com">Furnish@716corporatehousing.com</a></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:7162716555">(716) 271-6555</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column fade-in">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Premium furnished housing and furnishing services for travel professionals and property investors.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Corporate Housing</a></li>
+                        <li><a href="furnishing-services.html"><i class="fas fa-chevron-right"></i> STR Furnishing</a></li>
+                        <li><a href="furnishing-services.html"><i class="fas fa-chevron-right"></i> MTR Furnishing</a></li>
+                        <li><a href="property-management.html"><i class="fas fa-chevron-right"></i> Property Management</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Design Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Serving Nationwide USA</a></li>
+                        <li><a href="tel:7162716555"><i class="fas fa-phone"></i> (716) 271-6555</a></li>
+                        <li><a href="mailto:info@716corporatehousing.com"><i class="fas fa-envelope"></i> info@716corporatehousing.com</a></li>
+                        <li><a href="mailto:Furnish@716corporatehousing.com"><i class="fas fa-couch"></i> Furnishing Inquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 716 Corporate Housing. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Thank You!</h2>
+            <p>Your furnishing request has been received. We'll contact you within 24 hours with a personalized quote.</p>
+            <button class="btn btn-accent" id="close-modal">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="mobilenav.js"></script>
+    <script src="js/furnishing.js"></script>
+</body>
+</html>

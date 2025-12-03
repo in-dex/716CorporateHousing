@@ -1181,21 +1181,7 @@ document.head.appendChild(style);
             window.open('https://myopenphone.com', '_blank');
         });
 
-        // Form Submission
-        document.getElementById('relocation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // In a real implementation, this would send the form data to your backend/email
-            const formData = new FormData(this);
-            const formObject = {};
-            formData.forEach((value, key) => {
-                formObject[key] = value;
-            });
-            
-            console.log('Relocation form submitted:', formObject);
-            alert('Thank you for your relocation request! We will contact you shortly to discuss housing options.');
-            this.reset();
-        });
+
 
         // Scroll Animation Functionality
         function checkScroll() {

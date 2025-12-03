@@ -1,3 +1,4 @@
+// Property Listings Class - FIXED VERSION
 class PropertyListings {
     constructor() {
         this.properties = [];
@@ -187,18 +188,29 @@ class PropertyListings {
         });
         
         // Refresh button
-        document.getElementById('refresh-listings').addEventListener('click', () => {
-            this.refreshProperties();
-        });
+        const refreshBtn = document.getElementById('refresh-listings');
+        if (refreshBtn) {
+            refreshBtn.addEventListener('click', () => {
+                this.refreshProperties();
+            });
+        }
     }
     
     setupViewToggle() {
-        document.querySelectorAll('.toggle-btn').forEach(btn => {
+        const toggleButtons = document.querySelectorAll('.toggle-btn');
+        
+        toggleButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const view = e.target.closest('.toggle-btn').dataset.view;
+                e.preventDefault(); // Prevent any default behavior
+                e.stopPropagation(); // Stop event bubbling
+                
+                const view = btn.dataset.view;
+                console.log('Toggle button clicked, switching to view:', view);
                 this.switchView(view);
             });
         });
+        
+        console.log('View toggle setup complete. Found buttons:', toggleButtons.length);
     }
     
     applyCustomDateFilter() {
@@ -221,24 +233,35 @@ class PropertyListings {
     }
     
     switchView(view) {
+        console.log('Switching to view:', view);
+        
         this.currentView = view;
         
         // Update active button
         document.querySelectorAll('.toggle-btn').forEach(btn => {
             btn.classList.remove('active');
         });
-        document.querySelector(`[data-view="${view}"]`).classList.add('active');
+        
+        const activeButton = document.querySelector(`[data-view="${view}"]`);
+        if (activeButton) {
+            activeButton.classList.add('active');
+        }
         
         // Show/hide views
+        const tableView = document.getElementById('table-view');
+        const cardView = document.getElementById('card-view');
+        
         if (view === 'table') {
-            document.getElementById('table-view').style.display = 'block';
-            document.getElementById('card-view').style.display = 'none';
+            if (tableView) tableView.style.display = 'block';
+            if (cardView) cardView.style.display = 'none';
             this.loadTableView();
         } else {
-            document.getElementById('table-view').style.display = 'none';
-            document.getElementById('card-view').style.display = 'block';
+            if (tableView) tableView.style.display = 'none';
+            if (cardView) cardView.style.display = 'block';
             this.loadCardView();
         }
+        
+        console.log('View switched successfully to:', view);
     }
     
     applyFilters() {
@@ -348,9 +371,14 @@ class PropertyListings {
         document.getElementById('price-filter').value = 'all';
         document.getElementById('date-filter').value = 'all';
         document.getElementById('search-filter').value = '';
-        document.getElementById('custom-date-range').style.display = 'none';
-        document.getElementById('start-date').value = '';
-        document.getElementById('end-date').value = '';
+        
+        const customDateRange = document.getElementById('custom-date-range');
+        if (customDateRange) customDateRange.style.display = 'none';
+        
+        const startDate = document.getElementById('start-date');
+        const endDate = document.getElementById('end-date');
+        if (startDate) startDate.value = '';
+        if (endDate) endDate.value = '';
         
         this.applyFilters();
     }
@@ -360,12 +388,17 @@ class PropertyListings {
         const filtered = this.filteredProperties.length;
         
         // Update results count
-        document.getElementById('results-count').textContent = filtered;
+        const resultsCount = document.getElementById('results-count');
+        if (resultsCount) {
+            resultsCount.textContent = filtered;
+        }
     }
     
     updateActiveFilters() {
         const activeFilters = document.getElementById('active-filters');
         const filterTags = document.getElementById('filter-tags');
+        
+        if (!activeFilters || !filterTags) return;
         
         const activeFiltersList = [];
         
@@ -441,7 +474,8 @@ class PropertyListings {
             case 'date':
                 this.currentFilters.date = 'all';
                 document.getElementById('date-filter').value = 'all';
-                document.getElementById('custom-date-range').style.display = 'none';
+                const customDateRange = document.getElementById('custom-date-range');
+                if (customDateRange) customDateRange.style.display = 'none';
                 break;
             case 'search':
                 this.currentFilters.search = '';
@@ -491,6 +525,9 @@ class PropertyListings {
         const tbody = document.getElementById('table-body');
         const noResults = document.getElementById('table-no-results');
         
+        if (!tbody || !noResults) return;
+        
+        
         if (this.filteredProperties.length === 0) {
             tbody.innerHTML = '';
             noResults.style.display = 'block';
@@ -538,6 +575,8 @@ class PropertyListings {
         const grid = document.getElementById('properties-grid');
         const noResults = document.getElementById('card-no-results');
         
+        if (!grid || !noResults) return;
+        
         if (this.filteredProperties.length === 0) {
             grid.innerHTML = '';
             noResults.style.display = 'block';
@@ -569,7 +608,7 @@ class PropertyListings {
                             </button>
                         ` : ''}
                         ${property.video ? `
-                            <button class="action-btn video" onclick="propertyListings.playVideo('${property.video})">
+                            <button class="action-btn video" onclick="propertyListings.playVideo('${property.video}')">
                                 <i class="fas fa-play"></i> Video Tour
                             </button>
                         ` : ''}
@@ -605,14 +644,16 @@ class PropertyListings {
         return badges[status] || 'Available';
     }
     
-    viewListing(propertyId) {
-        const property = this.properties.find(p => p.id === propertyId);
-        if (property) {
-            // Open property modal or redirect to detailed view
-            alert(`Opening detailed listing for ${property.title}`);
-            // In real implementation, you would open a modal or navigate to property details
-        }
+viewListing(propertyId) {
+    // Open the same link for ALL properties when listing button is clicked
+    window.open("https://my.innago.com/l/9183Iw6DXBS", "_blank");
+    
+    // Optional: You can still get the property info if needed
+    const property = this.properties.find(p => p.id === propertyId);
+    if (property) {
+        console.log(`Opening listing for: ${property.title}`);
     }
+}
     
     playVideo(videoUrl) {
         if (videoUrl && videoUrl !== 'true') {
@@ -633,27 +674,35 @@ class PropertyListings {
         
         // Show feedback
         const refreshBtn = document.getElementById('refresh-listings');
-        const originalText = refreshBtn.innerHTML;
-        
-        refreshBtn.innerHTML = '<i class="fas fa-check"></i> Updated!';
-        refreshBtn.disabled = true;
-        
-        setTimeout(() => {
-            refreshBtn.innerHTML = originalText;
-            refreshBtn.disabled = false;
-        }, 2000);
+        if (refreshBtn) {
+            const originalText = refreshBtn.innerHTML;
+            
+            refreshBtn.innerHTML = '<i class="fas fa-check"></i> Updated!';
+            refreshBtn.disabled = true;
+            
+            setTimeout(() => {
+                refreshBtn.innerHTML = originalText;
+                refreshBtn.disabled = false;
+            }, 2000);
+        }
     }
 }
 
 // Initialize when DOM is loaded
 let propertyListings;
 
-document.addEventListener('DOMContentLoaded', function() {
-    propertyListings = new PropertyListings();
-    window.propertyListings = propertyListings;
-    
-    // Mobile menu functionality
-    document.querySelector('.mobile-menu')?.addEventListener('click', function() {
-        document.querySelector('.nav-links').classList.toggle('active');
+// Replace your current initialization code at the bottom with:
+if (!window.propertyListingsInitialized) {
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Initializing Property Listings...');
+        
+        // Only initialize once
+        if (!window.propertyListings) {
+            propertyListings = new PropertyListings();
+            window.propertyListings = propertyListings;
+            window.propertyListingsInitialized = true;
+        }
+        
+        console.log('Property Listings initialized successfully');
     });
-});
+}

@@ -6,122 +6,183 @@
     <title>Available Properties | 716 Corporate Housing</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
     <link rel="stylesheet" href="property-listings.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
+                <img src="logo.png" alt="716 Corporate Housing" class="logo-image">           
+                <span>716 Corporate Housing</span>
+            </div>
+            
+            <!-- Desktop Navigation - Section Links Only -->
+            <nav class="nav-links desktop-nav">
+                <ul class="section-nav-links">
+                    <li><a href="#filter-section" data-section="filter-section">Filters</a></li>
+                    <li><a href="#table-view" data-section="table-view">Table View</a></li>
+                    <li><a href="#card-view" data-section="card-view">Card View</a></li>
+                    <li><a href="#faq" data-section="faq">Property FAQ</a></li>
+                    <li><a href="#booking-help" data-section="booking-help">Booking Help</a></li>
+                    <li><a href="#contact" data-section="contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+            <button class="mobile-menu" id="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+    <!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+    <nav class="mobile-nav-menu" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
                 <i class="fas fa-home"></i>
                 716 Corporate Housing
             </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="property-listings.html" class="active">Available Units</a></li>
-                <li><a href="index.html#amenities">Amenities</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#testimonials">Testimonials</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
+            <button class="mobile-nav-close" id="mobile-nav-close">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <!-- Make sure this has proper vertical layout -->
+        <div class="mobile-nav-content">
+            <!-- Main Navigation Section -->
+            <div class="mobile-nav-section">
+                <h3>Main Navigation</h3>
+                <ul class="mobile-nav-links main-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="property-listings.html" class="active">Available Units</a></li>
+                    <li><a href="things-to-do.html">Things to do</a></li>
+                    <li><a href="buying-a-home.html">Buying a home</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="partnerships.html">Partnerships</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="furnishing-services.html">Furnishing Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="property-management.html">Add Property</a></li>
+                    <li><a href="review-management.html">Review</a></li>                
+                </ul>
+            </div>
+            
+            <!-- Section Navigation for Current Page -->
+            <div class="mobile-nav-section">
+                <h3>On This Page</h3>
+                <ul class="mobile-nav-links section-nav-links">
+                    <li><a href="#filter-section" data-section="filter-section">Filters</a></li>
+                    <li><a href="#table-view" data-section="table-view">Table View</a></li>
+                    <li><a href="#card-view" data-section="card-view">Card View</a></li>
+                    <li><a href="#faq" data-section="faq">Property FAQ</a></li>
+                    <li><a href="#booking-help" data-section="booking-help">Booking Help</a></li>
+                    <li><a href="#contact" data-section="contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Mobile Navigation Actions -->
+            <div class="mobile-nav-actions">
+                <a href="#intake-form" class="btn request-home-btn">Request a Home</a>
+                <a href="tel:7162716555" class="btn btn-accent">
+                    <i class="fas fa-phone"></i> 716-271-6555
+                </a>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Property Listings Section -->
     <section class="property-listings">
         <div class="container">
             <!-- Compact Header -->
-            <div class="compact-header">
+            <div class="compact-header" id="filter-section">
                 <h1>Available Properties</h1>
+                <span>Browse our selection of fully furnished corporate housing units across Buffalo's best neighborhoods.</span>
                 <p>Text us at <strong>716-271-6555</strong> for immediate assistance</p>
             </div>
 
-          <!-- Compact Filter Bar -->
-<div class="compact-filter-bar">
-    <div class="filter-controls">
-        <!-- Row 1: All Filters -->
-        <div class="compact-filters">
-            <select id="status-filter" class="compact-select">
-                <option value="all">All Properties</option>
-                <option value="ready-now">Ready Now</option>
-                <option value="ready-soon">Ready Soon</option>
-                <option value="ask">Contact for Availability</option>
-            </select>
-            
-            <select id="bedroom-filter" class="compact-select">
-                <option value="all">Any Beds</option>
-                <option value="1">1 Bed</option>
-                <option value="2">2 Beds</option>
-                <option value="3">3 Beds</option>
-                <option value="4">4+ Beds</option>
-            </select>
-            
-            <select id="price-filter" class="compact-select">
-                <option value="all">Any Price</option>
-                <option value="1500-2000">$1.5-2K</option>
-                <option value="2000-2500">$2-2.5K</option>
-                <option value="2500-3000">$2.5-3K</option>
-                <option value="3000-4000">$3-4K</option>
-                <option value="4000-plus">$4K+</option>
-            </select>
+            <!-- Compact Filter Bar -->
+            <div class="compact-filter-bar">
+                <div class="filter-controls">
+                    <!-- Row 1: All Filters -->
+                    <div class="compact-filters">
+                        <select id="status-filter" class="compact-select">
+                            <option value="all">All Properties</option>
+                            <option value="ready-now">Ready Now</option>
+                            <option value="ready-soon">Ready Soon</option>
+                            <option value="ask">Contact for Availability</option>
+                        </select>
+                        
+                        <select id="bedroom-filter" class="compact-select">
+                            <option value="all">Any Beds</option>
+                            <option value="1">1 Bed</option>
+                            <option value="2">2 Beds</option>
+                            <option value="3">3 Beds</option>
+                            <option value="4">4+ Beds</option>
+                        </select>
+                        
+                        <select id="price-filter" class="compact-select">
+                            <option value="all">Any Price</option>
+                            <option value="1500-2000">$1.5-2K</option>
+                            <option value="2000-2500">$2-2.5K</option>
+                            <option value="2500-3000">$2.5-3K</option>
+                            <option value="3000-4000">$3-4K</option>
+                            <option value="4000-plus">$4K+</option>
+                        </select>
 
-            <select id="date-filter" class="compact-select">
-                <option value="all">Any Date</option>
-                <option value="available-now">Available Now</option>
-                <option value="next-7-days">Next 7 Days</option>
-                <option value="next-30-days">Next 30 Days</option>
-                <option value="next-90-days">Next 90 Days</option>
-                <option value="custom">Custom Date Range</option>
-            </select>
-        </div>
+                        <select id="date-filter" class="compact-select">
+                            <option value="all">Any Date</option>
+                            <option value="available-now">Available Now</option>
+                            <option value="next-7-days">Next 7 Days</option>
+                            <option value="next-30-days">Next 30 Days</option>
+                            <option value="next-90-days">Next 90 Days</option>
+                            <option value="custom">Custom Date Range</option>
+                        </select>
+                    </div>
 
+                    <!-- Row 2: Controls - Toggle, Search, Actions -->
+                    <div class="mobile-controls-row">
+                        <div class="view-toggle">
+                            <button class="toggle-btn active" data-view="table" title="Table View">
+                                <i class="fas fa-list"></i>
+                            </button>
+                            <button class="toggle-btn" data-view="cards" title="Card View">
+                                <i class="fas fa-th"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="search-filter" placeholder="Search properties...">
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn btn-sm " id="reset-filters">
+                                <i class="fas fa-times"></i> Reset
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="custom-date-range" id="custom-date-range" style="display: none;">
+                    <div class="date-inputs">
+                        <input type="date" id="start-date" class="compact-select">
+                        <span>to</span>
+                        <input type="date" id="end-date" class="compact-select">
+                        <button class="btn btn-sm btn-primary" id="apply-custom-date">Apply</button>
+                    </div>
+                </div>
 
-        <!-- Row 2: Controls - Toggle, Search, Actions -->
-        <div class="mobile-controls-row">
-            <div class="view-toggle">
-                <button class="toggle-btn active" data-view="table" title="Table View">
-                    <i class="fas fa-list"></i>
-                </button>
-                <button class="toggle-btn" data-view="cards" title="Card View">
-                    <i class="fas fa-th"></i>
-                </button>
+                <!-- Row 3: Results Count -->
+                <div class="results-count">
+                    <span id="results-count">0</span> properties found
+                </div>
             </div>
-            
-            <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="search-filter" placeholder="Search properties...">
-            </div>
-            
-            <div class="action-buttons">
-                <button class="btn btn-sm btn-outline" id="reset-filters">
-                    <i class="fas fa-times"></i> Reset
-                </button>
-                <button class="btn btn-sm btn-accent refresh-btn" id="refresh-listings">
-                    <i class="fas fa-sync-alt"></i>
-                </button>
-            </div>
-        </div>
-        
-    </div>
-    
-        <div class="custom-date-range" id="custom-date-range" style="display: none;">
-            <div class="date-inputs">
-                <input type="date" id="start-date" class="compact-select">
-                <span>to</span>
-                <input type="date" id="end-date" class="compact-select">
-                <button class="btn btn-sm btn-primary" id="apply-custom-date">Apply</button>
-            </div>
-        </div>
-        
-
-    <!-- Row 3: Results Count -->
-    <div class="results-count">
-        <span id="results-count">0</span> properties found
-    </div>
-</div>
 
             <!-- Active Filters -->
             <div class="active-filters" id="active-filters" style="display: none;">
@@ -170,11 +231,145 @@
         </div>
     </section>
 
+    <!-- Property FAQ Section -->
+    <section class="property-faq" id="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">Property FAQ</h2>    
+            <div class="faq-cta fade-in">
+                <h3>Have more questions?</h3>
+                <p>Visit our complete <a href="faq.html">FAQ page</a> for detailed answers on booking, payments, amenities, and more.</p>
+                <div class="cta-buttons">
+                    <a href="faq.html" class="btn">
+                        <i class="fas fa-question-circle"></i> View Full FAQ
+                    </a>
+                    <a href="tel:7162716555" class="btn btn-accent">
+                        <i class="fas fa-phone"></i> Call for Answers
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Help Section -->
+    <section class="booking-help" id="booking-help">
+        <div class="container">
+            <div class="booking-help-content fade-in">
+                <div class="booking-help-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="booking-help-text">
+                    <h2>Need Help Booking?</h2>
+                    <p>Our team is here to help you find the perfect property and handle all the details.</p>
+                    
+                    <div class="booking-steps">
+                        <div class="booking-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Find Your Property</h4>
+                                <p>Browse our available units above and use filters to narrow your search</p>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Contact Us</h4>
+                                <p>Click on any property or contact us directly to discuss your needs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Virtual Tour & Details</h4>
+                                <p>We'll provide more photos, virtual tours, and answer all your questions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="booking-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Easy Booking</h4>
+                                <p>Complete our simple online application and sign electronically</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-help-contact">
+                        <a href="tel:7162716555" class="btn btn-accent">
+                            <i class="fas fa-phone"></i> Call to Book: 716-271-6555
+                        </a>
+                        <a href="mailto:info@716corporatehousing.com" class="btn">
+                            <i class="fas fa-envelope"></i> Email for Availability
+                        </a>
+                        <a href="#intake-form" class="btn request-home-btn">
+                            <i class="fas fa-home"></i> Request a Home
+                        </a>
+                    </div>
+                    
+                    <div class="booking-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Quick Booking Tips</h4>
+                        <ul>
+                            <li>Book 30+ days in advance for best availability</li>
+                            <li>Have your move-in date and length of stay ready</li>
+                            <li>Let us know about special requirements (pets, parking, etc.)</li>
+                            <li>Healthcare professionals: Ask about our special rates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Contact Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <h2>Ready to Book Your Buffalo Home?</h2>
+                <p>Contact us today to secure your perfect corporate housing in Buffalo.</p>
+                
+                <!-- Contact Info - Single Row -->
+            <div class="cta-contact-info">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-label">Call or Text</div>
+                        <a href="tel:7162716555" class="contact-value">716-271-6555</a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-label">Email Us</div>
+                        <a href="mailto:info@716corporatehousing.com" class="contact-value">info@716corporatehousing.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact-label">Location</div>
+                        <span class="contact-value">Buffalo, NY</span>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="container">
             <div class="footer-container">
-                <div class="footer-column">
+                <div class="footer-column fade-in">
                     <h3>716 Corporate Housing</h3>
                     <p>Premium furnished housing for travel professionals in Buffalo, NY.</p>
                     <div class="social-links">
@@ -183,26 +378,113 @@
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="footer-column">
+                
+                <div class="footer-column fade-in">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="property-listings.html" class="active"><i class="fas fa-chevron-right"></i> Available Units</a></li>
+                        <li><a href="things-to-do.html"><i class="fas fa-chevron-right"></i> Things to Do</a></li>
+                        <li><a href="buying-a-home.html"><i class="fas fa-chevron-right"></i> Buying a Home</a></li>
+                        <li><a href="faq.html"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+                        <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column fade-in">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
                         <li><a href="tel:7162716555"><i class="fas fa-phone"></i> 716-271-6555</a></li>
                         <li><a href="mailto:info@716corporatehousing.com"><i class="fas fa-envelope"></i> info@716corporatehousing.com</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Buffalo, NY</a></li>
                     </ul>
+                    
+                    <div class="footer-cta">
+                        <a href="#intake-form" class="btn btn-sm request-home-btn">
+                            <i class="fas fa-home"></i> Request a Home
+                        </a>
+                    </div>
                 </div>
             </div>
+            
             <div class="copyright">
                 <p>&copy; 2024 716 Corporate Housing. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Floating Text Widget
+    <!-- Fullscreen Relocation Form Modal -->
+    <div class="relocation-modal" id="relocation-modal">
+        <div class="relocation-modal-content">
+            <div class="relocation-modal-header">
+                <div class="relocation-modal-logo">
+                    <img src="logo.png" alt="716 Corporate Housing" class="logo-image">
+                    <span>716 Corporate Housing</span>
+                </div>
+                <button class="relocation-modal-close" id="relocation-modal-close">
+                    <i class="fas fa-times"></i>
+                    <span class="close-text">Close</span>
+                </button>
+            </div>
+            
+            <div class="relocation-modal-body">
+                <div class="relocation-intro">
+                    <h2>Relocation Claim Intake Form</h2>
+                    <p>Fill out the form below to begin your housing search. The more details you provide, the better we can match you with suitable properties.</p>
+                    
+                    <div class="form-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Secure & Encrypted Submission</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-clock"></i>
+                            <span>24-48 Hour Response Time</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-user-check"></i>
+                            <span>Personalized Property Matching</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Monday.com Form iFrame -->
+                <div class="monday-form-wrapper">
+                    <iframe 
+                        src="https://forms.monday.com/forms/embed/9a8ee94dc22d5a1f5c02f95367218398?r=use1" 
+                        width="100%" 
+                        height="600" 
+                        frameborder="0"
+                        style="border: 1px solid #e0e0e0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                        title="716 Corporate Housing - Relocation Intake Form">
+                    </iframe>
+                </div>
+                
+                <div class="form-footer">
+                    <p>
+                        Having trouble with the form? <a href="tel:7162716555">Call us at 716-271-6555</a> or 
+                        <a href="mailto:info@716corporatehousing.com">email info@716corporatehousing.com</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Text Widget -->
     <div class="floating-text">
-        <i class="fas fa-comment-alt"></i> Text Us Now
-    </div> -->
+        <i class="fas fa-comment-alt"></i> Text Us Now: 716-271-6555
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <script src="property-listings.js"></script>
+    <script src="mobilenav.js"></script>
+
+    <script src="js/relocation-modal.js"></script>
+    
+
 </body>
 </html>

@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buying a Home in Buffalo, NY | 716 Corporate Housing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/buying-a-home.css">
+</head>
+<body>
+   <header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="716 Corporate Housing" class="logo-image">           
+            <span>716 Corporate Housing</span>
+        </div>
+        
+        <!-- Desktop Navigation - Section Links Only -->
+        <nav class="nav-links desktop-nav">
+            <ul class="section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#why-buffalo" data-section="why-buffalo">Why Buffalo</a></li>
+                <li><a href="#neighborhoods" data-section="neighborhoods">Neighborhoods</a></li>
+                <li><a href="#try-before-buy" data-section="try-before-buy">Try Before You Buy</a></li>
+                <li><a href="#process" data-section="process">Buying Process</a></li>
+                <li><a href="#contact" data-section="contact">Get Started</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+        <button class="mobile-menu" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+<nav class="mobile-nav-menu" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="mobile-logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
+        </div>
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <!-- Make sure this has proper vertical layout -->
+    <div class="mobile-nav-content">
+        <!-- Main Navigation Section -->
+        <div class="mobile-nav-section">
+            <h3>Main Navigation</h3>
+            <ul class="mobile-nav-links main-nav-links">
+               <ul class="mobile-nav-links main-nav-links">
+                <li><a href="index.html">Home</a></li>
+                 <li><a href="property-listings.html">Available Units</a></li>
+                <li><a href="things-to-do.html">Things to do</a></li>
+                <li><a href="buying-a-home.html">Buying a home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="furnishing-services.html">Furnishing Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="property-management.html">Add Property</a></li>
+                <li><a href="review-management.html">Review</a></li>                
+            </ul>
+            </ul>
+        </div>
+        
+        <!-- Section Navigation for Current Page -->
+        <div class="mobile-nav-section">
+            <h3>On This Page</h3>
+            <ul class="mobile-nav-links section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#why-buffalo" data-section="why-buffalo">Why Buffalo</a></li>
+                <li><a href="#neighborhoods" data-section="neighborhoods">Neighborhoods</a></li>
+                <li><a href="#try-before-buy" data-section="try-before-buy">Try Before You Buy</a></li>
+                <li><a href="#process" data-section="process">Buying Process</a></li>
+                <li><a href="#contact" data-section="contact">Get Started</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Actions -->
+        <div class="mobile-nav-actions">
+            <a href="tel:7162716555" class="btn btn-accent">
+                <i class="fas fa-phone"></i> 716-271-6555
+            </a>
+            <a href="#contact" class="btn">Get Home Buying Advice</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="homebuyer-hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Buying a Home in Buffalo, NY</h1>
+                <p class="fade-in">Discover why Buffalo is one of America's best-kept secrets for homeownership and quality living.</p>
+                <div class="hero-actions fade-in">
+                    <a href="#why-buffalo" class="btn btn-accent">Why Choose Buffalo</a>
+                    <a href="#neighborhoods" class="btn">Explore Neighborhoods</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Home Value Growth</h3>
+                        <div class="stat-number">+32%</div>
+                        <p>Average home value increase over 5 years</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Affordable Prices</h3>
+                        <div class="stat-number">$250K</div>
+                        <p>Median home price in Buffalo</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Job Growth</h3>
+                        <div class="stat-number">+15%</div>
+                        <p>Tech & healthcare employment growth</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Education</h3>
+                        <div class="stat-number">20+</div>
+                        <p>Colleges & universities in region</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Buffalo Section -->
+    <section class="why-buffalo" id="why-buffalo">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose Buffalo?</h2>
+            <p class="section-subtitle fade-in">Discover what makes Buffalo an exceptional place to call home</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Affordable Housing</h3>
+                    <p>Significantly more affordable than major metros with similar amenities and quality of life.</p>
+                    <div class="comparison">
+                        <div class="city-price">
+                            <span>Buffalo</span>
+                            <strong>$250K</strong>
+                        </div>
+                        <div class="city-price">
+                            <span>Boston</span>
+                            <strong>$650K</strong>
+                        </div>
+                        <div class="city-price">
+                            <span>NYC</span>
+                            <strong>$850K</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Strong Job Market</h3>
+                    <p>Growing tech, healthcare, and education sectors with opportunities at major employers.</p>
+                    <ul class="employer-list">
+                        <li><i class="fas fa-hospital"></i> Kaleida Health</li>
+                        <li><i class="fas fa-university"></i> University at Buffalo</li>
+                        <li><i class="fas fa-industry"></i> M&T Bank</li>
+                        <li><i class="fas fa-flask"></i> Roswell Park</li>
+                    </ul>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-theater-masks"></i>
+                    </div>
+                    <h3>Rich Cultural Scene</h3>
+                    <p>World-class museums, theaters, music venues, and festivals year-round.</p>
+                    <div class="highlights">
+                        <span class="highlight">Albright-Knox Art Gallery</span>
+                        <span class="highlight">Shea's Performing Arts</span>
+                        <span class="highlight">Buffalo Philharmonic</span>
+                        <span class="highlight">Shakespeare in Delaware Park</span>
+                    </div>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Excellent Education</h3>
+                    <p>Top-rated public schools and access to renowned universities and colleges.</p>
+                    <div class="education-list">
+                        <div class="school">
+                            <strong>University at Buffalo</strong>
+                            <span>Top public research university</span>
+                        </div>
+                        <div class="school">
+                            <strong>Buffalo State</strong>
+                            <span>Comprehensive college</span>
+                        </div>
+                        <div class="school">
+                            <strong>Canisius College</strong>
+                            <span>Private Jesuit institution</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Low Cost of Living</h3>
+                    <p>Enjoy a high quality of life without the high price tag of coastal cities.</p>
+                    <div class="cost-breakdown">
+                        <div class="cost-item">
+                            <span>Housing Costs</span>
+                            <div class="cost-bar">
+                                <div class="bar-fill" style="width: 40%;"></div>
+                            </div>
+                            <span>40% below national avg</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Utilities</span>
+                            <div class="cost-bar">
+                                <div class="bar-fill" style="width: 60%;"></div>
+                            </div>
+                            <span>20% below national avg</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Transportation</span>
+                            <div class="cost-bar">
+                                <div class="bar-fill" style="width: 50%;"></div>
+                            </div>
+                            <span>25% below national avg</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="benefit-card fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Prime Location</h3>
+                    <p>Strategic location with easy access to major cities and natural wonders.</p>
+                    <div class="location-distances">
+                        <div class="distance-item">
+                            <i class="fas fa-water"></i>
+                            <div>
+                                <strong>Niagara Falls</strong>
+                                <span>20 minutes</span>
+                            </div>
+                        </div>
+                        <div class="distance-item">
+                            <i class="fas fa-flag"></i>
+                            <div>
+                                <strong>Toronto, Canada</strong>
+                                <span>2 hours</span>
+                            </div>
+                        </div>
+                        <div class="distance-item">
+                            <i class="fas fa-city"></i>
+                            <div>
+                                <strong>New York City</strong>
+                                <span>1 hour flight</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Neighborhoods Section -->
+    <section class="neighborhoods-section" id="neighborhoods">
+        <div class="container">
+            <h2 class="section-title fade-in">Popular Neighborhoods</h2>
+            <p class="section-subtitle fade-in">Find the perfect neighborhood that matches your lifestyle</p>
+            
+            <div class="neighborhoods-grid">
+                <!-- Elmwood Village -->
+                <div class="neighborhood-card fade-in">
+                    <div class="neighborhood-image">
+                        <img src="https://images.unsplash.com/photo-1541432901047-7c7c5f1c4b6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elmwood Village">
+                        <div class="neighborhood-badge">Most Popular</div>
+                    </div>
+                    <div class="neighborhood-content">
+                        <h3>Elmwood Village</h3>
+                        <p class="neighborhood-desc">Historic district known for its vibrant arts scene, boutique shopping, and diverse dining options.</p>
+                        
+                        <div class="neighborhood-stats">
+                            <div class="stat">
+                                <i class="fas fa-home"></i>
+                                <div>
+                                    <div class="stat-label">Home Prices</div>
+                                    <div class="stat-value">$250K - $400K</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-walking"></i>
+                                <div>
+                                    <div class="stat-label">Walk Score</div>
+                                    <div class="stat-value">92/100</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-subway"></i>
+                                <div>
+                                    <div class="stat-label">Transit Score</div>
+                                    <div class="stat-value">78/100</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="neighborhood-highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Art galleries & boutiques</li>
+                                <li>Farmers markets</li>
+                                <li>Historic architecture</li>
+                                <li>Proximity to Delaware Park</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- North Buffalo -->
+                <div class="neighborhood-card fade-in">
+                    <div class="neighborhood-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="North Buffalo">
+                    </div>
+                    <div class="neighborhood-content">
+                        <h3>North Buffalo</h3>
+                        <p class="neighborhood-desc">Family-friendly area with excellent schools, parks, and a strong sense of community.</p>
+                        
+                        <div class="neighborhood-stats">
+                            <div class="stat">
+                                <i class="fas fa-home"></i>
+                                <div>
+                                    <div class="stat-label">Home Prices</div>
+                                    <div class="stat-value">$200K - $350K</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-walking"></i>
+                                <div>
+                                    <div class="stat-label">Walk Score</div>
+                                    <div class="stat-value">75/100</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-subway"></i>
+                                <div>
+                                    <div class="stat-label">Transit Score</div>
+                                    <div class="stat-value">65/100</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="neighborhood-highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Top-rated schools</li>
+                                <li>Hertel Avenue shopping</li>
+                                <li>Delaware Park access</li>
+                                <li>Family-oriented community</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Delaware District -->
+                <div class="neighborhood-card fade-in">
+                    <div class="neighborhood-image">
+                        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Delaware District">
+                    </div>
+                    <div class="neighborhood-content">
+                        <h3>Delaware District</h3>
+                        <p class="neighborhood-desc">Upscale neighborhood featuring historic mansions, tree-lined streets, and cultural institutions.</p>
+                        
+                        <div class="neighborhood-stats">
+                            <div class="stat">
+                                <i class="fas fa-home"></i>
+                                <div>
+                                    <div class="stat-label">Home Prices</div>
+                                    <div class="stat-value">$300K - $500K</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-walking"></i>
+                                <div>
+                                    <div class="stat-label">Walk Score</div>
+                                    <div class="stat-value">85/100</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-subway"></i>
+                                <div>
+                                    <div class="stat-label">Transit Score</div>
+                                    <div class="stat-value">70/100</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="neighborhood-highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Historic architecture</li>
+                                <li>Delaware Park frontage</li>
+                                <li>Albright-Knox Art Gallery</li>
+                                <li>Historic Society Museum</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allentown -->
+                <div class="neighborhood-card fade-in">
+                    <div class="neighborhood-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Allentown">
+                        <div class="neighborhood-badge">Arts District</div>
+                    </div>
+                    <div class="neighborhood-content">
+                        <h3>Allentown</h3>
+                        <p class="neighborhood-desc">Bohemian arts district with vibrant nightlife, music venues, and historic Victorian homes.</p>
+                        
+                        <div class="neighborhood-stats">
+                            <div class="stat">
+                                <i class="fas fa-home"></i>
+                                <div>
+                                    <div class="stat-label">Home Prices</div>
+                                    <div class="stat-value">$220K - $380K</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-walking"></i>
+                                <div>
+                                    <div class="stat-label">Walk Score</div>
+                                    <div class="stat-value">95/100</div>
+                                </div>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-subway"></i>
+                                <div>
+                                    <div class="stat-label">Transit Score</div>
+                                    <div class="stat-value">82/100</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="neighborhood-highlights">
+                            <h4>Highlights:</h4>
+                            <ul>
+                                <li>Music venues & galleries</li>
+                                <li>Historic Victorian homes</li>
+                                <li>Restaurants & bars</li>
+                                <li>First Friday gallery walks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try Before You Buy Section -->
+    <section class="try-before-buy" id="try-before-buy">
+        <div class="container">
+            <div class="try-content fade-in">
+                <div class="try-text">
+                    <h2>Try Before You Buy</h2>
+                    <p>Considering relocating to Buffalo? Stay in one of our corporate housing units to explore neighborhoods and get a feel for the city before making your home purchase decision.</p>
+                    
+                    <div class="try-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <div>
+                                <h4>Explore Neighborhoods</h4>
+                                <p>Experience different areas firsthand before committing</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <h4>No Long-Term Commitment</h4>
+                                <p>Flexible stays from 30 days to several months</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-handshake"></i>
+                            <div>
+                                <h4>Local Expertise</h4>
+                                <p>Get insider advice on neighborhoods and home buying</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="try-cta">
+                        <a href="tel:7162716555" class="btn btn-accent">
+                            <i class="fas fa-phone"></i> Call Us: 716-271-6555
+                        </a>
+                        <a href="property-listings.html" class="btn">
+                            View Available Units
+                        </a>
+                    </div>
+                </div>
+                <div class="try-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Buffalo Neighborhood">
+                    <div class="image-caption">
+                        <i class="fas fa-quote-left"></i>
+                        <p style="color: aliceblue;">"Staying with 716 Corporate Housing helped us find our perfect neighborhood before buying."</p>
+                        <span>- Sarah & Mark, Recent Homebuyers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Home Buying Process -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <h2 class="section-title fade-in">Your Buffalo Home Buying Journey</h2>
+            <p class="section-subtitle fade-in">We're here to help every step of the way</p>
+            
+            <div class="process-timeline">
+                <div class="process-step fade-in">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Exploration Stay</h3>
+                        <p>Book a flexible-term stay with us to explore Buffalo neighborhoods and get a feel for the city.</p>
+                        <a href="index.html#intake-form" class="step-link">Request a Stay</a>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Neighborhood Discovery</h3>
+                        <p>Use our local expertise to identify neighborhoods that match your lifestyle and budget.</p>
+                        <a href="#neighborhoods" class="step-link">Explore Neighborhoods</a>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Mortgage Pre-Approval</h3>
+                        <p>Connect with our trusted local lenders to get pre-approved for your Buffalo home.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Home Search</h3>
+                        <p>Work with our recommended real estate agents to find your perfect Buffalo home.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step fade-in">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Close & Move In</h3>
+                        <p>Complete your purchase and settle into your new Buffalo home with our welcome assistance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="homebuyer-contact" id="contact">
+        <div class="container">
+            <div class="contact-wrapper fade-in">
+                <div class="contact-info">
+                    <h2>Start Your Buffalo Journey</h2>
+                    <p>Ready to explore homeownership in Buffalo? Contact us for personalized assistance and recommendations.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Call or Text</h4>
+                                <a href="tel:7162716555">716-271-6555</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:homes@716corporatehousing.com">homes@716corporatehousing.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Availability</h4>
+                                <span>Mon-Fri: 9am-7pm</span>
+                                <span>Sat-Sun: 10am-4pm</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-note">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>Ask about our "Try Before You Buy" program for flexible temporary housing while you search for your permanent home.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Get Personalized Advice</h3>
+                    <form id="homebuyer-form">
+                        <div class="form-group">
+                            <label for="hb-name">Name *</label>
+                            <input type="text" id="hb-name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hb-phone">Phone *</label>
+                            <input type="tel" id="hb-phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hb-email">Email *</label>
+                            <input type="email" id="hb-email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hb-timeline">When are you planning to move?</label>
+                            <select id="hb-timeline" name="timeline">
+                                <option value="">Select timeline</option>
+                                <option value="immediate">Immediately</option>
+                                <option value="1-3">1-3 months</option>
+                                <option value="3-6">3-6 months</option>
+                                <option value="6-12">6-12 months</option>
+                                <option value="exploring">Just exploring</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hb-budget">Home Budget</label>
+                            <select id="hb-budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="200-300">$200K - $300K</option>
+                                <option value="300-400">$300K - $400K</option>
+                                <option value="400-500">$400K - $500K</option>
+                                <option value="500-plus">$500K+</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hb-interests">What's most important to you?</label>
+                            <select id="hb-interests" name="interests">
+                                <option value="">Select priority</option>
+                                <option value="schools">Schools & Family</option>
+                                <option value="urban">Urban Living</option>
+                                <option value="investment">Investment Potential</option>
+                                <option value="commute">Easy Commute</option>
+                                <option value="lifestyle">Lifestyle & Amenities</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="hb-message">Additional Notes</label>
+                            <textarea id="hb-message" name="message" placeholder="Tell us about your home search..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-accent">Get Buffalo Home Advice</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column fade-in">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Premium furnished housing for travel professionals in Buffalo, NY.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#properties"><i class="fas fa-chevron-right"></i> Our Units</a></li>
+                        <li><a href="things-to-do.html"><i class="fas fa-chevron-right"></i> Things to Do</a></li>
+                        <li><a href="#why-buffalo"><i class="fas fa-chevron-right"></i> Why Buffalo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Buffalo, NY</a></li>
+                        <li><a href="tel:7162716555"><i class="fas fa-phone"></i> 716-271-6555</a></li>
+                        <li><a href="mailto:info@716corporatehousing.com"><i class="fas fa-envelope"></i> info@716corporatehousing.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 716 Corporate Housing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+   <!-- Floating Text Widget -->
+    <div class="floating-text">
+        <i class="fas fa-comment-alt"></i> Text Us Now: 716-271-6555
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Buffalo Home Buying Advice</p>
+                </div>
+                <div class="chat-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    Interested in buying a home in Buffalo? Ask me about neighborhoods, prices, or our "Try Before You Buy" program!
+                    <div class="chat-time">Just now</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Ask about Buffalo real estate...">
+                <button class="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="mobilenav.js"></script>
+    <script>
+        // Home Buying Page Specific Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Intersection Observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all fade-in elements
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Form submission
+            const homebuyerForm = document.getElementById('homebuyer-form');
+            if (homebuyerForm) {
+                homebuyerForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form data
+                    const formData = {
+                        name: document.getElementById('hb-name').value,
+                        phone: document.getElementById('hb-phone').value,
+                        email: document.getElementById('hb-email').value,
+                        timeline: document.getElementById('hb-timeline').value,
+                        budget: document.getElementById('hb-budget').value,
+                        interests: document.getElementById('hb-interests').value,
+                        message: document.getElementById('hb-message').value
+                    };
+                    
+                    // Simple validation
+                    if (!formData.name || !formData.phone || !formData.email) {
+                        alert('Please fill in all required fields.');
+                        return;
+                    }
+                    
+                    // Show success message (in a real implementation, this would send to a server)
+                    alert('Thank you! We\'ll contact you within 24 hours with personalized Buffalo home buying advice.');
+                    homebuyerForm.reset();
+                    
+                    // Scroll to top of form
+                    homebuyerForm.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            
+            // Simple chat functionality
+            const chatButton = document.querySelector('.chat-button');
+            const chatBox = document.querySelector('.chat-box');
+            const chatClose = document.querySelector('.chat-close');
+            const chatSend = document.querySelector('.chat-send');
+            const chatInput = document.querySelector('.chat-input input');
+            
+            if (chatButton) {
+                chatButton.addEventListener('click', function() {
+                    chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+                });
+            }
+            
+            if (chatClose) {
+                chatClose.addEventListener('click', function() {
+                    chatBox.style.display = 'none';
+                });
+            }
+            
+            if (chatSend && chatInput) {
+                chatSend.addEventListener('click', sendChatMessage);
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') sendChatMessage();
+                });
+            }
+            
+            function sendChatMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    // Add user message
+                    const userMessage = document.createElement('div');
+                    userMessage.className = 'chat-message user-message';
+                    userMessage.innerHTML = `
+                        <div class="message-content">${message}</div>
+                        <div class="chat-time">Just now</div>
+                    `;
+                    document.querySelector('.chat-body').appendChild(userMessage);
+                    
+                    // Clear input
+                    chatInput.value = '';
+                    
+                    // Scroll to bottom
+                    const chatBody = document.querySelector('.chat-body');
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                    
+                    // Simulate bot response about home buying
+                    setTimeout(() => {
+                        const responses = [
+                            "Great question! Elmwood Village is popular for its walkability and arts scene. North Buffalo is more family-oriented with great schools.",
+                            "Median home prices in Buffalo range from $250K-$400K depending on the neighborhood. That's much more affordable than most major cities!",
+                            "Our 'Try Before You Buy' program lets you stay in different neighborhoods before making a decision. Want to learn more?",
+                            "I recommend checking out Delaware District for historic homes or Allentown for a vibrant arts community.",
+                            "Need specific neighborhood recommendations? Call us at 716-271-6555 for personalized advice!"
+                        ];
+                        
+                        const botMessage = document.createElement('div');
+                        botMessage.className = 'chat-message bot-message';
+                        botMessage.innerHTML = `
+                            <div class="message-content">${responses[Math.floor(Math.random() * responses.length)]}</div>
+                            <div class="chat-time">Just now</div>
+                        `;
+                        document.querySelector('.chat-body').appendChild(botMessage);
+                        
+                        // Scroll to bottom
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                    }, 1000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

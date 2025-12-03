@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | 716 Corporate Housing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/testimonials.css">
+</head>
+<body>
+   <header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="716 Corporate Housing" class="logo-image">           
+            <span>716 Corporate Housing</span>
+        </div>
+        
+        <!-- Desktop Navigation - Section Links Only -->
+        <nav class="nav-links desktop-nav section-nav">
+            <ul class="section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#featured" data-section="featured">Featured Stories</a></li>
+                <li><a href="#all-testimonials" data-section="all-testimonials">All Reviews</a></li>
+                <li><a href="#stats" data-section="stats">Statistics</a></li>
+                <li><a href="#share" data-section="share">Share Your Story</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+        <button class="mobile-menu" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+<nav class="mobile-nav-menu" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="mobile-logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
+        </div>
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <!-- Make sure this has proper vertical layout -->
+    <div class="mobile-nav-content">
+        <!-- Main Navigation Section -->
+        <div class="mobile-nav-section">
+            <h3>Main Navigation</h3>
+            <ul class="mobile-nav-links main-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="property-listings.html">Available Units</a></li>
+                <li><a href="things-to-do.html">Things to do</a></li>
+                <li><a href="buying-a-home.html">Buying a home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="testimonials.html" class="active">Testimonials</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="furnishing-services.html">Furnishing Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="property-management.html">Add Property</a></li>
+                <li><a href="review-management.html">Review</a></li>                
+            </ul>
+        </div>
+        
+        <!-- Section Navigation for Current Page -->
+        <div class="mobile-nav-section">
+            <h3>On This Page</h3>
+            <ul class="mobile-nav-links section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#featured" data-section="featured">Featured Stories</a></li>
+                <li><a href="#all-testimonials" data-section="all-testimonials">All Reviews</a></li>
+                <li><a href="#stats" data-section="stats">Statistics</a></li>
+                <li><a href="#share" data-section="share">Share Your Story</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Actions -->
+        <div class="mobile-nav-actions">
+            <a href="tel:7162716555" class="btn btn-accent">
+                <i class="fas fa-phone"></i> 716-271-6555
+            </a>
+            <a href="#share" class="btn">Share Your Review</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="testimonials-hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">What Our Guests Say</h1>
+                <p class="fade-in">Don't just take our word for it. Here's what travel professionals say about their experience with 716 Corporate Housing.</p>
+                <div class="hero-stats fade-in">
+                    <div class="stat">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Guests</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Would Recommend</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Testimonials -->
+    <section class="featured-testimonials" id="featured">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Stories</h2>
+            <p class="section-subtitle fade-in">Real experiences from our valued guests</p>
+            
+            <div class="featured-grid">
+                <!-- Travel Nurse Story -->
+                <div class="story-card fade-in">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Travel Nurse">
+                        <div class="story-badge">Healthcare</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>From Travel Nurse to Buffalo Local</h3>
+                        <p class="story-desc">How Sarah found a home away from home during her critical care assignment at Buffalo General Hospital.</p>
+                        <div class="story-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"As a travel nurse, I've stayed in corporate housing across the country. 716 Corporate Housing exceeded my expectations. The apartment was spotless, fully equipped, and in a great neighborhood. Made my 3-month assignment feel like home!"</p>
+                        </div>
+                        <div class="story-author">
+                            <div class="author-info">
+                                <strong>Dr. Sarah Mitchell</strong>
+                                <span>Travel Nurse - Buffalo General</span>
+                            </div>
+                            <div class="author-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Corporate Consultant Story -->
+                <div class="story-card fade-in">
+                    <div class="story-image">
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Software Consultant">
+                        <div class="story-badge">Corporate</div>
+                    </div>
+                    <div class="story-content">
+                        <h3>Seamless Project Transition</h3>
+                        <p class="story-desc">James's experience with hassle-free housing during his extended tech project in Buffalo.</p>
+                        <div class="story-quote">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"I needed housing for a 6-month project in Buffalo. The team at 716 Corporate Housing made everything so easy. From booking to move-out, the service was exceptional. The WiFi was fast, the location was perfect, and I didn't have to worry about a thing."</p>
+                        </div>
+                        <div class="story-author">
+                            <div class="author-info">
+                                <strong>James Chen</strong>
+                                <span>Software Consultant</span>
+                            </div>
+                            <div class="author-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Testimonials -->
+    <section class="all-testimonials" id="all-testimonials">
+        <div class="container">
+            <div class="testimonials-header fade-in">
+                <h2 class="section-title">Guest Reviews</h2>
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All Reviews</button>
+                    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-btn" data-filter="corporate">Corporate</button>
+                    <button class="filter-btn" data-filter="academic">Academic</button>
+                    <button class="filter-btn" data-filter="other">Other</button>
+                </div>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card fade-in" data-category="healthcare">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>SM</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Dr. Sarah Mitchell</div>
+                            <div class="review-profession">Travel Nurse - Buffalo General</div>
+                            <div class="review-date">March 15, 2024</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"As a travel nurse, I've stayed in corporate housing across the country. 716 Corporate Housing exceeded my expectations. The apartment was spotless, fully equipped, and in a great neighborhood. Made my 3-month assignment feel like home!"</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Fully Furnished</span>
+                        <span class="tag">Great Location</span>
+                        <span class="tag">Spotless Clean</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card fade-in" data-category="corporate">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>JC</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">James Chen</div>
+                            <div class="review-profession">Software Consultant</div>
+                            <div class="review-date">February 28, 2024</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"I needed housing for a 6-month project in Buffalo. The team at 716 Corporate Housing made everything so easy. From booking to move-out, the service was exceptional. The WiFi was fast, the location was perfect, and I didn't have to worry about a thing."</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Easy Process</span>
+                        <span class="tag">Fast WiFi</span>
+                        <span class="tag">Perfect Location</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card fade-in" data-category="academic">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>ER</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Dr. Emily Rodriguez</div>
+                            <div class="review-profession">Visiting Research Professor</div>
+                            <div class="review-date">January 20, 2024</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"Relocating from California for a year-long research position, I was worried about finding suitable housing. 716 Corporate Housing provided a beautiful, comfortable home close to the university. Their attention to detail made my transition seamless."</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Comfortable</span>
+                        <span class="tag">Close to Campus</span>
+                        <span class="tag">Attention to Detail</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card fade-in" data-category="healthcare">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>MT</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Michael Thompson</div>
+                            <div class="review-profession">Physical Therapist</div>
+                            <div class="review-date">December 10, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"This was my first travel assignment and I was nervous about finding the right place. The staff was incredibly helpful and patient with all my questions. The apartment had everything I needed and more. Highly recommend!"</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Helpful Staff</span>
+                        <span class="tag">Well-Equipped</span>
+                        <span class="tag">First Time Friendly</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card fade-in" data-category="corporate">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>LA</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Lisa Anderson</div>
+                            <div class="review-profession">Corporate Relocation - IBM</div>
+                            <div class="review-date">November 5, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-building"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"Our company has used 716 Corporate Housing for multiple employee relocations. They consistently deliver quality housing, excellent service, and make the entire process stress-free for our team members."</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Corporate Partner</span>
+                        <span class="tag">Stress-Free</span>
+                        <span class="tag">Consistent Quality</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card fade-in" data-category="healthcare">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>RK</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Dr. Robert Kim</div>
+                            <div class="review-profession">Locum Physician</div>
+                            <div class="review-date">October 18, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"I've worked with many corporate housing providers over my 10 years as a locum physician. 716 Corporate Housing stands out for their responsiveness, quality properties, and genuine care for their guests. The best in Buffalo!"</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Experienced Traveler</span>
+                        <span class="tag">Responsive</span>
+                        <span class="tag">Quality Properties</span>
+                    </div>
+                </div>
+
+                <!-- Additional testimonials for variety -->
+                <div class="testimonial-card fade-in" data-category="academic">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>DJ</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">David Johnson</div>
+                            <div class="review-profession">PhD Student - UB</div>
+                            <div class="review-date">September 22, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-microscope"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"As a graduate student on a tight budget, finding quality housing in Buffalo was challenging. 716 Corporate Housing offered an affordable, fully-furnished option that allowed me to focus on my research. The location near campus was perfect!"</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Affordable</span>
+                        <span class="tag">Student-Friendly</span>
+                        <span class="tag">Campus Proximity</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in" data-category="corporate">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>MP</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Maria Perez</div>
+                            <div class="review-profession">Project Manager</div>
+                            <div class="review-date">August 15, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"The flexibility of lease terms was exactly what our team needed for a variable-length project. Professional service, clean properties, and excellent communication throughout our stay. Will definitely use again for future projects."</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Flexible Terms</span>
+                        <span class="tag">Professional</span>
+                        <span class="tag">Excellent Communication</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in" data-category="healthcare">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>KW</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Kevin Williams</div>
+                            <div class="review-profession">Travel Respiratory Therapist</div>
+                            <div class="review-date">July 30, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-lungs"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"After long shifts at the hospital, coming home to a comfortable, well-equipped apartment made all the difference. The management team was always responsive, and the utilities being included saved me so much hassle. Highly recommended for healthcare travelers!"</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Comfortable</span>
+                        <span class="tag">All Utilities Included</span>
+                        <span class="tag">Responsive Management</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in" data-category="other">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>TG</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Tara Green</div>
+                            <div class="review-profession">Government Contractor</div>
+                            <div class="review-date">June 12, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span>4.5</span>
+                    </div>
+                    <div class="review-text">
+                        <p>"Working on a government contract in Buffalo, I needed secure, reliable housing. 716 Corporate Housing provided excellent accommodations with all the necessary amenities. The process was straightforward, and the team was professional throughout."</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Secure</span>
+                        <span class="tag">Reliable</span>
+                        <span class="tag">Professional</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in" data-category="academic">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>AB</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Alex Brown</div>
+                            <div class="review-profession">Postdoctoral Researcher</div>
+                            <div class="review-date">May 5, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"Moving from Europe for a research fellowship was daunting, but 716 Corporate Housing made it easy. The fully furnished apartment meant I didn't need to buy anything. Great location, quiet neighborhood, and excellent support when needed."</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">International Move</span>
+                        <span class="tag">Quiet Neighborhood</span>
+                        <span class="tag">Excellent Support</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in" data-category="healthcare">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <span>NM</span>
+                        </div>
+                        <div class="review-info">
+                            <div class="review-name">Nurse Martinez</div>
+                            <div class="review-profession">Emergency Room Nurse</div>
+                            <div class="review-date">April 18, 2023</div>
+                        </div>
+                        <div class="review-source">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="review-text">
+                        <p>"As an ER nurse working nights, I needed a quiet place to sleep during the day. My apartment was perfect - peaceful, dark curtains, and in a safe neighborhood. The management understood healthcare schedules and were always accommodating."</p>
+                    </div>
+                    <div class="review-tags">
+                        <span class="tag">Quiet</span>
+                        <span class="tag">Safe Neighborhood</span>
+                        <span class="tag">Healthcare Schedule Friendly</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="load-more fade-in">
+                <button class="btn btn-accent" id="loadMore">Load More Testimonials</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="testimonial-stats" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Average Rating</h3>
+                        <div class="stat-number">4.9</div>
+                        <p>Out of 5 Stars</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Recommendation Rate</h3>
+                        <div class="stat-number">98%</div>
+                        <p>Would Recommend</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Properties Rated</h3>
+                        <div class="stat-number">25+</div>
+                        <p>Different Locations</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card fade-in">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3>Average Stay</h3>
+                        <div class="stat-number">4.2</div>
+                        <p>Months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Review CTA -->
+    <section class="review-cta" id="share">
+        <div class="container">
+            <div class="cta-content fade-in">
+                <div class="cta-text">
+                    <h2>Share Your Experience</h2>
+                    <p>We value your feedback! Share your experience with 716 Corporate Housing and help other travel professionals make informed decisions.</p>
+                    
+                    <div class="cta-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-gift"></i>
+                            <div>
+                                <h4>Referral Bonus</h4>
+                                <p>Earn rewards for referring friends and colleagues</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-comment-dots"></i>
+                            <div>
+                                <h4>Help Others</h4>
+                                <p>Your review helps fellow travel professionals</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-star"></i>
+                            <div>
+                                <h4>Be Featured</h4>
+                                <p>Great reviews may be featured on our site</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cta-form fade-in">
+                    <h3>Leave Your Review</h3>
+                    <form id="review-form">
+                        <div class="form-group">
+                            <label for="reviewer-name">Your Name *</label>
+                            <input type="text" id="reviewer-name" name="reviewer_name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="reviewer-profession">Profession/Title</label>
+                            <input type="text" id="reviewer-profession" name="reviewer_profession" placeholder="Travel Nurse, Consultant, etc.">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-rating">Rating *</label>
+                            <div class="star-rating">
+                                <input type="radio" id="star5" name="rating" value="5" required>
+                                <label for="star5" title="5 stars">
+                                    <i class="fas fa-star"></i>
+                                </label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4" title="4 stars">
+                                    <i class="fas fa-star"></i>
+                                </label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3" title="3 stars">
+                                    <i class="fas fa-star"></i>
+                                </label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2" title="2 stars">
+                                    <i class="fas fa-star"></i>
+                                </label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1" title="1 star">
+                                    <i class="fas fa-star"></i>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-text">Your Review *</label>
+                            <textarea id="review-text" name="review_text" required placeholder="Tell us about your experience..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="review-tags">What stood out? (Select up to 3)</label>
+                            <div class="tag-options">
+                                <input type="checkbox" id="tag-clean" name="tags[]" value="Clean">
+                                <label for="tag-clean">Cleanliness</label>
+                                
+                                <input type="checkbox" id="tag-location" name="tags[]" value="Location">
+                                <label for="tag-location">Location</label>
+                                
+                                <input type="checkbox" id="tag-furnished" name="tags[]" value="Fully Furnished">
+                                <label for="tag-furnished">Fully Furnished</label>
+                                
+                                <input type="checkbox" id="tag-service" name="tags[]" value="Service">
+                                <label for="tag-service">Service</label>
+                                
+                                <input type="checkbox" id="tag-communication" name="tags[]" value="Communication">
+                                <label for="tag-communication">Communication</label>
+                                
+                                <input type="checkbox" id="tag-value" name="tags[]" value="Value">
+                                <label for="tag-value">Value</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="featured-consent" name="featured_consent">
+                            <label for="featured-consent">I'm open to having my review featured on the website</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-accent">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column fade-in">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Premium furnished housing for travel professionals in Buffalo, NY.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#properties"><i class="fas fa-chevron-right"></i> Our Units</a></li>
+                        <li><a href="things-to-do.html"><i class="fas fa-chevron-right"></i> Things to Do</a></li>
+                        <li><a href="buying-a-home.html"><i class="fas fa-chevron-right"></i> Buying a Home</a></li>
+                        <li><a href="#all-testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Buffalo, NY</a></li>
+                        <li><a href="tel:7162716555"><i class="fas fa-phone"></i> 716-271-6555</a></li>
+                        <li><a href="mailto:info@716corporatehousing.com"><i class="fas fa-envelope"></i> info@716corporatehousing.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 716 Corporate Housing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+       <!-- Floating Text Widget -->
+    <div class="floating-text">
+        <i class="fas fa-comment-alt"></i> Text Us Now: 716-271-6555
+    </div>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Questions? We're here!</p>
+                </div>
+                <div class="chat-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    Have questions about our reviews or want to share your experience? We'd love to hear from you!
+                    <div class="chat-time">Just now</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Ask about our reviews...">
+                <button class="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="mobilenav.js"></script>
+    <script src="js/testimonialpage.js"></script>
+</body>
+</html>

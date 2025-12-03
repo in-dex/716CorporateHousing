@@ -483,7 +483,7 @@
     object-fit: cover;
 }
 
-.property-card-badge {
+/* .property-card-badge {
     position: absolute;
     top: 15px;
     left: 15px;
@@ -493,7 +493,7 @@
     border-radius: 15px;
     font-size: 0.8rem;
     font-weight: 600;
-}
+} */
 
 .property-card-actions {
     position: absolute;
@@ -800,9 +800,10 @@
     margin: 0;
 }
 
-/* Table View Styles */
+/* Enhanced Table View Styles - FLUID & RESPONSIVE */
 .properties-table {
     margin-top: 20px;
+    width: 100%;
 }
 
 .table-container {
@@ -811,11 +812,16 @@
     border: 1px solid var(--border-gray);
     overflow: hidden;
     box-shadow: var(--shadow);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
+/* Table Structure */
 .properties-table table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .properties-table th {
@@ -825,26 +831,60 @@
     font-weight: 600;
     color: var(--dark);
     border-bottom: 1px solid var(--border-gray);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .properties-table td {
     padding: 15px 20px;
     border-bottom: 1px solid var(--border-gray);
     vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .properties-table tr:last-child td {
     border-bottom: none;
 }
 
-.properties-table tr:hover {
-    background: var(--bg-gray);
+/* Column Widths - Desktop */
+.properties-table th:nth-child(1),
+.properties-table td:nth-child(1) {
+    width: 30%;
 }
 
+.properties-table th:nth-child(2),
+.properties-table td:nth-child(2) {
+    width: 20%;
+}
+
+.properties-table th:nth-child(3),
+.properties-table td:nth-child(3) {
+    width: 15%;
+}
+
+.properties-table th:nth-child(4),
+.properties-table td:nth-child(4) {
+    width: 10%;
+}
+
+.properties-table th:nth-child(5),
+.properties-table td:nth-child(5) {
+    width: 20%;
+}
+
+.properties-table th:nth-child(6),
+.properties-table td:nth-child(6) {
+    width: 30%;
+}
+
+/* Table Content */
 .table-property-info {
     display: flex;
     align-items: center;
     gap: 15px;
+    min-width: 0;
 }
 
 .table-property-image {
@@ -852,38 +892,465 @@
     height: 60px;
     border-radius: 8px;
     object-fit: cover;
+    flex-shrink: 0;
+}
+
+.table-property-details {
+    min-width: 0;
+    flex: 1;
 }
 
 .table-property-details h4 {
     margin: 0 0 5px 0;
     color: var(--dark);
     font-size: 1rem;
+    line-height: 1.3;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .table-property-details p {
     margin: 0;
     color: var(--text-gray);
     font-size: 0.85rem;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+/* Table Actions */
 .table-actions {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
 }
 
+.table-actions .btn-sm {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Actions Row */
+.table-actions-mobile {
+    display: none;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-gray);
+    justify-content: center;
+}
+
+/* Table Badge */
 .table-badge {
     display: inline-block;
-    padding: 4px 10px;
-    background: var(--primary-light);
-    color: var(--dark);
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 
-/* Properties Display Area */
-.properties-display {
-    margin-top: 30px;
+/* ===== TABLE ROW SEPARATORS ===== */
+.properties-table tbody tr {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.properties-table tbody tr:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--border-gray) 15%, 
+        var(--border-gray) 85%, 
+        transparent
+    );
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.properties-table tbody tr:hover {
+    background: linear-gradient(90deg, 
+        rgba(255, 140, 0, 0.02) 0%, 
+        rgba(255, 140, 0, 0.05) 50%, 
+        rgba(255, 140, 0, 0.02) 100%
+    );
+}
+
+.properties-table tbody tr:hover::after {
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--primary) 15%, 
+        var(--primary) 85%, 
+        transparent
+    );
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.2);
+    transform: scaleX(1.02);
+}
+
+/* ===== MOBILE-ONLY ELEMENTS ===== */
+.mobile-badge-container {
+    display: none;
+    margin-top: 10px;
+}
+
+.mobile-badge-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.mobile-badge {
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.mobile-price-badge {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.mobile-status-badge {
+    color: white;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablet (901px) - Hide Location column */
+@media screen and (max-width: 900px) {
+    .properties-table th:nth-child(2),
+    .properties-table td:nth-child(2) {
+        display: none;
+    }
+    
+    .properties-table th:nth-child(1),
+    .properties-table td:nth-child(1) {
+        width: 30%;
+    }
+    
+    .properties-table th:nth-child(3),
+    .properties-table td:nth-child(3) {
+        width: 20%;
+    }
+    
+    .properties-table th:nth-child(4),
+    .properties-table td:nth-child(4) {
+        width: 20%;
+    }
+    
+    .properties-table th:nth-child(5),
+    .properties-table td:nth-child(5) {
+        width: 25%;
+    }
+    
+    .properties-table th:nth-child(6),
+    .properties-table td:nth-child(6) {
+        width: 15%;
+    }
+}
+
+/* Small Tablet (768px) - Hide Bed/Bath column */
+@media screen and (max-width: 768px) {
+    .properties-table th:nth-child(3),
+    .properties-table td:nth-child(3) {
+        display: none;
+    }
+
+    .properties-table th:nth-child(4),
+    .properties-table td:nth-child(4) {
+        display: none;
+    }
+    
+    .properties-table th:nth-child(1),
+    .properties-table td:nth-child(1) {
+        width: 45%;
+    }
+    
+    
+    .properties-table th:nth-child(5),
+    .properties-table td:nth-child(5) {
+        display: none;
+    }
+    
+    .properties-table th:nth-child(6),
+    .properties-table td:nth-child(6) {
+        width: 40%;
+    }
+    
+    .table-property-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .table-property-image {
+        width: 100%;
+        height: 100px;
+        object-fit: cover;
+    }
+    
+    .table-badge {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+    }
+}
+
+/* Mobile (641px) - Switch to mobile actions */
+@media screen and (max-width: 640px) {
+    /* Keep actions column visible */
+    .properties-table th:nth-child(6),
+    .properties-table td:nth-child(6) {
+        display: table-cell;
+        width: 40%; /* Give it more width */
+    }
+    
+    .properties-table th:nth-child(1),
+    .properties-table td:nth-child(1) {
+        width: 60%;
+    }
+    
+    /* Hide Price and Status columns instead */
+    .properties-table th:nth-child(4),
+    .properties-table td:nth-child(4) {
+       display: none;
+    }
+    
+    .properties-table th:nth-child(5),
+    .properties-table td:nth-child(5) {
+        display: none;
+    }
+    
+    .mobile-badge-container {
+        display: block;
+    }
+    
+    /* Make table actions responsive */
+    .properties-table .table-actions {
+        display: flex !important;
+        gap: 5px;
+        flex-wrap: nowrap;
+    }
+    
+    .properties-table .table-actions .btn-sm {
+        padding: 8px 10px;
+        min-width: 35px;
+    }
+    
+    /* Hide mobile actions since we're keeping desktop actions */
+    .table-actions-mobile {
+        display: none !important;
+    }
+}
+
+/* Medium Mobile (481px) - Hide Price column */
+@media screen and (max-width: 480px) {
+    .properties-table th:nth-child(4),
+    .properties-table td:nth-child(4) {
+        display: none;
+    }
+    
+    .properties-table th:nth-child(1),
+    .properties-table td:nth-child(1) {
+        width: 60%;
+    }
+    
+    .properties-table th:nth-child(5),
+    .properties-table td:nth-child(5) {
+        width: 40%;
+    }
+    
+    .table-property-info {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .table-property-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .table-actions-mobile {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .table-actions-mobile .btn-sm {
+        flex: 1;
+        min-width: 100px;
+        justify-content: center;
+        padding: 10px 15px;
+    }
+}
+
+/* Small Mobile (401px) - Hide Status column */
+@media screen and (max-width: 400px) {
+    .properties-table th:nth-child(5),
+    .properties-table td:nth-child(5) {
+        display: none;
+    }
+    
+    .properties-table th:nth-child(1),
+    .properties-table td:nth-child(1) {
+        width: 100%;
+    }
+    
+    .properties-table tr {
+        position: relative;
+        padding-bottom: 60px;
+    }
+    
+    .table-property-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .table-property-image {
+        width: 100%;
+        height: 120px;
+    }
+    
+    .table-actions-mobile {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        background: var(--light);
+        padding: 10px;
+        border-top: 1px solid var(--border-gray);
+        margin: 0;
+        flex-direction: column;
+    }
+    
+    .table-actions-mobile .btn-sm {
+        width: 100%;
+        margin: 2px 0;
+    }
+    
+    .mobile-badge-container {
+        margin-top: 15px;
+    }
+}
+
+/* Tiny Mobile (320px) - Compact view */
+@media screen and (max-width: 320px) {
+    .properties-table th,
+    .properties-table td {
+        padding: 10px 12px;
+    }
+    
+    .table-property-image {
+        height: 100px;
+    }
+    
+    .table-property-details h4 {
+        font-size: 0.9rem;
+    }
+    
+    .table-property-details p {
+        font-size: 0.75rem;
+    }
+    
+    .table-actions-mobile .btn-sm {
+        min-width: 80px;
+        font-size: 0.75rem;
+        padding: 8px 10px;
+    }
+    
+    .mobile-badge {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+    }
+}
+
+/* ===== STATUS BADGE CLASSES ===== */
+.status-ready-now     { background: linear-gradient(135deg, #28a745, #1e7e34); }
+.status-ready-soon    { background: linear-gradient(135deg, #ffc107, #e0a800); color: #212529; }
+.status-ask           { background: linear-gradient(135deg, #6c757d, #495057); }
+.status-for-rent      { background: linear-gradient(135deg, #28a745, #1e7e34); }
+.status-for-sale      { background: linear-gradient(135deg, #007bff, #0056b3); }
+.status-sold          { background: linear-gradient(135deg, #dc3545, #b02a37); }
+.status-under-offer   { background: linear-gradient(135deg, #fd7e14, #e65c00); }
+.status-rented        { background: linear-gradient(135deg, #343a40, #212529); }
+
+/* ===== NO PROPERTIES STATE ===== */
+.no-properties {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-gray);
+    display: none;
+}
+
+.no-properties i {
+    color: var(--light-gray);
+    margin-bottom: 20px;
+}
+
+.no-properties h3 {
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+/* ===== TOUCH-FRIENDLY IMPROVEMENTS ===== */
+@media screen and (max-width: 768px) {
+    .table-actions-mobile .btn-sm,
+    .table-actions .btn-sm {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .table-property-image {
+        cursor: pointer;
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .properties-table {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .table-container {
+        box-shadow: none !important;
+        border: 1px solid #000 !important;
+    }
+    
+    .properties-table th,
+    .properties-table td {
+        border: 1px solid #000 !important;
+        padding: 8px !important;
+        font-size: 10pt !important;
+        display: table-cell !important;
+        width: auto !important;
+    }
+    
+    .table-actions,
+    .table-actions-mobile,
+    .mobile-badge-container {
+        display: none !important;
+    }
 }
 
 /* Keep all your existing styles and add these responsive improvements */
@@ -1451,7 +1918,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.9);
     display: flex;
-    align-items: center;
+    align-items: flex;
     justify-content: center;
     z-index: 2000;
     opacity: 0;
@@ -1814,3 +2281,78 @@
         justify-content: center;
     }
 }
+
+/* Fully responsive grid (keeps your 4-column on desktop) */
+@media (max-width: 1200px) {
+    .properties-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+@media (max-width: 992px) {
+    .properties-grid {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+@media (max-width: 768px) {
+    .properties-grid {
+        grid-template-columns: 1fr;
+    }
+    .header-content {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .header-actions {
+        justify-content: stretch;
+    }
+    .modern-add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .form-row {
+        grid-template-columns: 1fr !important;
+    }
+    .quick-filters {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 2. Fix modal overflow on mobile */
+@media (max-width: 768px) {
+    .modal-header {
+        padding: 15px 20px;
+    }
+    .form-container {
+        padding: 20px;
+    }
+    .form-section {
+        padding: 20px;
+    }
+}
+
+/* 3. UPGRADED STATUS BADGES — just add one of these classes */
+.property-card-badge,
+.status-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    backdrop-filter: blur(4px);
+}
+
+/* Beautiful new status styles (use any of these) */
+.status-ready-now     { background: linear-gradient(135deg, #28a745, #1e7e34); color: white; }
+.status-ready-soon    { background: linear-gradient(135deg, #ffc107, #e0a800); color: #212529; }
+.status-ask           { background: linear-gradient(135deg, #6c757d, #495057); color: white; }
+.status-for-rent      { background: linear-gradient(135deg, #28a745, #1e7e34); color: white; }
+.status-for-sale      { background: linear-gradient(135deg, #007bff, #0056b3); color: white; }
+.status-sold          { background: linear-gradient(135deg, #dc3545, #b02a37); color: white; }
+.status-under-offer   { background: linear-gradient(135deg, #fd7e14, #e65c00); color: white; }
+.status-rented        { background: linear-gradient(135deg, #343a40, #212529); color: white; }
+

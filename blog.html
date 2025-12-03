@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buffalo Living Blog | 716 Corporate Housing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+<body>
+   <header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="logo.png" alt="716 Corporate Housing" class="logo-image">           
+            <!-- <span>716 Corporate Housing</span> -->
+        </div>
+        
+        <!-- Desktop Navigation - Section Links Only -->
+        <nav class="nav-links desktop-nav section-nav">
+            <ul class="section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#categories" data-section="categories">Categories</a></li>
+                <li><a href="#featured-post" data-section="featured-post">Featured</a></li>
+                <li><a href="#latest-articles" data-section="latest-articles">Latest Articles</a></li>
+                <li><a href="#popular-topics" data-section="popular-topics">Popular Topics</a></li>
+                <li><a href="#newsletter" data-section="newsletter">Newsletter</a></li>
+                <li><a href="#author" data-section="author">About Author</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Mobile Menu Button - ALWAYS VISIBLE -->
+        <button class="mobile-menu" id="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation Overlay -->
+<div class="mobile-nav-overlay" id="mobile-overlay"></div>
+
+<!-- Mobile Navigation Menu - Enhanced with Main Navigation -->
+<nav class="mobile-nav-menu" id="mobile-nav">
+    <div class="mobile-nav-header">
+        <div class="mobile-logo">
+            <i class="fas fa-home"></i>
+            716 Corporate Housing
+        </div>
+        <button class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <!-- Make sure this has proper vertical layout -->
+    <div class="mobile-nav-content">
+        <!-- Main Navigation Section -->
+        <div class="mobile-nav-section">
+            <h3>Main Navigation</h3>
+            <ul class="mobile-nav-links main-nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="property-listings.html">Available Units</a></li>
+                <li><a href="things-to-do.html">Things to do</a></li>
+                <li><a href="buying-a-home.html">Buying a home</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="partnerships.html">Partnerships</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="furnishing-services.html">Furnishing Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="property-management.html">Add Property</a></li>
+                <li><a href="review-management.html">Review</a></li>                
+            </ul>
+        </div>
+        
+        <!-- Section Navigation for Current Page -->
+        <div class="mobile-nav-section">
+            <h3>On This Page</h3>
+            <ul class="mobile-nav-links section-nav-links">
+                <li><a href="#home" data-section="home">Home</a></li>
+                <li><a href="#categories" data-section="categories">Categories</a></li>
+                <li><a href="#featured-post" data-section="featured-post">Featured</a></li>
+                <li><a href="#latest-articles" data-section="latest-articles">Latest Articles</a></li>
+                <li><a href="#popular-topics" data-section="popular-topics">Popular Topics</a></li>
+                <li><a href="#newsletter" data-section="newsletter">Newsletter</a></li>
+                <li><a href="#author" data-section="author">About Author</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Navigation Actions -->
+        <div class="mobile-nav-actions">
+            <a href="tel:7162716555" class="btn btn-accent">
+                <i class="fas fa-phone"></i> 716-271-6555
+            </a>
+            <a href="#newsletter" class="btn">Subscribe to Blog</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="blog-hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="fade-in">Buffalo Living Blog</h1>
+                <p class="fade-in">Tips, guides, and insights for travel professionals living in Buffalo.</p>
+                <div class="hero-search fade-in">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="blog-search" placeholder="Search blog posts...">
+                    <button id="clear-search">Clear</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories" id="categories">
+        <div class="container">
+            <div class="categories-grid">
+                <a href="#travel-nurse" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Travel Nurse Guides</h3>
+                    <p>Tips for healthcare professionals</p>
+                </a>
+                
+                <a href="#neighborhoods" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Neighborhoods</h3>
+                    <p>Explore Buffalo's best areas</p>
+                </a>
+                
+                <a href="#housing-tips" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Housing Tips</h3>
+                    <p>Make the most of your stay</p>
+                </a>
+                
+                <a href="#local-guides" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Local Guides</h3>
+                    <p>Restaurants & activities</p>
+                </a>
+                
+                <a href="#seasonal" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Seasonal Living</h3>
+                    <p>Buffalo through the seasons</p>
+                </a>
+                
+                <a href="#travel-tips" class="category-card fade-in">
+                    <div class="category-icon">
+                        <i class="fas fa-suitcase"></i>
+                    </div>
+                    <h3>Travel Tips</h3>
+                    <p>For temporary residents</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="featured-post" id="featured-post">
+        <div class="container">
+            <div class="featured-content fade-in">
+                <div class="featured-text">
+                    <div class="post-category">
+                        <span class="category-badge">Featured</span>
+                        <span class="post-date">March 15, 2024</span>
+                    </div>
+                    <h2>Travel Nurse's Guide to Buffalo: What You Need to Know</h2>
+                    <p class="post-excerpt">Essential tips for healthcare professionals relocating to Buffalo for temporary assignments, including best neighborhoods and must-visit spots.</p>
+                    
+                    <div class="post-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            <span>5 min read</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            <span>Travel Nurse, Healthcare, Relocation</span>
+                        </div>
+                    </div>
+                    
+                    <div class="post-highlights">
+                        <h4>In this guide:</h4>
+                        <ul>
+                            <li>Best neighborhoods near hospitals</li>
+                            <li>Navigating Buffalo's healthcare facilities</li>
+                            <li>Local resources for medical professionals</li>
+                            <li>Making the most of your assignment</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#travel-nurse-guide" class="btn btn-accent">Read Full Article</a>
+                </div>
+                
+                <div class="featured-image fade-in">
+                    <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Travel Nurse in Buffalo">
+                    <div class="image-caption">
+                        <i class="fas fa-camera"></i>
+                        <span>Travel nurses find Buffalo to be a welcoming and affordable destination</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-posts" id="latest-articles">
+        <div class="container">
+            <div class="posts-header fade-in">
+                <h2 class="section-title">Latest Articles</h2>
+                <div class="sort-controls">
+                    <label for="sort-posts">Sort by:</label>
+                    <select id="sort-posts">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="read-time">Reading Time</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="posts-grid">
+                <!-- Post 1 -->
+                <article class="post-card fade-in" data-category="local-guides" data-date="2024-03-10" data-read-time="4" data-popular="95">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Restaurant near hospital">
+                        <div class="post-category-badge">Local Guides</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">March 10, 2024</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <h3>Top 10 Restaurants Near Buffalo's Major Hospitals</h3>
+                        <p class="post-excerpt">A curated list of dining options within walking distance of Buffalo General, Mercy Hospital, and other major medical facilities.</p>
+                        
+                        <div class="post-tags">
+                            <span class="tag">Restaurants</span>
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">Local</span>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <div class="stat">
+                                <i class="fas fa-utensils"></i>
+                                <span>10 spots</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-walking"></i>
+                                <span>Walking distance</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#restaurants-guide" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="post-card fade-in" data-category="seasonal" data-date="2024-03-05" data-read-time="6" data-popular="92">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Winter in Buffalo">
+                        <div class="post-category-badge">Seasonal Living</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">March 5, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>Winter in Buffalo: Your Essential Survival Guide</h3>
+                        <p class="post-excerpt">Don't let Buffalo's reputation scare you. Learn how to embrace and enjoy winter in the Queen City like a local.</p>
+                        
+                        <div class="post-tags">
+                            <span class="tag">Winter</span>
+                            <span class="tag">Seasonal</span>
+                            <span class="tag">Local Tips</span>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <div class="stat">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Winter guide</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-temperature-low"></i>
+                                <span>Survival tips</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#winter-guide" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="post-card fade-in" data-category="housing-tips" data-date="2024-02-28" data-read-time="7" data-popular="98">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Corporate Housing vs Hotel">
+                        <div class="post-category-badge">Housing Tips</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">February 28, 2024</span>
+                            <span class="read-time">7 min read</span>
+                        </div>
+                        <h3>Corporate Housing vs. Extended Stay Hotels: What's Better?</h3>
+                        <p class="post-excerpt">A comprehensive comparison to help you make the right choice for your temporary housing needs in Buffalo.</p>
+                        
+                        <div class="post-tags">
+                            <span class="tag">Housing</span>
+                            <span class="tag">Comparison</span>
+                            <span class="tag">Tips</span>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <div class="stat">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Comparison</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-money-bill-wave"></i>
+                                <span>Cost analysis</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#housing-comparison" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 4 -->
+                <article class="post-card fade-in" data-category="travel-tips" data-date="2024-02-20" data-read-time="5" data-popular="88">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1548014878-9c8054df5a6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Niagara Falls weekend getaway">
+                        <div class="post-category-badge">Travel Tips</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">February 20, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>Weekend Getaways from Buffalo: Explore the Region</h3>
+                        <p class="post-excerpt">Discover amazing destinations within a short drive from Buffalo, perfect for your days off during your assignment.</p>
+                        
+                        <div class="post-tags">
+                            <span class="tag">Travel</span>
+                            <span class="tag">Weekend Trips</span>
+                            <span class="tag">Exploration</span>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <div class="stat">
+                                <i class="fas fa-car"></i>
+                                <span>Easy drives</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-compass"></i>
+                                <span>7 destinations</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#weekend-getaways" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 5 -->
+                <article class="post-card fade-in" data-category="housing-tips" data-date="2024-02-15" data-read-time="4" data-popular="90">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Furnished apartment checklist">
+                        <div class="post-category-badge">Housing Tips</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">February 15, 2024</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <h3>Furnished Apartment Checklist: What to Bring</h3>
+                        <p class="post-excerpt">Moving into a furnished corporate apartment? Here's what you actually need to bring and what's already provided.</p>
+                        
+                        <div class="post-tags">
+                            <span class="tag">Moving</span>
+                            <span class="tag">Checklist</span>
+                            <span class="tag">Packing</span>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <div class="stat">
+                                <i class="fas fa-clipboard-check"></i>
+                                <span>Checklist</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-suitcase"></i>
+                                <span>Packing tips</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#apartment-checklist" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 6 -->
+                <article class="post-card fade-in" data-category="neighborhoods" data-date="2024-02-10" data-read-time="6" data-popular="85">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1541432901047-7c7c5f1c4b6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Elmwood Village neighborhood">
+                        <div class="post-category-badge">Neighborhoods</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">February 10, 2024</span>
+                            <span class="read-time">6 min read</span>
+                        </div>
+                        <h3>Elmwood Village: Buffalo's Most Walkable Neighborhood</h3>
+                        <p class="post-excerpt">Discover why Elmwood Village is the top choice for travel professionals seeking convenience, culture, and community.</p>
+                        
+                        <div class="post-tags">
+                            <span class="tag">Neighborhoods</span>
+                            <span class="tag">Walkability</span>
+                            <span class="tag">Local Living</span>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <div class="stat">
+                                <i class="fas fa-walking"></i>
+                                <span>92 Walk Score</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-store"></i>
+                                <span>Local shops</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#elmwood-guide" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 7 -->
+                <article class="post-card fade-in" data-category="travel-nurse" data-date="2024-02-05" data-read-time="5" data-popular="93">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Healthcare professionals networking">
+                        <div class="post-category-badge">Travel Nurse Guides</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">February 5, 2024</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <h3>Building Community as a Travel Nurse in Buffalo</h3>
+                        <p class="post-excerpt">Tips for connecting with other healthcare professionals and building a support network during your temporary assignment.</p>
+                        
+                        <div class="post-tags">
+                            <span class="tag">Community</span>
+                            <span class="tag">Networking</span>
+                            <span class="tag">Support</span>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>Community</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-handshake"></i>
+                                <span>Networking</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#nurse-community" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Post 8 -->
+                <article class="post-card fade-in" data-category="local-guides" data-date="2024-01-30" data-read-time="4" data-popular="87">
+                    <div class="post-image">
+                        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Buffalo farmers market">
+                        <div class="post-category-badge">Local Guides</div>
+                    </div>
+                    <div class="post-content">
+                        <div class="post-meta">
+                            <span class="post-date">January 30, 2024</span>
+                            <span class="read-time">4 min read</span>
+                        </div>
+                        <h3>Farmers Markets & Grocery Stores: Eating Well in Buffalo</h3>
+                        <p class="post-excerpt">A guide to the best places to shop for groceries, fresh produce, and local specialties during your stay in Buffalo.</p>
+                        
+                        <div class="post-tags">
+                            <span class="tag">Food</span>
+                            <span class="tag">Groceries</span>
+                            <span class="tag">Local</span>
+                        </div>
+                        
+                        <div class="post-stats">
+                            <div class="stat">
+                                <i class="fas fa-shopping-basket"></i>
+                                <span>Groceries</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-apple-alt"></i>
+                                <span>Farmers Markets</span>
+                            </div>
+                        </div>
+                        
+                        <a href="#grocery-guide" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="load-more fade-in">
+                <button class="btn btn-accent" id="loadMorePosts">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="newsletter-section" id="newsletter">
+        <div class="container">
+            <div class="newsletter-content fade-in">
+                <div class="newsletter-text">
+                    <h2>Stay Updated on Buffalo Living</h2>
+                    <p>Get the latest tips, guides, and insights for travel professionals living in Buffalo delivered to your inbox.</p>
+                    
+                    <div class="newsletter-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Weekly articles and local tips</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Exclusive housing recommendations</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Seasonal event guides</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>No spam, unsubscribe anytime</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="newsletter-form fade-in">
+                    <h3>Subscribe to Our Blog</h3>
+                    <form id="newsletter-form">
+                        <div class="form-group">
+                            <label for="subscriber-name">Your Name</label>
+                            <input type="text" id="subscriber-name" name="subscriber_name" placeholder="Enter your name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subscriber-email">Email Address *</label>
+                            <input type="email" id="subscriber-email" name="subscriber_email" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subscriber-role">I am a:</label>
+                            <select id="subscriber-role" name="subscriber_role">
+                                <option value="">Select role</option>
+                                <option value="travel-nurse">Travel Nurse</option>
+                                <option value="healthcare">Healthcare Professional</option>
+                                <option value="corporate">Corporate Traveler</option>
+                                <option value="academic">Academic/Researcher</option>
+                                <option value="other">Other Travel Professional</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="newsletter-terms" name="newsletter_terms" required>
+                            <label for="newsletter-terms">I agree to receive email updates and promotional content</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-accent">Subscribe Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Topics -->
+    <section class="popular-topics" id="popular-topics">
+        <div class="container">
+            <h2 class="section-title fade-in">Popular Topics</h2>
+            <p class="section-subtitle fade-in">Explore our most-read categories and articles</p>
+            
+            <div class="topics-grid">
+                <div class="topic-card fade-in">
+                    <div class="topic-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <h3>Healthcare Living</h3>
+                    <p>Guides specifically for medical professionals in Buffalo</p>
+                    <a href="#healthcare" class="topic-link">Browse Articles</a>
+                </div>
+                
+                <div class="topic-card fade-in">
+                    <div class="topic-icon">
+                        <i class="fas fa-map-signs"></i>
+                    </div>
+                    <h3>Neighborhood Guides</h3>
+                    <p>Detailed breakdowns of Buffalo's best areas to live</p>
+                    <a href="#neighborhoods" class="topic-link">Browse Articles</a>
+                </div>
+                
+                <div class="topic-card fade-in">
+                    <div class="topic-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h3>Seasonal Living</h3>
+                    <p>Making the most of Buffalo's four distinct seasons</p>
+                    <a href="#seasonal" class="topic-link">Browse Articles</a>
+                </div>
+                
+                <div class="topic-card fade-in">
+                    <div class="topic-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Food & Dining</h3>
+                    <p>Where to eat and drink in Buffalo</p>
+                    <a href="#food" class="topic-link">Browse Articles</a>
+                </div>
+                
+                <div class="topic-card fade-in">
+                    <div class="topic-icon">
+                        <i class="fas fa-suitcase"></i>
+                    </div>
+                    <h3>Travel Tips</h3>
+                    <p>Making temporary living feel like home</p>
+                    <a href="#travel-tips" class="topic-link">Browse Articles</a>
+                </div>
+                
+                <div class="topic-card fade-in">
+                    <div class="topic-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Housing Advice</h3>
+                    <p>Getting the most from your corporate housing</p>
+                    <a href="#housing" class="topic-link">Browse Articles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Spotlight -->
+    <section class="author-spotlight" id="author">
+        <div class="container">
+            <div class="author-content fade-in">
+                <div class="author-image">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Blog author">
+                    <div class="author-badge">
+                        <i class="fas fa-pen-fancy"></i>
+                        <span>Lead Writer</span>
+                    </div>
+                </div>
+                
+                <div class="author-info">
+                    <h2>Meet Our Buffalo Expert</h2>
+                    <h3>Sarah Johnson</h3>
+                    <p class="author-title">Travel Nurse & Buffalo Resident</p>
+                    
+                    <div class="author-bio">
+                        <p>"As a travel nurse who fell in love with Buffalo during my first assignment, I've made it my mission to help fellow travel professionals discover everything this amazing city has to offer. From hidden neighborhood gems to practical living tips, I share real experiences that make temporary living feel like home."</p>
+                    </div>
+                    
+                    <div class="author-stats">
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Articles Written</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Years in Buffalo</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Healthcare Facilities</div>
+                        </div>
+                    </div>
+                    
+                    <div class="author-contact">
+                        <a href="mailto:sarah@716corporatehousing.com" class="btn">
+                            <i class="fas fa-envelope"></i> Contact Sarah
+                        </a>
+                        <a href="#latest-articles" class="btn">
+                            <i class="fas fa-book-open"></i> Read All Articles
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer-contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column fade-in">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Premium furnished housing for travel professionals in Buffalo, NY.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Blog Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#travel-nurse"><i class="fas fa-chevron-right"></i> Travel Nurse Guides</a></li>
+                        <li><a href="#neighborhoods"><i class="fas fa-chevron-right"></i> Neighborhoods</a></li>
+                        <li><a href="#housing-tips"><i class="fas fa-chevron-right"></i> Housing Tips</a></li>
+                        <li><a href="#local-guides"><i class="fas fa-chevron-right"></i> Local Guides</a></li>
+                        <li><a href="#seasonal"><i class="fas fa-chevron-right"></i> Seasonal Living</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column fade-in">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Buffalo, NY</a></li>
+                        <li><a href="tel:7162716555"><i class="fas fa-phone"></i> 716-271-6555</a></li>
+                        <li><a href="mailto:info@716corporatehousing.com"><i class="fas fa-envelope"></i> info@716corporatehousing.com</a></li>
+                        <li><a href="mailto:blog@716corporatehousing.com"><i class="fas fa-pen"></i> Blog Inquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 716 Corporate Housing. All rights reserved. | <a href="#privacy">Privacy Policy</a> | <a href="#terms">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-button">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <h3>716 Corporate Housing</h3>
+                    <p>Blog & Local Tips</p>
+                </div>
+                <div class="chat-close"><i class="fas fa-times"></i></div>
+            </div>
+            <div class="chat-body">
+                <div class="chat-message bot-message">
+                    Looking for specific Buffalo living tips? Ask me about neighborhoods, restaurants, or travel nurse advice!
+                    <div class="chat-time">Just now</div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Ask about Buffalo living...">
+                <button class="chat-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="mobilenav.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
