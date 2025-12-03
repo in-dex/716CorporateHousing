@@ -1,16 +1,5 @@
 //script.js
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-links').classList.remove('active');
-            });
-        });
-
+    
         // Chat Widget Toggle
         document.querySelector('.chat-button').addEventListener('click', function() {
             const chatBox = document.querySelector('.chat-box');
