@@ -1,0 +1,117 @@
+/* Base Styles - Updated Color Scheme */
+:root {
+    --primary: hsl(196, 70%, 25%); /* Deep teal blue */
+    --primary-dark: hsl(196, 80%, 15%); /* Darker teal */
+    --primary-light: hsl(196, 70%, 35%); /* Lighter teal */
+    --secondary: hsl(196, 30%, 92%); /* Light blue-gray */
+    --accent: hsl(32, 95%, 55%); /* Warm orange accent */
+    --accent-dark: hsl(32, 85%, 45%);
+    --dark: hsl(200, 40%, 10%); /* Dark blue-gray */
+    --light: hsl(0, 0%, 100%);
+    --gray: hsl(200, 20%, 40%);
+    --light-gray: hsl(200, 15%, 95%);
+    --bg-gray: hsl(200, 30%, 98%); /* Light blue-gray background */
+    --text-gray: hsl(200, 40%, 10%); /* Dark gray for text */
+    --border-gray: hsl(200, 20%, 90%);
+    --shadow: 0 10px 40px -10px hsl(196 70% 25% / 0.15);
+    --shadow-soft: 0 4px 20px -4px hsl(196 70% 25% / 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --border-radius: 0.75rem;
+    --radius: 0.75rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-gray);
+    background-color: var(--bg-gray);
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+a, button, .btn, .nav-links a {
+    transition: var(--transition);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Section Titles */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.2rem;
+    color: var(--dark);
+    position: relative;
+    font-weight: 700;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    margin: 1rem auto 0;
+    border-radius: 2px;
+}
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scale-in.visible {
+    opacity: 1;
+    transform: scale(1);
+}

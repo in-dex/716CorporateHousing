@@ -1,0 +1,902 @@
+/* Buying a Home Page Specific Styles */
+
+/* Hero Section */
+.homebuyer-hero {
+    background: linear-gradient(135deg, rgba(17, 79, 100, 0.9) 0%, rgba(2, 58, 91, 0.7) 100%), 
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+    color: var(--light);
+    padding: 120px 0 80px;
+    position: relative;
+    text-align: center;
+}
+
+.homebuyer-hero .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.homebuyer-hero h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--light);
+    font-weight: 700;
+}
+
+.homebuyer-hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    color: var(--light);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.homebuyer-hero .hero-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Stats Section */
+.stats-section {
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    color: var(--light);
+    padding: 60px 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 25px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--light);
+}
+
+.stat-content h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: var(--light);
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--light);
+}
+
+.stat-content p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* Why Buffalo Section */
+.why-buffalo {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.benefit-card {
+    background: var(--light);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-gray);
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-light);
+}
+
+.benefit-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--light);
+    font-size: 1.5rem;
+}
+
+.benefit-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.benefit-card p {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Comparison Tables */
+.comparison {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.city-price {
+    text-align: center;
+    padding: 10px;
+    background: var(--bg-gray);
+    border-radius: 8px;
+    border: 1px solid var(--border-gray);
+}
+
+.city-price span {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    margin-bottom: 5px;
+}
+
+.city-price strong {
+    display: block;
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+/* Employer List */
+.employer-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.employer-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-gray);
+}
+
+.employer-list li:last-child {
+    border-bottom: none;
+}
+
+.employer-list i {
+    color: var(--primary);
+    width: 20px;
+}
+
+/* Highlights */
+.highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.highlight {
+    background: var(--bg-gray);
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    border: 1px solid var(--border-gray);
+}
+
+/* Education List */
+.education-list {
+    margin-top: 15px;
+}
+
+.school {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-gray);
+}
+
+.school:last-child {
+    border-bottom: none;
+}
+
+.school strong {
+    display: block;
+    color: var(--dark);
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.school span {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+/* Cost Breakdown */
+.cost-breakdown {
+    margin-top: 15px;
+}
+
+.cost-item {
+    margin-bottom: 15px;
+}
+
+.cost-item span:first-child {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 5px;
+}
+
+.cost-bar {
+    height: 8px;
+    background: var(--border-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 4px;
+}
+
+.cost-item span:last-child {
+    font-size: 0.8rem;
+    color: var(--gray);
+}
+
+/* Location Distances */
+.location-distances {
+    margin-top: 15px;
+}
+
+.distance-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--border-gray);
+}
+
+.distance-item:last-child {
+    border-bottom: none;
+}
+
+.distance-item i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    width: 30px;
+}
+
+.distance-item strong {
+    display: block;
+    color: var(--dark);
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+}
+
+.distance-item span {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+/* Neighborhoods Section */
+.neighborhoods-section {
+    padding: 80px 0;
+    background-color: var(--bg-gray);
+}
+
+.neighborhoods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.neighborhood-card {
+    background: var(--light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border-gray);
+}
+
+.neighborhood-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.neighborhood-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.neighborhood-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.neighborhood-card:hover .neighborhood-image img {
+    transform: scale(1.05);
+}
+
+.neighborhood-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.neighborhood-content {
+    padding: 25px;
+}
+
+.neighborhood-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.neighborhood-desc {
+    color: var(--text-gray);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.neighborhood-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    width: 30px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--gray);
+    margin-bottom: 2px;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.neighborhood-highlights h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.neighborhood-highlights ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.neighborhood-highlights li {
+    padding: 5px 0;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.neighborhood-highlights li:before {
+    content: '✓';
+    color: var(--primary);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Try Before You Buy */
+.try-before-buy {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--dark), #1a202c);
+    color: var(--light);
+}
+
+.try-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.try-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--light);
+}
+
+.try-text > p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.try-benefits {
+    margin-bottom: 30px;
+}
+
+.benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.benefit i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-top: 5px;
+}
+
+.benefit h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: var(--light);
+}
+
+.benefit p {
+    opacity: 0.8;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.try-cta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.try-image {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.try-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    color: var(--light);
+}
+
+.image-caption i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.image-caption p {
+    font-style: italic;
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.image-caption span {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* Process Timeline */
+.process-section {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.process-timeline {
+    max-width: 800px;
+    margin: 40px auto 0;
+    position: relative;
+}
+
+.process-timeline:before {
+    content: '';
+    position: absolute;
+    left: 50px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary);
+    transform: translateX(-50%);
+}
+
+.process-step {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.step-number {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--light);
+    margin-right: 30px;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.step-content {
+    flex: 1;
+    padding-top: 15px;
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.step-content p {
+    color: var(--text-gray);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.step-link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.step-link:hover {
+    color: var(--primary-dark);
+    transform: translateX(5px);
+}
+
+/* Contact Section */
+.homebuyer-contact {
+    padding: 80px 0;
+    background-color: var(--bg-gray);
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--light);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.contact-info > p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.contact-details {
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-top: 5px;
+}
+
+.contact-item h4 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: var(--gray);
+}
+
+.contact-item a, .contact-item span {
+    display: block;
+    color: var(--dark);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: var(--primary);
+}
+
+.contact-note {
+    background: var(--bg-gray);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary);
+    display: flex;
+    gap: 15px;
+}
+
+.contact-note i {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-top: 5px;
+}
+
+.contact-note p {
+    margin: 0;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--dark);
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: var(--light);
+    color: var(--text-gray);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+}
+
+.contact-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .try-content,
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .homebuyer-hero {
+        padding: 100px 0 60px;
+    }
+    
+    .homebuyer-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .homebuyer-hero p {
+        font-size: 1.1rem;
+    }
+    
+    .homebuyer-hero .hero-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .neighborhoods-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-timeline:before {
+        left: 30px;
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-right: 20px;
+    }
+    
+    .try-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .try-image {
+        order: -1;
+    }
+    
+    .contact-wrapper {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .neighborhood-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .comparison {
+        grid-template-columns: 1fr;
+    }
+    
+    .process-timeline:before {
+        display: none;
+    }
+    
+    .process-step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .try-cta {
+        flex-direction: column;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .homebuyer-hero,
+    .chat-widget,
+    .mobile-menu,
+    .social-links,
+    .try-cta,
+    .contact-form {
+        display: none !important;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+        font-size: 12pt;
+    }
+    
+    .container {
+        max-width: 100%;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: none;
+    }
+    
+    .btn {
+        display: none;
+    }
+    
+    .stats-section,
+    .try-before-buy {
+        background: #fff !important;
+        color: #000 !important;
+    }
+    
+    .stat-card {
+        background: #fff !important;
+        border: 1px solid #000;
+        color: #000 !important;
+    }
+    
+    .benefit-card,
+    .neighborhood-card {
+        break-inside: avoid;
+    }
+}

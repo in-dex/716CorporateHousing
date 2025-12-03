@@ -1,0 +1,264 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        padding: 5rem 0 3rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .hero-action-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .hero .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .metrics-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+    
+    .metric-value {
+        font-size: 1.25rem;
+    }
+    
+    .metric-label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 8rem 0 6rem;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-actions {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .metrics-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    
+    .metric-value {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 992px) {
+    .about-container, .modal-header {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .about-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--light);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border-top: 1px solid var(--border-gray);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links li {
+        margin: 12px 0;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-btns .btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .filter-group input, .filter-group select {
+        width: 100%;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .chat-box {
+        width: 300px;
+    }
+    
+    .floating-text {
+        bottom: 90px;
+        left: 15px;
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+    
+    .modal-content {
+        margin: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        padding: 80px 0;
+    }
+    
+    .properties-grid, .reviews-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .chat-box {
+        width: 280px;
+        right: -20px;
+    }
+    
+    .metrics-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .modal-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CTA Section Responsive */
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 60px 0;
+    }
+    
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content > p {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    .cta-contact-info {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 400px;
+    }
+    
+    .contact-method {
+        padding: 25px 20px;
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+    }
+    
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+        font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+    
+    .contact-details {
+        flex: 1;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-section .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-content > p {
+        font-size: 1rem;
+    }
+    
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .contact-icon {
+        margin-bottom: 0;
+    }
+    
+    .contact-label {
+        font-size: 0.9rem;
+    }
+    
+    .contact-value {
+        font-size: 1rem;
+    }
+}

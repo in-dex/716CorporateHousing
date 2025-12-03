@@ -1,0 +1,222 @@
+/* Hero Section - Full Screen */
+.hero {
+    background: linear-gradient(135deg, rgba(17, 79, 100, 0.9) 0%, rgba(2, 58, 91, 0.7) 100%), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
+    color: var(--light);
+    padding: 8rem 0 4rem;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: left;
+    max-width: 100%;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--light);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    color: var(--light);
+    line-height: 1.6;
+}
+
+/* Hero Actions - Single Row Layout */
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-action-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero .btn {
+    min-width: 160px;
+    margin: 0;
+}
+
+.hero-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var(--border-radius);
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.hero-phone:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Header Metrics - White text with separators */
+.metrics-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.metric-item {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    text-align: left;
+}
+
+.metric-item:not(:last-child)::after {
+    content: '|';
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0 1.5rem;
+    font-weight: 300;
+}
+
+.metric-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.metric-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--light);
+    margin-bottom: 0.25rem;
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Responsive Hero Height */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 90vh;
+        padding: 6rem 0 2rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-action-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .hero .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .hero-phone {
+        width: 100%;
+        justify-content: center;
+        max-width: 280px;
+    }
+    
+    .metrics-container {
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+    
+    .metric-item {
+        flex: 0 0 calc(50% - 0.5rem);
+    }
+    
+    .metric-item:nth-child(2)::after {
+        content: none;
+    }
+    
+    .metric-item:nth-child(even)::after {
+        content: none;
+    }
+    
+    .metric-value {
+        font-size: 1.5rem;
+    }
+    
+    .metric-label {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+    
+    .metric-item:not(:last-child)::after {
+        margin: 0 1rem;
+    }
+    
+    .metric-value {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .hero {
+        padding: 8rem 0 3rem 0;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .hero-actions {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .metric-item:not(:last-child)::after {
+        margin: 0 2rem;
+    }
+    
+    .metric-value {
+        font-size: 2rem;
+    }
+}
